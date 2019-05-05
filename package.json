@@ -1,33 +1,34 @@
 {
   "name": "ocunited2",
-  "proxy": "http://localhost:8080",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "express": "^4.16.4",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.0"
-  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "NODE_ENV=production node index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "client": "react-scripts start",
+    "server": "nodemon server",
+    "eject": "react-scripts eject",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "npm run build"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guilleeh/ocunited2.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guilleeh/ocunited2/issues"
+  },
+  "homepage": "https://github.com/guilleeh/ocunited2#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "http-proxy-middleware": "^0.19.1"
+  },
+  "devDependencies": {
+    "morgan": "^1.9.1"
   }
 }
