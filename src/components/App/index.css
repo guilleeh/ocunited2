@@ -4,9 +4,9 @@ img{
 }
 
 .site-header{
-    background-color: blue;
+    background-color: #001D34;
     display: block;
-    z-index: 999;
+    z-index: 2;
     position:fixed;
     top:0;
     left:0;
@@ -167,4 +167,41 @@ img{
     padding: 8px 15px;
     position: relative;
     z-index: 1;
+}
+
+.buttons li:hover{
+    background: #F99200;
+    border-color: #F99200;
+}
+
+.Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:#001D34;
+    z-index: 3;
+  }
+
+.DonationModal{
+    position:absolute;
+    background-color: #e5e5e5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 80%;
+    box-shadow: 0px 4px 4px rgba(0,0,0,.25);
+}
+
+.DonationModal:focus{
+    outline:none;
+}
+
+#makeadonation{
+    color:white;
+    text-align: center;
+    margin-top: -30px;
+    margin-bottom: 30px;
 }
