@@ -32,7 +32,7 @@ class Heading extends React.Component{
                 </ReactModal>
                 <header className="site-header">
                     <div class="site-branding">
-                        <img src="https://ocunited.org/wp-content/themes/ocunited/images/ocu-logo.png"/> 
+                        <img alt="logo" src="https://ocunited.org/wp-content/themes/ocunited/images/ocu-logo.png"/> 
                     </div>
                     <nav className="main-navigation">
                         <ul className="main-menu">
