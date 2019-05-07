@@ -1,7 +1,5 @@
 import React from 'react';
 import Stepper from 'react-stepper-horizontal';
-import Button from 'mineral-ui/Button';
-import TextInput from 'mineral-ui/TextInput';
 import logo from './logo.png'
 
 
@@ -60,7 +58,7 @@ class Donation extends React.Component{
                             <button>$500</button>
                         </div>
                         <div>
-                            <TextInput type="number" prefix="$"/>
+                            <input type="number"/>
                         </div>
                         <div>
                             <select multiple>
@@ -87,8 +85,8 @@ class Donation extends React.Component{
                             </select>
                         </div>
                         <div className="ModalNav">
-                            <Button className="cancel" onClick={this.closeModal}>Cancel</Button>
-                            <Button className="next" onClick={this.next}>Next</Button>
+                            <button className="cancel" onClick={this.closeModal}>Cancel</button>
+                            <button className="next" onClick={this.next}>Next</button>
                         </div>
                     </div>
                 );
@@ -96,20 +94,20 @@ class Donation extends React.Component{
                 return(
                     <div>
                         {this.renderStepper()}
-                        <TextInput placeholder="First Name" />
-                        <TextInput placeholder="Last Name" />
-                        <TextInput type="email" placeholder="Email" />
-                        <TextInput placeholder="Phone Number (Optional)" />
-                        <TextInput placeholder="Street Address" />
-                        <TextInput placeholder="City" />
-                        <TextInput placeholder="State" />
-                        <TextInput type="number" placeholder="Postal Code" />
-                        <TextInput placeholder="Country" />
+                        <input placeholder="First Name" />
+                        <input placeholder="Last Name" />
+                        <input type="email" placeholder="Email" />
+                        <input placeholder="Phone Number (Optional)" />
+                        <input placeholder="Street Address" />
+                        <input placeholder="City" />
+                        <input placeholder="State" />
+                        <input type="number" placeholder="Postal Code" />
+                        <input placeholder="Country" />
                         <input type="checkbox" name="anonymity"/>Donate Anonymously
                         <div className="ModalNav">
-                            <Button onClick={this.closeModal}>Cancel</Button>
-                            <Button onClick={this.previous}>Previous</Button>
-                            <Button onClick={this.next}>Next</Button>
+                            <button onClick={this.closeModal}>Cancel</button>
+                            <button onClick={this.previous}>Previous</button>
+                            <button onClick={this.next}>Next</button>
                         </div>
                     </div>
                 );
@@ -117,9 +115,9 @@ class Donation extends React.Component{
                 return(
                    <div>
                         {this.renderStepper()}
-                        <TextInput placeholder="Name on Card" />
-                        <TextInput type="number" placeholder="Card Number" />
-                        <TextInput type="number" placeholder="cvv" />
+                        <input placeholder="Name on Card" />
+                        <input type="number" placeholder="Card Number" />
+                        <input type="number" placeholder="cvv" />
                         <select>
                             <option>January</option>
                             <option>February</option>
@@ -138,9 +136,9 @@ class Donation extends React.Component{
                             {this.generateDays()}
                         </select>
                         <div className="ModalNav">
-                            <Button onClick={this.closeModal}>Cancel</Button>
-                            <Button onClick={this.previous}>Previous</Button>
-                            <Button onClick={this.next}>Next</Button>
+                            <button onClick={this.closeModal}>Cancel</button>
+                            <button onClick={this.previous}>Previous</button>
+                            <button onClick={this.next}>Next</button>
                         </div>
                     </div>
                 );
@@ -153,9 +151,9 @@ class Donation extends React.Component{
                         <h3>Frequency: __________</h3>
                         <h3>Anonymous?: __________</h3>
                         <div className="ModalNav">
-                            <Button onClick={this.closeModal}>Cancel</Button>
-                            <Button onClick={this.previous}>Previous</Button>
-                            <Button onClick={this.next}>Next</Button>
+                            <button onClick={this.closeModal}>Cancel</button>
+                            <button onClick={this.previous}>Previous</button>
+                            <button onClick={this.next}>Next</button>
                         </div>
                     </div>
                 );
@@ -164,7 +162,7 @@ class Donation extends React.Component{
                     <div>
                         <img src={logo} alt="Thank you for Donating"/>
                         <h1>Thank you for donating!</h1>
-                        <Button onClick={this.closeModal}>Back to Home</Button>
+                        <button onClick={this.closeModal}>Back to Home</button>
                     </div>
                 );
         }
