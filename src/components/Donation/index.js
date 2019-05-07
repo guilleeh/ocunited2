@@ -1,8 +1,9 @@
 import React from 'react';
 import Stepper from 'react-stepper-horizontal';
-import ButtonGroup from 'mineral-ui/ButtonGroup';
 import Button from 'mineral-ui/Button';
 import TextInput from 'mineral-ui/TextInput';
+import logo from './logo.png'
+
 
 class Donation extends React.Component{
     state = {
@@ -19,6 +20,14 @@ class Donation extends React.Component{
 
     previous=()=>{
         this.setState({currentStep: this.state.currentStep - 1});
+    }
+
+    generateDays(){
+        let output=[]
+        for (let i=1; i<=31; i++){
+            output.push(<option> {i} </option>);
+        }
+        return output;
     }
 
     renderStepper(){
@@ -44,17 +53,17 @@ class Donation extends React.Component{
                 return(
                     <div className="pageOne">
                         {this.renderStepper()}
-                        <ButtonGroup  className ="buttongroup" aria-label="Edit text" mode="radio">
-                            <Button>$50</Button>
-                            <Button>$100</Button>
-                            <Button>$250</Button>
-                            <Button>$500</Button>
-                        </ButtonGroup>
+                        <div className="buttongroup">
+                            <button>$50</button>
+                            <button>$100</button>
+                            <button>$250</button>
+                            <button>$500</button>
+                        </div>
                         <div>
                             <TextInput type="number" prefix="$"/>
                         </div>
                         <div>
-                            <select>
+                            <select multiple>
                                 <option>Donate to General</option>
                                 <option>Donate to Neighborhoods</option>
                                 <option>Donate to Homelessness</option>
@@ -87,6 +96,16 @@ class Donation extends React.Component{
                 return(
                     <div>
                         {this.renderStepper()}
+                        <TextInput placeholder="First Name" />
+                        <TextInput placeholder="Last Name" />
+                        <TextInput type="email" placeholder="Email" />
+                        <TextInput placeholder="Phone Number (Optional)" />
+                        <TextInput placeholder="Street Address" />
+                        <TextInput placeholder="City" />
+                        <TextInput placeholder="State" />
+                        <TextInput type="number" placeholder="Postal Code" />
+                        <TextInput placeholder="Country" />
+                        <input type="checkbox" name="anonymity"/>Donate Anonymously
                         <div className="ModalNav">
                             <Button onClick={this.closeModal}>Cancel</Button>
                             <Button onClick={this.previous}>Previous</Button>
@@ -97,24 +116,54 @@ class Donation extends React.Component{
             case 2:
                 return(
                    <div>
-                       {this.renderStepper()}
-                        <Button onClick={this.closeModal}>Cancel</Button>
-                        <Button onClick={this.previous}>Previous</Button>
-                        <Button onClick={this.next}>Next</Button>
+                        {this.renderStepper()}
+                        <TextInput placeholder="Name on Card" />
+                        <TextInput type="number" placeholder="Card Number" />
+                        <TextInput type="number" placeholder="cvv" />
+                        <select>
+                            <option>January</option>
+                            <option>February</option>
+                            <option>March</option>
+                            <option>April</option>
+                            <option>May</option>
+                            <option>June</option>
+                            <option>July</option>
+                            <option>August</option>
+                            <option>September</option>
+                            <option>October</option>
+                            <option>November</option>
+                            <option>December</option>
+                        </select>
+                        <select>
+                            {this.generateDays()}
+                        </select>
+                        <div className="ModalNav">
+                            <Button onClick={this.closeModal}>Cancel</Button>
+                            <Button onClick={this.previous}>Previous</Button>
+                            <Button onClick={this.next}>Next</Button>
+                        </div>
                     </div>
                 );
             case 3:
                 return(
                     <div>
                         {this.renderStepper()}
-                        <Button onClick={this.closeModal}>Cancel</Button>
-                        <Button onClick={this.previous}>Previous</Button>
-                        <Button onClick={this.next}>Next</Button>
+                        <h3>Donation Amount: __________</h3>
+                        <h3>Donate To: __________</h3>
+                        <h3>Frequency: __________</h3>
+                        <h3>Anonymous?: __________</h3>
+                        <div className="ModalNav">
+                            <Button onClick={this.closeModal}>Cancel</Button>
+                            <Button onClick={this.previous}>Previous</Button>
+                            <Button onClick={this.next}>Next</Button>
+                        </div>
                     </div>
                 );
             case 4:
                 return(
                     <div>
+                        <img src={logo} alt="Thank you for Donating"/>
+                        <h1>Thank you for donating!</h1>
                         <Button onClick={this.closeModal}>Back to Home</Button>
                     </div>
                 );
