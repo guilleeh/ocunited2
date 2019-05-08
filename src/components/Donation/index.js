@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css';
 import Stepper from 'react-stepper-horizontal';
 import logo from './logo.png'
 
