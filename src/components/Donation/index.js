@@ -50,7 +50,7 @@ class Donation extends React.Component{
         switch (this.state.currentStep){
             case 0:
                 return(
-                    <div className="pageOne">
+                    <div>
                         {this.renderStepper()}
                         <div className="buttongroup">
                             <button>$50</button>
