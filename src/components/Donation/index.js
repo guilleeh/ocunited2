@@ -107,8 +107,9 @@ class Donation extends React.Component{
                             <input placeholder="Street Address" />
                             <input placeholder="City" />
                             <input placeholder="State" />
-                            <input type="number" placeholder="Postal Code" />
+                            <input type="number" placeholder="Postal Code" min="00501"/>
                             <input placeholder="Country" />
+                            <br></br>
                             <input type="checkbox" name="anonymity"/>Donate Anonymously
                             <div className="ModalNav">
                                 <button onClick={this.closeModal}>Cancel</button>
