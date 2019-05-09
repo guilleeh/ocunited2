@@ -23,6 +23,14 @@
     background-color: #bdbdbd;
 }
 
+.lineup {
+    padding-bottom: 2%;
+    text-align: center;
+}
+
+.ModalNav {
+    text-align: center;
+}
 .buttongroup :hover {
   background-color: #F1802D;
   color : white;

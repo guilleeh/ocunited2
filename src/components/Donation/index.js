@@ -62,10 +62,10 @@ class Donation extends React.Component{
                             <button>$250</button>
                             <button>$500</button>
                         </div>
-                        <div>
+                        <div className="lineup">
                             <input type="number"/>
                         </div>
-                        <div>
+                        <div className="lineup">
                             <select multiple>
                                 <option>Donate to General</option>
                                 <option>Donate to Neighborhoods</option>
@@ -82,7 +82,7 @@ class Donation extends React.Component{
                                 <option>Donate to Love Yorba Linda</option>
                             </select>
                         </div>
-                        <div>
+                        <div className="lineup">
                             <select>
                                 <option>One Time</option>
                                 <option>Monthly</option>
@@ -154,7 +154,7 @@ class Donation extends React.Component{
                 );
             case 4:
                 return(
-                    <div>
+                    <div  className="lineup">
                         <img src={logo} alt="Thank you for Donating"/>
                         <h1>Thank you for donating!</h1>
                         <button onClick={this.closeModal}>Back to Home</button>
