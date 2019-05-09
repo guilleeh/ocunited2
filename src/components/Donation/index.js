@@ -37,7 +37,7 @@ class Donation extends React.Component{
         return(
             <div>
             <Stepper
-                    steps={ [{title: 'Select Donation Amount'}, {title: 'Add Personal Information'}, {title: 'Add Payment Information'}, {title: 'Submit Donation'}] } 
+                    steps={ [{title: 'Select Donation Amount'}, {title: 'Add Personal Information'}, {title: 'Add Payment Information'}, {title: 'Submit Donation'}] }
                     activeStep={this.state.currentStep}
                     activeColor="#ffb547"
                     completeColor="#ffb547"
@@ -168,7 +168,7 @@ class Donation extends React.Component{
     render(){
         return(
             <div>
-                
+
                 {this.renderField()}
             </div>
 
