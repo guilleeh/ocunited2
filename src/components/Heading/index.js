@@ -2,10 +2,14 @@ import React from 'react';
 import './index.css';
 import ReactModal from 'react-modal';
 import Donation from '../Donation';
+import EventDropdown from './eventdropdown';
+
+import {} from 'react-bootstrap';
 
 class Heading extends React.Component{
     state={
         donation_visibility:false,
+        event_dropdown_show: false,
     };
 
     show_modal = () =>{
@@ -15,7 +19,6 @@ class Heading extends React.Component{
     hide_modal = () =>{
         this.setState({donation_visibility:false});
     }
-
 
     render(){
         return(
@@ -38,25 +41,25 @@ class Heading extends React.Component{
                     <nav className="main-navigation">
                         <ul className="main-menu">
                             <li>
-                                <a>Who We Are</a>
+                                <h3>Who We Are</h3>
                             </li>
                             <li>
-                                <a>What We Do</a>
+                                <h3>What We Do</h3>
                             </li>
                             <li>
-                                <a>Events</a>
+                                <EventDropdown />
                             </li>
                             <li>
-                                <a>Volunteer</a>
+                                <h3>Volunteer</h3>
                             </li>
                             <li>
-                                <a>Blog</a>
+                                <h3>Blog</h3>
                             </li>
                         </ul>
                     </nav>
                     <div className="buttons">
-                        <li><a>Get Involved</a></li>
-                        <li onClick={this.show_modal}><a>Donate</a></li>
+                        <li><div className="buttontext">Get Involved</div></li>
+                        <li onClick={this.show_modal}><div className="buttontext">Donate</div></li>
                     </div>
                 </header>
             </div>

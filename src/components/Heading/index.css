@@ -93,12 +93,12 @@ img{
     position: relative;
 }
 
-.main-menu li a{
+.main-menu li h3{
     cursor: default;
     color: white;
 }
 
-.main-navigation a{
+.main-navigation h3{
     display:block;
     text-decoration:none;
     color:white;
@@ -157,7 +157,7 @@ img{
     margin-right:10px;
 }
 
-.buttons a{
+.buttontext{
     text-decoration: none;
     display: block;
     color: white;
@@ -198,4 +198,69 @@ img{
 
 .DonationModal:focus{
     outline:none;
+}
+
+#dropdown-button{
+    display:block;
+    text-decoration:none;
+    color:white;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    font-size: 14 px;
+    font-size: .875rem;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    background: none;
+    border: none;
+    outline:none;
+    font-weight: 600;
+}
+
+#dropdown-button:hover{
+    color:#F99200;
+}
+
+.event-item{
+    padding: 10px;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+}
+
+.event-item:hover{
+    color:#F99200;
+}
+
+.dropdown-items{
+    position:absolute;
+    width:200px;
+    margin-top: 15px;
+    right:-66px;
+    background:white;
+    color: #001D34;
+    text-align:center;
+    border: 1px solid #001D34;
+}
+
+.dropdown-items:after, .dropdown-items:before {
+	bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.dropdown-items:after {
+	border-color: rgba(0, 29, 52, 0);
+	border-bottom-color: white;
+	border-width: 15px;
+	margin-left: -15px;
+}
+.dropdown-items:before {
+	border-color: rgba(0, 29, 52, 0);
+	border-bottom-color: white;
+	border-width: 15px;
+	margin-left: -15px;
 }
