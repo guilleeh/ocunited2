@@ -28,10 +28,16 @@
 
 .ModalNav {
     text-align: center;
+    position: relative;
 }
 .buttongroup :hover {
   background-color: Orange;
   color : white;
   font-weight : bold;
   
+}
+
+.personalinfo {
+    display: table;
+    align-items:center;
 }
