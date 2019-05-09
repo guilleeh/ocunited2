@@ -31,6 +31,8 @@
 
 .ModalNav {
     text-align: center;
+    position: relative;
+    padding-top: 5%;
 }
 .buttongroup :hover {
   background-color: #F1802D;
@@ -40,6 +42,8 @@
   text-align : center;
 }
 
-.personal_info :focus{
-  background-color: #ffb547;
+.personalinfo {
+    text-align: center;
+    display: table;
+    align-items:vertical;
 }

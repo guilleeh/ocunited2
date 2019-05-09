@@ -63,7 +63,7 @@ class Donation extends React.Component{
                             <button>$500</button>
                         </div>
                         <div className="lineup">
-                            <input type="number"/>
+                            <input type="number" min="1" step="1" />
                         </div>
                         <div className="lineup">
                             <select multiple>
@@ -99,20 +99,23 @@ class Donation extends React.Component{
                 return(
                     <div className="personal_info">
                         {this.renderStepper()}
-                        <input placeholder="First Name" />
-                        <input placeholder="Last Name" />
-                        <input type="email" placeholder="Email" />
-                        <input placeholder="Phone Number (Optional)" />
-                        <input placeholder="Street Address" />
-                        <input placeholder="City" />
-                        <input placeholder="State" />
-                        <input type="number" placeholder="Postal Code" />
-                        <input placeholder="Country" />
-                        <input type="checkbox" name="anonymity"/>Donate Anonymously
-                        <div className="ModalNav">
-                            <button onClick={this.closeModal}>Cancel</button>
-                            <button onClick={this.previous}>Previous</button>
-                            <button onClick={this.next}>Next</button>
+                        <div className="personalinfo">
+                            <input placeholder="First Name" />
+                            <input placeholder="Last Name" />
+                            <input type="email" placeholder="Email" />
+                            <input placeholder="Phone Number (Optional)" />
+                            <input placeholder="Street Address" />
+                            <input placeholder="City" />
+                            <input placeholder="State" />
+                            <input type="number" placeholder="Postal Code" min="00501"/>
+                            <input placeholder="Country" />
+                            <br></br>
+                            <input type="checkbox" name="anonymity"/>Donate Anonymously
+                            <div className="ModalNav">
+                                <button onClick={this.closeModal}>Cancel</button>
+                                <button onClick={this.previous}>Previous</button>
+                                <button onClick={this.next}>Next</button>
+                            </div>
                         </div>
                     </div>
                 );
