@@ -120,6 +120,7 @@ class Donation extends React.Component{
                 return(
                    <div>
                         {this.renderStepper()}
+
                         <StripeProvider apiKey="pk_test_mVIHxjDBueW9FOhHUrp3uD7d0042aj7bq6">
                         <div className="oc-united-stripe-element">
                          <h1>React Stripe Element</h1>
@@ -128,6 +129,7 @@ class Donation extends React.Component{
                         </Elements>
                         </div>
                         </StripeProvider>
+
                         <div className="ModalNav">
                             <button onClick={this.closeModal}>Cancel</button>
                             <button onClick={this.previous}>Previous</button>
