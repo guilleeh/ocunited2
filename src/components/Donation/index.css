@@ -23,4 +23,7 @@
 
 .buttongroup :hover {
   background-color: Orange;
+  color : white;
+  font-weight : bold;
+  
 }
