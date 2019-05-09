@@ -3,6 +3,10 @@ import './index.css';
 import Stepper from 'react-stepper-horizontal';
 import logo from './logo.png'
 
+//dependencies for Stripe
+import {Elements, StripeProvider} from 'react-stripe-elements';
+import CheckoutForm from './CheckoutForm';
+
 
 class Donation extends React.Component{
     state = {
@@ -116,26 +120,14 @@ class Donation extends React.Component{
                 return(
                    <div>
                         {this.renderStepper()}
-                        <input placeholder="Name on Card" />
-                        <input type="number" placeholder="Card Number" />
-                        <input type="number" placeholder="cvv" />
-                        <select>
-                            <option>January</option>
-                            <option>February</option>
-                            <option>March</option>
-                            <option>April</option>
-                            <option>May</option>
-                            <option>June</option>
-                            <option>July</option>
-                            <option>August</option>
-                            <option>September</option>
-                            <option>October</option>
-                            <option>November</option>
-                            <option>December</option>
-                        </select>
-                        <select>
-                            {this.generateDays()}
-                        </select>
+                        <StripeProvider apiKey="pk_test_mVIHxjDBueW9FOhHUrp3uD7d0042aj7bq6">
+                        <div className="oc-united-stripe-element">
+                         <h1>React Stripe Element</h1>
+                         <Elements>
+                        <CheckoutForm />
+                        </Elements>
+                        </div>
+                        </StripeProvider>
                         <div className="ModalNav">
                             <button onClick={this.closeModal}>Cancel</button>
                             <button onClick={this.previous}>Previous</button>
