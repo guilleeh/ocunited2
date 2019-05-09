@@ -97,7 +97,7 @@ class Donation extends React.Component{
                 );
             case 1:
                 return(
-                    <div>
+                    <div className="personal_info">
                         {this.renderStepper()}
                         <input placeholder="First Name" />
                         <input placeholder="Last Name" />
