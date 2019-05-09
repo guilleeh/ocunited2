@@ -255,12 +255,12 @@ img{
 .dropdown-items:after {
 	border-color: rgba(0, 29, 52, 0);
 	border-bottom-color: white;
-	border-width: 15px;
-	margin-left: -15px;
+	border-width: 12px;
+	margin-left: -12px;
 }
 .dropdown-items:before {
 	border-color: rgba(0, 29, 52, 0);
 	border-bottom-color: white;
-	border-width: 15px;
-	margin-left: -15px;
+	border-width: 12px;
+	margin-left: -12px;
 }
