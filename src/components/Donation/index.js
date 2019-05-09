@@ -37,7 +37,7 @@ class Donation extends React.Component{
         return(
             <div>
             <Stepper
-                    steps={ [{title: 'Select Donation Amount'}, {title: 'Add Personal Information'}, {title: 'Add Payment Information'}, {title: 'Submit Donation'}] } 
+                    steps={ [{title: 'Select Donation Amount'}, {title: 'Add Personal Information'}, {title: 'Add Payment Information'}, {title: 'Submit Donation'}] }
                     activeStep={this.state.currentStep}
                     activeColor="#ffb547"
                     completeColor="#ffb547"
@@ -62,10 +62,10 @@ class Donation extends React.Component{
                             <button>$250</button>
                             <button>$500</button>
                         </div>
-                        <div>
-                            <input type="number"/>
+                        <div className="lineup">
+                            <input type="number" min="1" step="1" />
                         </div>
-                        <div>
+                        <div className="lineup">
                             <select multiple>
                                 <option>Donate to General</option>
                                 <option>Donate to Neighborhoods</option>
@@ -82,7 +82,7 @@ class Donation extends React.Component{
                                 <option>Donate to Love Yorba Linda</option>
                             </select>
                         </div>
-                        <div>
+                        <div className="lineup">
                             <select>
                                 <option>One Time</option>
                                 <option>Monthly</option>
@@ -97,22 +97,25 @@ class Donation extends React.Component{
                 );
             case 1:
                 return(
-                    <div>
+                    <div className="personal_info">
                         {this.renderStepper()}
-                        <input placeholder="First Name" />
-                        <input placeholder="Last Name" />
-                        <input type="email" placeholder="Email" />
-                        <input placeholder="Phone Number (Optional)" />
-                        <input placeholder="Street Address" />
-                        <input placeholder="City" />
-                        <input placeholder="State" />
-                        <input type="number" placeholder="Postal Code" />
-                        <input placeholder="Country" />
-                        <input type="checkbox" name="anonymity"/>Donate Anonymously
-                        <div className="ModalNav">
-                            <button onClick={this.closeModal}>Cancel</button>
-                            <button onClick={this.previous}>Previous</button>
-                            <button onClick={this.next}>Next</button>
+                        <div className="personalinfo">
+                            <input placeholder="First Name" />
+                            <input placeholder="Last Name" />
+                            <input type="email" placeholder="Email" />
+                            <input placeholder="Phone Number (Optional)" />
+                            <input placeholder="Street Address" />
+                            <input placeholder="City" />
+                            <input placeholder="State" />
+                            <input type="number" placeholder="Postal Code" min="00501"/>
+                            <input placeholder="Country" />
+                            <br></br>
+                            <input type="checkbox" name="anonymity"/>Donate Anonymously
+                            <div className="ModalNav">
+                                <button onClick={this.closeModal}>Cancel</button>
+                                <button onClick={this.previous}>Previous</button>
+                                <button onClick={this.next}>Next</button>
+                            </div>
                         </div>
                     </div>
                 );
@@ -154,7 +157,7 @@ class Donation extends React.Component{
                 );
             case 4:
                 return(
-                    <div>
+                    <div  className="lineup">
                         <img src={logo} alt="Thank you for Donating"/>
                         <h1>Thank you for donating!</h1>
                         <button onClick={this.closeModal}>Back to Home</button>
@@ -166,7 +169,7 @@ class Donation extends React.Component{
     render(){
         return(
             <div>
-                
+
                 {this.renderField()}
             </div>
 
