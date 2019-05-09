@@ -63,7 +63,7 @@ class Donation extends React.Component{
                             <button>$500</button>
                         </div>
                         <div className="lineup">
-                            <input type="number" min="0.01" step="0.01" />
+                            <input type="number" min="1" step="1" />
                         </div>
                         <div className="lineup">
                             <select multiple>
