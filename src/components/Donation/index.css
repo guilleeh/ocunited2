@@ -62,3 +62,8 @@ html {
     display: table;
     align-items:vertical;
 }
+
+.logo {
+    object-fit: contain;
+    max-width: 100%;
+}

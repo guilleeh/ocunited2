@@ -160,8 +160,8 @@ class Donation extends React.Component{
                 );
             case 4:
                 return(
-                    <div  className="lineup">
-                        <img src={logo} alt="Thank you for Donating"/>
+                    <div className="lineup">
+                        <img className="logo" src={logo} alt="Thank you for Donating"/>
                         <h1>Thank you for donating!</h1>
                         <button onClick={this.closeModal}>Back to Home</button>
                     </div>
