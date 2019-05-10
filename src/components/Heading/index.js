@@ -26,8 +26,8 @@ class Heading extends React.Component{
                 <ReactModal 
                     isOpen={this.state.donation_visibility}
                     onRequestClose={this.hide_modal}
-                    shouldCloseOnOverlayClick={false}
-                    shouldCloseOnEsc={false}
+                    shouldCloseOnOverlayClick={true}
+                    shouldCloseOnEsc={true}
                     className="DonationModal"
                     overlayClassName="Overlay"
                 >
