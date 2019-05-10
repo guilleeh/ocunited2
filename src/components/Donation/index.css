@@ -62,3 +62,7 @@ html {
     display: table;
     align-items:vertical;
 }
+
+.logo {
+    max-width: 100%;
+}
