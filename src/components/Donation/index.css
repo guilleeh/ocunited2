@@ -64,6 +64,5 @@ html {
 }
 
 .logo {
-    object-fit: contain;
     max-width: 100%;
 }
