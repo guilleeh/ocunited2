@@ -1,3 +1,17 @@
+html {
+    cursor: default;
+}
+
+.card-details {
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.donate-button {
+    float: right;
+}
+
 #makeadonation{
     color:white;
     text-align: center;
@@ -40,6 +54,7 @@
   font-weight : bold;
   font-size : large;
   text-align : center;
+
 }
 
 .personalinfo {
