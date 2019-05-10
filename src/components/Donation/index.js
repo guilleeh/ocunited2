@@ -62,9 +62,10 @@ class Donation extends React.Component{
                             <button>$250</button>
                             <button>$500</button>
                         </div>
-                        <div className="lineup">
-                            <input type="number" min="1" step="1" />
-                        </div>
+                        <form className="lineup">
+                            <label for="donationAmt">$</label>
+                            <input id="donationAmt" type="number" placeholder="0.00" name="donationAmt" min="1" step="0.01" />
+                        </form>
                         <div className="lineup">
                             <select multiple>
                                 <option>Donate to General</option>
