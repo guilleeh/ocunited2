@@ -2,6 +2,15 @@ html {
     cursor: default;
 }
 
+.card-details {
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.donate-button {
+    float: right;
+}
 
 #makeadonation{
     color:white;
