@@ -21,7 +21,7 @@ class EventDropdown extends React.Component {
       >
         events
         {this.state.open && (
-          <div class="dropdown-items arrow-top">
+          <div className="dropdown-items arrow-top">
             <div className="event-item">Upcoming Events</div>
             <div className="event-item">Past Events</div>
           </div>

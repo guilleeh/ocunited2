@@ -35,7 +35,7 @@ class Heading extends React.Component{
                     <Donation hide_modal={this.hide_modal} />
                 </ReactModal>
                 <header className="site-header">
-                    <div class="site-branding">
+                    <div className="site-branding">
                         <img alt="logo" src="https://ocunited.org/wp-content/themes/ocunited/images/ocu-logo.png"/> 
                     </div>
                     <nav className="main-navigation">
