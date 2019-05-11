@@ -57,6 +57,14 @@ html {
 
 }
 
+.buttongroup :focus {
+    background-color: #F1802D;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+
 .personalinfo {
     text-align: center;
     display: table;
