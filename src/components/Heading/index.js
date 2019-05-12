@@ -4,7 +4,6 @@ import ReactModal from 'react-modal';
 import Donation from '../Donation';
 import EventDropdown from './eventdropdown';
 
-import {} from 'react-bootstrap';
 
 class Heading extends React.Component{
     state={

@@ -1,10 +1,12 @@
 import React from 'react';
-import Heading from '../Heading';
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Home from '../Home';
+
 
 class App extends React.Component{
     render(){
         return(
-            <Heading />
+            <Home />
         );
     }
 }
