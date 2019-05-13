@@ -19,6 +19,18 @@ class Heading extends React.Component{
         this.setState({donation_visibility:false});
     }
 
+    componentDidMount() {
+        document.addEventListener('scroll', () => {
+          const isTop = window.scrollY < 100;
+          if (isTop && document.documentElement.style.getPropertyValue("--header-color")!=="none"){
+            document.documentElement.style.setProperty("--header-color","none");
+          }
+          else if(!isTop && document.documentElement.style.getPropertyValue("--header-color")!=="#001D34"){
+            document.documentElement.style.setProperty("--header-color","#001D34");
+          }
+        });
+    }
+
     render(){
         return(
             <div className="heading">

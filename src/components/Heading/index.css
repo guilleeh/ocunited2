@@ -1,10 +1,14 @@
+:root{
+    --header-color: none;
+}
+
 img{
     border:0;
     height:auto;
 }
 
 .site-header{
-    background-color: #001D34;
+    background-color: var(--header-color);
     display: block;
     z-index: 2;
     position:fixed;
@@ -90,11 +94,7 @@ img{
     align-items: center;
     height: 100%;
     position: relative;
-}
-
-.main-menu li h3{
-    cursor: default;
-    color: white;
+    margin-top: 20px;
 }
 
 .main-navigation h3{
@@ -213,6 +213,7 @@ img{
     border: none;
     outline:none;
     font-weight: 600;
+    margin-top: -7px;
 }
 
 #dropdown-button:hover{
@@ -252,15 +253,14 @@ img{
 }
 
 .dropdown-items:after {
-	border-color: rgba(0, 29, 52, 0);
-	border-bottom-color: white;
-	border-width: 12px;
-	margin-left: -12px;
+	border-color: rgba(255, 255, 255, 0);
+	border-bottom-color: #ffffff;
+	border-width: 10px;
+	margin-left: -10px;
 }
 .dropdown-items:before {
 	border-color: rgba(0, 29, 52, 0);
-	border-bottom-color: white;
-	border-width: 12px;
-	margin-left: -12px;
+	border-bottom-color: #001D34;
+	border-width: 11px;
+	margin-left: -11px;
 }
-

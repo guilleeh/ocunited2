@@ -1,6 +1,6 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel'
-
+import './image_carousel.css';
 
 class Slideshow extends React.Component{
     state={
@@ -18,12 +18,15 @@ class Slideshow extends React.Component{
 
     render(){
         return (
-        <div>
+        <div className="carousel-div">
             <Carousel
                 slide='false'
                 fade='true'
                 prevLabel='null'
                 nextLabel='null'
+                controls='false'
+                indicators='false'
+                pauseOnHover='false'
             >
                 <Carousel.Item>
                 <img
