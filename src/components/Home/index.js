@@ -36,8 +36,13 @@ class Home extends React.Component{
                     <h1>Volunteers Stepping into the Gap</h1>
                     <h2>Watch the Video Now</h2>
                 </div>
-                <div>
-                    
+                <div className="action-box">
+                    <h1>Take Action</h1>
+                </div>
+                <div className="contacts-box">
+                    <div>CONTACT</div>
+                    <div>STAY CONNECTED</div>
+                    <div>JOIN OUR MAILING LIST</div>
                 </div>
                 <footer>
                     <div className="footer-items">
