@@ -1,0 +1,45 @@
+#orange-bg{
+    background-color: orange;
+}
+
+.facts img{
+    width:50%;
+    height:500px;
+    float:right;
+    object-fit:cover;
+}
+
+.carousel-caption {
+    display:block;
+    left:0;
+    top: 0;
+    width: 40%;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+
+}
+
+.facts p{
+    color:#bc800f;
+    text-transform: uppercase;
+}
+
+.facts h1{
+    font-weight:bold;
+    font-size: 70px;
+}
+
+.facts h2{
+    font-size: 20px;
+}
+
+.carousel.carousel-fade .carousel-item {
+    display: block;
+    opacity: 0;
+    transition: opacity ease-out .7s;
+}
+
+.carousel.carousel-fade .carousel-item.active {
+    opacity: 1 !important;
+}

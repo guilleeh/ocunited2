@@ -1,0 +1,27 @@
+#white{
+    width:100%;;
+    height:375px;
+    background-color: white;
+    text-align:center;
+}
+
+.quotes{
+    background-color: #001D34;
+    color:white;
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 5%;
+    height: 300px;
+    border: 10px solid #4286f4;
+}
+
+.quotes h3{
+    font-size: 20px;
+    padding: 50px;
+    padding-bottom: 0px;
+}
+
+.quotes p{
+    color: #4286f4;
+    text-transform: uppercase;
+}

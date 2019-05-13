@@ -76,3 +76,56 @@
 #orange{
     color:#FF4901;
 }
+
+.volunteer-box{
+    background-color:#122b54;
+    position:relative;
+}
+
+.volunteer-box img{
+    height:700px;
+    width:100%;
+    object-fit:cover;
+    opacity:.6;
+}
+
+.volunteer-box h1{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:white;
+    text-align:center;
+    font-weight:bold;
+    font-size: 30px;
+}
+
+.volunteer-box h2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:orange;
+    text-align:center;
+    text-transform: uppercase;
+    font-size: 20px;
+
+}
+
+#copyright{
+    float:right;
+    color: #81d7db;
+}
+
+footer{
+    height: 60px;
+    background-color: #1CA7AD;
+    color:white;
+}
+
+.footer-items{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+    font-size: 15px;
+}

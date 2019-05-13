@@ -1,9 +1,12 @@
 import React from 'react';
 import Heading from '../Heading';
 import Slideshow from './slideshow';
+import Facts from './facts';
+import Quotes from './quotes';
 import './index.css'
 
 import Support from './images/support.jpg';
+import Photos from './images/photos.png';
 
 class Home extends React.Component{
     render(){
@@ -26,7 +29,24 @@ class Home extends React.Component{
                     <h1>Will You Step Into the Gap With Us?</h1>
                     <h2>Watch the Video Now</h2>
                 </div>
-                
+                <Facts />
+                <Quotes />
+                <div className="volunteer-box">
+                    <img src={Photos} draggable="false" alt="photos"/>
+                    <h1>Volunteers Stepping into the Gap</h1>
+                    <h2>Watch the Video Now</h2>
+                </div>
+                <div>
+                    
+                </div>
+                <footer>
+                    <div className="footer-items">
+                        TERMS OF USE | PRIVACY POLICY | JOBS
+                    <div id="copyright">
+                    COPYRIGHT © 2019 OC UNITED. ALL RIGHTS RESERVED.
+                    </div>
+                    </div>
+                </footer>
             </div>
         );
     }
