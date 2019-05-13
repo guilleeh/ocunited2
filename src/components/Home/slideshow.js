@@ -22,11 +22,9 @@ class Slideshow extends React.Component{
             <Carousel
                 slide='false'
                 fade='true'
-                prevLabel='null'
-                nextLabel='null'
-                controls='false'
-                indicators='false'
-                pauseOnHover='false'
+                controls={false}
+                indicators={false}
+                pauseOnHover={false}
             >
                 <Carousel.Item>
                 <img
