@@ -7,6 +7,7 @@ import './index.css'
 
 import Support from './images/support.jpg';
 import Photos from './images/photos.png';
+import Guardians from './images/fullerton.jpg';
 
 class Home extends React.Component{
     render(){
@@ -37,12 +38,30 @@ class Home extends React.Component{
                     <h2>Watch the Video Now</h2>
                 </div>
                 <div className="action-box">
+                    <img src={Guardians} alt="Guardians" draggable="false"/>
                     <h1>Take Action</h1>
+                    <ul>
+                        <li>
+                            <h3>Get Involved</h3>
+                        </li>
+                        <li>
+                            <h2>Donate</h2>
+                        </li>
+                    </ul>
                 </div>
                 <div className="contacts-box">
-                    <div>CONTACT</div>
-                    <div>STAY CONNECTED</div>
-                    <div>JOIN OUR MAILING LIST</div>
+                    <div className="contact">
+                        <h3>Contact</h3>
+                        418 W Commonwealth Ave.,<br></br>
+                        Fullerton, CA 92832<br></br>
+                        <a href="tel:(714)515-3085">(714 514-3085</a>
+                    </div>
+                    <div className="social">
+                        <h3>Stay Connected</h3>
+                    </div>
+                    <div className="newsletter">
+                        <h3>Join our mailing list</h3>
+                    </div>
                 </div>
                 <footer>
                     <div className="footer-items">
