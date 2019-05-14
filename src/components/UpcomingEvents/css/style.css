@@ -62,34 +62,51 @@ table {
 }
 
 .body{
-  font-style: 14px;
+  font-style: 11px;
   font-family: MinionPro;
 }
 
 /*======= HEADER ========*/
+@media all and (max-width: 600px) {
+  .container {
+    flex-wrap: wrap;
+  }
+  .container > li {
+    flex-basis: 50%;
+  }
+}
 .page-header{
-  height: 60px;
+  display:flex;
+  height: 51px;
   width: 100%;
   background-color: #0E1F2C;
+  justify-content: center;
+  
 }
-.wrapper{
-  width: 1920px;
-  height: 100%;
-  margin: 0 auto;
+.header-logo, .main-nav, .right-nav {
+  flex:1;
 }
-.page-header .wrapper{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.page-header .header-logo {
+  padding: 0px 0;
 }
-
-.page-header nav ul{
-  display: flex;
-  justify-content: space-between;
+.page-header .main-nav {
+ border-width: 1px 0;
+ list-style: none;
+ margin: 0;
+ padding-top: 14px;
+ text-align: center;
 }
-.page-header nav a{
-  font-family: Poppins;
-  background-color: blueviolet;
-  text-transform: uppercase;
-  text-decoration: none;
+.page-header .main-nav a:hover {
+  color: #008edd;
+}
+.page-header .main-nav li {
+  display:inline;
+  color: #fff;
+}
+.page-header .main-nav a {
+  display:inline-block;
+  padding: 8px;
+}
+.page-header .right-nav {
+  text-align: right;
 }
