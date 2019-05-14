@@ -284,3 +284,17 @@ footer{
     margin-right: 30px;
     margin-left: 30px;
 }
+
+.fa-facebook-f {
+    color: white;
+}
+
+.fa-twitter {
+    padding-left: 10%;
+    color: white;
+}
+
+.fa-instagram {
+    padding-left: 10%;
+    color: white;
+}

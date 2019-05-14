@@ -54,10 +54,24 @@ class Home extends React.Component{
                         <h3>Contact</h3>
                         418 W Commonwealth Ave.,<br></br>
                         Fullerton, CA 92832<br></br>
-                        <a href="tel:(714)515-3085">(714 514-3085</a>
+                        <a href="tel:(714)515-3085">(714) 514-3085</a>
                     </div>
                     <div className="social">
                         <h3>Stay Connected</h3>
+                        
+                        <br/>
+                        <a href="https://www.facebook.com/ocunitednpo/" target="_blank">
+                        <i class="fab fa-facebook-f fa-lg"></i>
+                        </a>
+
+                        <a href="https://twitter.com/OCUnitedNPO" target="_blank">
+                        <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/ocunitednpo/" target="_blank">
+                        <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+
                     </div>
                     <div className="newsletter">
                         <h3>Join our mailing list</h3>
