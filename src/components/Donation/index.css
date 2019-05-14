@@ -39,16 +39,29 @@ html {
 }
 
 .lineup {
-    padding-bottom: 2%;
+    /*padding-bottom: 2%;*/
     text-align: center;
+    width: 500px;
+    border: 200px;
+    margin:auto;
 }
+
 
 .ModalNav {
     text-align: center;
     position: relative;
     padding-top: 5%;
-
+    color: rgba(14, 12, 12, 0.68);
 }
+
+.ModalNav :hover{
+  background-color: #F1802D;
+  color : white;
+  font-weight : bold;
+  font-size: large;
+  text-align: center;
+}
+
 .buttongroup :hover {
   background-color: #F1802D;
   color : white;
