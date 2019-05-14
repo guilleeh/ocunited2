@@ -95,7 +95,7 @@ class Slideshow extends React.Component{
                         </Carousel.Item> 
                     </Carousel>
                 </div>
-                <div id="overlay-text">may 4th is over and they haven't updated their site sooo..</div>
+                <div id="overlay-text">pls fix the the bottom 2 carousel arrows and add footer info</div>
                 <div className="category-container">
                     <div className="item homelessness"> <img src={this.state.homelessness} alt="Homelessness"/> Homelessness</div>
                     <div className="item fostercare"> <img src={this.state.foster_care} alt="Foster Care"/> Foster Care</div>
