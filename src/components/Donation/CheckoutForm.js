@@ -25,8 +25,10 @@ class CheckoutForm extends Component {
     
     return (
       <div className="checkout">
-        <p>Please enter card details below</p>
-        <CardElement />
+        <p><i><strong>Please enter card details below</strong></i></p>
+        <br/>
+        <CardElement className="cardElement" />
+        <br/>
         <button onClick={this.submit}>Submit Donation</button>
       </div>
     );
