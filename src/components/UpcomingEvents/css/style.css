@@ -1,5 +1,95 @@
-#circle {
-  width: 1129px;
-  height: 1129px;
-  background: color#FFCE07;
+/*======= CSS RESET ========*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*======= BASE STYLE ========*/
+@font-face {
+  font-family: D;
+  src: url(/src/components/UpcomingEvents/fonts/D-DINCondensed.woff) format('woff'), url(/src/components/UpcomingEvents/fonts/D-DINCondensed.ttf) format('truetype');
+}
+@font-face {
+  font-family: DIN;
+  src: url(/src/components/UpcomingEvents/fonts/DIN-Black.woff) format('woff'), url(/src/components/UpcomingEvents/fonts/DIN-Black.ttf) format('truetype');
+}
+@font-face {
+  font-family: MinionPro;
+  src: url(/src/components/UpcomingEvents/fonts/MinionPro-Regular.woff) format('woff'), url(/src/components/UpcomingEvents/fonts/MinionPro-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: Poppins;
+  src: url(/src/components/UpcomingEvents/fonts/Poppins-Regular.woff) format('woff'), url(/src/components/UpcomingEvents/fonts/Poppins-Regular.ttf) format('truetype');
+}
+
+.body{
+  font-style: 14px;
+  font-family: MinionPro;
+}
+
+/*======= HEADER ========*/
+.page-header{
+  height: 60px;
+  width: 100%;
+  background-color: #0E1F2C;
+}
+.wrapper{
+  width: 1920px;
+  height: 100%;
+  margin: 0 auto;
+}
+.page-header .wrapper{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.page-header nav ul{
+  display: flex;
+  justify-content: space-between;
+}
+.page-header nav a{
+  font-family: Poppins;
+  background-color: blueviolet;
+  text-transform: uppercase;
+  text-decoration: none;
 }
