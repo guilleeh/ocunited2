@@ -57,6 +57,14 @@ html {
     margin:auto;
 }
 
+.lineup Button {
+  background-color: #F1802D;
+  color : white;
+  font-weight: bold;
+  font-size: large;
+  text-align: center;
+}
+
 
 .ModalNav {
     text-align: center;
