@@ -43,7 +43,7 @@ table {
 	border-spacing: 0;
 }
 
-/*======= BASE STYLE ========*/
+/*/*======= BASE STYLE ========*/
 @font-face {
   font-family: D;
   src: url(/src/components/UpcomingEvents/fonts/D-DINCondensed.woff) format('woff'), url(/src/components/UpcomingEvents/fonts/D-DINCondensed.ttf) format('truetype');
@@ -62,51 +62,20 @@ table {
 }
 
 .body{
-  font-style: 11px;
+  font-style: 10px;
   font-family: MinionPro;
+  background: #0E1F2C;
 }
 
 /*======= HEADER ========*/
-@media all and (max-width: 600px) {
-  .container {
-    flex-wrap: wrap;
-  }
-  .container > li {
-    flex-basis: 50%;
-  }
-}
 .page-header{
-  display:flex;
-  height: 51px;
-  width: 100%;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(10px, auto);
   background-color: #0E1F2C;
-  justify-content: center;
-  
 }
-.header-logo, .main-nav, .right-nav {
-  flex:1;
-}
-.page-header .header-logo {
-  padding: 0px 0;
-}
-.page-header .main-nav {
- border-width: 1px 0;
- list-style: none;
- margin: 0;
- padding-top: 14px;
- text-align: center;
-}
-.page-header .main-nav a:hover {
-  color: #008edd;
-}
-.page-header .main-nav li {
-  display:inline;
+nav{
   color: #fff;
 }
-.page-header .main-nav a {
-  display:inline-block;
-  padding: 8px;
-}
-.page-header .right-nav {
-  text-align: right;
-}
+
+
