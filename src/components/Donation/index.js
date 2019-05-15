@@ -162,8 +162,10 @@ class Donation extends React.Component{
                 return(
                     <div className="lineup">
                         <img className="logo" src={logo} alt="Thank you for Donating"/>
+                        <div>
                         <h1>Thank you for donating!</h1>
                         <button onClick={this.closeModal}>Back to Home</button>
+                        </div>
                     </div>
                 );
         }
