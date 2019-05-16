@@ -71,24 +71,33 @@ body {
 }
 .container {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(100px, auto);
-  max-width: 100%;
   gap: 20px;
-  height: auto;
   margin: auto;
+  max-width: 100%;
+  
 }
 /*======= HEADER ========*/
 .page-header{
   display:grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 2fr 1fr;
   grid-auto-rows: minmax(10px, auto);
   background-color: #0E1F2C;
+  align-self: start;
+}
+
+.page-header div{
+  padding-left: 1em;
+  padding-top: 1em;
 }
 
 .page-header #logo img {
   width: 225px;
   height: 33px;
+}
+.page-header nav {
+  padding: 1em; 
 }
 .page-header nav ul {
   list-style-type: none;
