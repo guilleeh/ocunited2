@@ -3,6 +3,8 @@ import Heading from '../Heading';
 import Slideshow from './slideshow';
 import Facts from './facts';
 import Quotes from './quotes';
+import Donation from '../Donation';
+import ReactModal from 'react-modal';
 import './index.css'
 
 import Support from './images/support.jpg';
@@ -10,9 +12,34 @@ import Photos from './images/photos.png';
 import Guardians from './images/fullerton.jpg';
 
 class Home extends React.Component{
+    state={
+        donation_visibility:false,
+        event_dropdown_show: false,
+    };
+
+    show_modal = () =>{
+        this.setState({donation_visibility:true});
+    }
+
+    hide_modal = () =>{
+        this.setState({donation_visibility:false});
+    }
+
+
     render(){
         return(
             <div>
+                 <ReactModal 
+                    isOpen={this.state.donation_visibility}
+                    onRequestClose={this.hide_modal}
+                    shouldCloseOnOverlayClick={true}
+                    shouldCloseOnEsc={true}
+                    className="DonationModal"
+                    overlayClassName="Overlay"
+                >
+                    <div id = "makeadonation">Make a Donation</div>
+                    <Donation hide_modal={this.hide_modal} />
+                </ReactModal>
                 <Heading />
                 <Slideshow />
                 <div className="mission-statement">
@@ -45,7 +72,7 @@ class Home extends React.Component{
                             <h3>Get Involved</h3>
                         </li>
                         <li>
-                            <h2>Donate</h2>
+                            <h2 onClick={this.show_modal}>Donate</h2>
                         </li>
                     </ul>
                 </div>

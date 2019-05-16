@@ -179,9 +179,8 @@ img{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color:#001D34;
+    background-color: rgba(0,29,52,.95);
     z-index: 3;
-    opacity: .95;
   }
 
 .DonationModal{
