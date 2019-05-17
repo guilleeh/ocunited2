@@ -1,5 +1,6 @@
 #orange-bg{
     background-color: orange;
+    position:relative;
 }
 
 .facts img{
@@ -43,4 +44,14 @@
 
 .carousel.carousel-fade .carousel-item.active {
     opacity: 1 !important;
+}
+
+.facts .carousel-control-prev-icon{
+  position: absolute;
+  left: 95vh;
+}
+
+.facts .carousel-control-next-icon{
+    position: absolute;
+    right: 95vh;
 }

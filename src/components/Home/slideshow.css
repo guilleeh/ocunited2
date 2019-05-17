@@ -14,7 +14,7 @@
     position:relative;
 }
 
-#overlay-text{
+.overlay-text{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -85,4 +85,19 @@
 
 .domesticabuse img{
     border: 6px solid rgba(51,153,255,1);
+}
+
+#orange-text{
+    color:orange;
+}
+
+.overlay-text h1{
+    font-size:60px;
+    font-weight:bold;
+    width:100%;
+}
+
+.overlay-text p{
+    font-size: 20px;
+    font-weight:normal;
 }

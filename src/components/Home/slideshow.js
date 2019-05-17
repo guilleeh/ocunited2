@@ -95,7 +95,10 @@ class Slideshow extends React.Component{
                         </Carousel.Item> 
                     </Carousel>
                 </div>
-                <div id="overlay-text">please fix the orange carousel's indicators and maybe footer links</div>
+                <div className="overlay-text">
+                    <h1><span id="orange-text">GOLF TOURNAMENT</span> ON JUNE 26TH, 2019</h1>
+                    <p>at Coyote Hills Golf Course. Go to <a href="ocunited.org/golf">ocunited.org/golf</a> to sign up!</p>
+                </div>
                 <div className="category-container">
                     <div className="item homelessness"> <img src={this.state.homelessness} alt="Homelessness"/> Homelessness</div>
                     <div className="item fostercare"> <img src={this.state.foster_care} alt="Foster Care"/> Foster Care</div>
