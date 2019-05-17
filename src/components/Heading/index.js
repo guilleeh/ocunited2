@@ -13,10 +13,12 @@ class Heading extends React.Component{
 
     show_modal = () =>{
         this.setState({donation_visibility:true});
+        document.body.style.setProperty("overflow-y","hidden");
     }
 
     hide_modal = () =>{
         this.setState({donation_visibility:false});
+        document.body.style.setProperty("overflow-y","auto");
     }
 
     componentDidMount() {

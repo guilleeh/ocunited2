@@ -5,24 +5,50 @@ import Facts from './facts';
 import Quotes from './quotes';
 import Donation from '../Donation';
 import ReactModal from 'react-modal';
+import ModalVideo from 'react-modal-video'
 import './index.css'
 
 import Support from './images/support.jpg';
 import Photos from './images/photos.png';
 import Guardians from './images/fullerton.jpg';
+import PlayButton from './images/play.png';
 
 class Home extends React.Component{
     state={
         donation_visibility:false,
         event_dropdown_show: false,
+        video: false,
+        volunteer_video: false
     };
 
     show_modal = () =>{
         this.setState({donation_visibility:true});
+        document.body.style.setProperty("overflow-y","hidden");
     }
 
     hide_modal = () =>{
         this.setState({donation_visibility:false});
+        document.body.style.setProperty("overflow-y","auto");
+    }
+
+    volunteer_video_open = () => {
+        this.setState({volunteer_video: true});
+        document.body.style.setProperty("overflow-y","hidden");
+    }
+
+    volunteer_video_close = () =>{
+        this.setState({volunteer_video: false});
+        document.body.style.setProperty("overflow-y","auto");
+    }
+
+    video_open = () => {
+        this.setState({video: true});
+        document.body.style.setProperty("overflow-y","hidden");
+    }
+
+    video_close = () => {
+        this.setState({video: false});
+        document.body.style.setProperty("overflow-y","auto");
     }
 
 
@@ -55,6 +81,10 @@ class Home extends React.Component{
                 <div className="video-box">
                     <img src={Support} draggable="false" alt="support"/>
                     <h1>Will You Step Into the Gap With Us?</h1>
+                    <div>
+                        <ModalVideo channel='vimeo' isOpen={this.state.video} videoId='260971449' onClose={this.video_close} />
+                        <img src={PlayButton} alt="Play" id="video" onClick={this.video_open} />
+                    </div>
                     <h2>Watch the Video Now</h2>
                 </div>
                 <Facts />
@@ -62,6 +92,10 @@ class Home extends React.Component{
                 <div className="volunteer-box">
                     <img src={Photos} draggable="false" alt="photos"/>
                     <h1>Volunteers Stepping into the Gap</h1>
+                    <div>
+                        <ModalVideo channel='vimeo' isOpen={this.state.volunteer_video} videoId='260972046' onClose={this.volunteer_video_close} />
+                        <img src={PlayButton} alt="Play" id="volunteer-video" onClick={this.volunteer_video_open} />
+                    </div>
                     <h2>Watch the Video Now</h2>
                 </div>
                 <div className="action-box">
@@ -102,6 +136,12 @@ class Home extends React.Component{
                     </div>
                     <div className="newsletter">
                         <h3>Join our mailing list</h3>
+                        <div className="input-group mb-3">
+                        <input type="email" placeholder="Enter Your Email Address" aria-label="join email" aria-describedby="basic-addon2" />
+                        <div class="input-group-append">
+                            <button className="btn btn-outline-secondary" type="button">JOIN</button>
+                        </div>
+                        </div>
                     </div>
                 </div>
                 <footer>
