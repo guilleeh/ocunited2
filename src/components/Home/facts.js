@@ -19,6 +19,7 @@ class Facts extends React.Component{
                     slide='false'
                     fade='true'
                     indicators={false}
+                    control = {true}
                 >
                     <Carousel.Item>
                         <img
