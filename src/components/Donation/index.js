@@ -23,16 +23,13 @@ class Donation extends React.Component{
     handleChange = (e) => {
         let options = e.target.options;
         let selectedOptions = [];
-        // console.log(options)
 
         for(let i = 0; i < options.length; i++) {
             if( options[i].selected ) {
                 selectedOptions.push(options[i].value);
             }
         }
-
         this.setState({values: selectedOptions, currentStep: this.state.currentStep});
-        console.log(this.state.values)
     }
 
 
