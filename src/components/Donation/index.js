@@ -6,23 +6,46 @@ import logo from './logo.png'
 //dependencies for Stripe
 import {Elements, StripeProvider} from 'react-stripe-elements';
 import CheckoutForm from './CheckoutForm';
+import { Script } from 'vm';
 
 
 class Donation extends React.Component{
-    state = {
-        currentStep: 0,
-    };
+    constructor() {
+        super();
+
+        this.state = {
+            values: [],
+            currentStep: 0
+        }
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange = (e) => {
+        let options = e.target.options;
+        let selectedOptions = [];
+        // console.log(options)
+
+        for(let i = 0; i < options.length; i++) {
+            if( options[i].selected ) {
+                selectedOptions.push(options[i].value);
+            }
+        }
+
+        this.setState({values: selectedOptions, currentStep: this.state.currentStep});
+        console.log(this.state.values)
+    }
+
 
     closeModal = () =>{
         this.props.hide_modal();
     }
 
     next=()=>{
-        this.setState({currentStep: this.state.currentStep + 1});
+        this.setState({values: this.state.values, currentStep: this.state.currentStep + 1})
     }
 
     previous=()=>{
-        this.setState({currentStep: this.state.currentStep - 1});
+        this.setState({values: this.state.values, currentStep: this.state.currentStep - 1});
     }
 
     generateDays(){
@@ -67,20 +90,20 @@ class Donation extends React.Component{
                             <input id="donationAmt" type="number" placeholder="0.00" name="donationAmt" min="1" step="0.01" />
                         </form>
                         <div className="lineup">
-                            <select multiple>
-                                <option>Donate to General</option>
-                                <option>Donate to Neighborhoods</option>
-                                <option>Donate to Homelessness</option>
-                                <option>Donate to Domestic Abuse</option>
-                                <option>Donate to Foster/Adopt</option>
-                                <option>Donate to Love Fullerton</option>
-                                <option>Donate to Love Placentia</option>
-                                <option>Donate to Love Orange</option>
-                                <option>Donate to Love Buena Park</option>
-                                <option>Donate to Love Anaheim</option>
-                                <option>Donate to Love Brea</option>
-                                <option>Donate to Love Tustin</option>
-                                <option>Donate to Love Yorba Linda</option>
+                            <select multiple={true} value={this.state.values} onChange={this.handleChange}>
+                                <option value="general">Donate to General</option>
+                                <option value="neighborhood">Donate to Neighborhoods</option>
+                                <option value="homelessness">Donate to Homelessness</option>
+                                <option value="domestic-abuse">Donate to Domestic Abuse</option>
+                                <option value="foster">Donate to Foster/Adopt</option>
+                                <option value="fullerton">Donate to Love Fullerton</option>
+                                <option value="Placentia">Donate to Love Placentia</option>
+                                <option value="Orange">Donate to Love Orange</option>
+                                <option value="buena-park">Donate to Love Buena Park</option>
+                                <option value="aneheim">Donate to Love Anaheim</option>
+                                <option value="brea">Donate to Love Brea</option>
+                                <option value="tustin">Donate to Love Tustin</option>
+                                <option value="yorda-linda">Donate to Love Yorba Linda</option>
                             </select>
                         </div>
                         <div className="lineup">
