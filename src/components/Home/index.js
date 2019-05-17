@@ -87,15 +87,15 @@ class Home extends React.Component{
                         <h3>Stay Connected</h3>
                         
                         <br/>
-                        <a href="https://www.facebook.com/ocunitednpo/" target="_blank">
+                        <a href="https://www.facebook.com/ocunitednpo/" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-facebook-f fa-lg"></i>
                         </a>
 
-                        <a href="https://twitter.com/OCUnitedNPO" target="_blank">
+                        <a href="https://twitter.com/OCUnitedNPO" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-twitter fa-lg"></i>
                         </a>
 
-                        <a href="https://www.instagram.com/ocunitednpo/" target="_blank">
+                        <a href="https://www.instagram.com/ocunitednpo/" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-instagram fa-lg"></i>
                         </a>
 

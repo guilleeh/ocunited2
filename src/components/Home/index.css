@@ -226,6 +226,14 @@ footer{
     font-size: 15px;
 }
 
+.action-box h2:hover{
+    -webkit-filter: brightness(90%);
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    transition: all .5s ease;
+}
 
 .contacts-box{
     padding-top: 50px;
@@ -298,3 +306,4 @@ footer{
     padding-left: 10%;
     color: white;
 }
+
