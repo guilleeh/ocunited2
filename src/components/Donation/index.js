@@ -2,6 +2,7 @@ import React from 'react';
 import './index.css';
 import Stepper from 'react-stepper-horizontal';
 import logo from './logo.png'
+import Dropdown from './Dropdown';
 
 //dependencies for Stripe
 import {Elements, StripeProvider} from 'react-stripe-elements';
@@ -15,7 +16,133 @@ class Donation extends React.Component{
 
         this.state = {
             values: [],
-            currentStep: 0
+            currentStep: 0,
+            organization: [
+                {
+                  id: 0,
+                  title: 'Donate to General',
+                  selected: false,
+                  key: 'organization'
+                },
+                {
+                  id: 1,
+                  title: 'Donate to Neighborhoods',
+                  selected: false,
+                  key: 'organization'
+                },
+                {
+                  id: 2,
+                  title: 'Donate to Homelessness',
+                  selected: false,
+                  key: 'organization'
+                },
+                {
+                  id: 3,
+                  title: 'Donate to Domestic Abuse',
+                  selected: false,
+                  key: 'organization'
+                },
+                {
+                  id: 4,
+                  title: 'Donate to Foster/Adopt',
+                  selected: false,
+                  key: 'organization'
+                },
+                {
+                  id: 5,
+                  title: 'Donate to Love Fullerton',
+                  selected: false,
+                  key: 'organization'
+                },
+                {
+                  id: 6,
+                  title: 'Donate to Love Placentia',
+                  selected: false,
+                  key: 'organization'
+                },
+                {
+                  id: 7,
+                  title: 'Donate to Love Orange',
+                  selected: false,
+                  key: 'organization'
+                },
+                {
+                  id: 8,
+                  title: 'Donate to Love Buena Park',
+                  selected: false,
+                  key: 'organization'
+                },
+                {
+                  id: 9,
+                  title: 'Donate to Love Anaheim',
+                  selected: false,
+                  key: 'organization'
+                },
+                {
+                  id: 10,
+                  title: 'Donate to Love Brea',
+                  selected: false,
+                  key: 'organization'
+                },
+                {
+                  id: 11,
+                  title: 'Donate to Love Tustin',
+                  selected: false,
+                  key: 'organization'
+                },
+                {
+                  id: 12,
+                  title: 'Donate to Love Yorba Linda',
+                  selected: false,
+                  key: 'organization'
+                },
+              ],
+              donation: [
+                {
+                  id: 0,
+                  title: '$50',
+                  selected: false,
+                  key: 'donation'
+                },
+                {
+                  id: 1,
+                  title: '$100',
+                  selected: false,
+                  key: 'donation'
+                },
+                {
+                  id: 2,
+                  title: '$250',
+                  selected: false,
+                  key: 'donation'
+                },
+                {
+                  id: 3,
+                  title: '$500',
+                  selected: false,
+                  key: 'donation'
+                },
+            ],
+            recurring: [
+                {
+                  id: 0,
+                  title: 'One Time',
+                  selected: false,
+                  key: 'recurring'
+                },
+                {
+                  id: 1,
+                  title: 'Monthly',
+                  selected: false,
+                  key: 'recurring'
+                },
+                {
+                  id: 2,
+                  title: 'Yearly',
+                  selected: false,
+                  key: 'recurring'
+                },
+            ]
         }
         this.handleChange = this.handleChange.bind(this);
     }
@@ -54,6 +181,15 @@ class Donation extends React.Component{
         return output;
     }
 
+    resetThenSet = (id, key) => {
+        let temp = JSON.parse(JSON.stringify(this.state[key]))
+        temp.forEach(item => item.selected = false);
+        temp[id].selected = true;
+        this.setState({
+          [key]: temp
+        })
+      }
+
     renderStepper(){
         return(
             <div>
@@ -75,46 +211,29 @@ class Donation extends React.Component{
         switch (this.state.currentStep){
             case 0:
                 return(
-                    <div>
+                    <div className="App">
                         {this.renderStepper()}
-                        <div className="buttongroup">
-                            <button>$50</button>
-                            <button>$100</button>
-                            <button>$250</button>
-                            <button>$500</button>
+                        <div className="dropdowngroup">
+                            <Dropdown
+                                title="Organization"
+                                list={this.state.organization}
+                                resetThenSet={this.resetThenSet}
+                            />
+                            <Dropdown
+                                title="Amount"
+                                list={this.state.donation}
+                                resetThenSet={this.resetThenSet}
+                            />
+                            <Dropdown
+                                title="Make This Donation"
+                                list={this.state.recurring}
+                                resetThenSet={this.resetThenSet}
+                            />
                         </div>
-                        <form className="lineup">
-                            <label for="donationAmt">$</label>
-                            <input id="donationAmt" type="number" placeholder="0.00" name="donationAmt" min="1" step="0.01" />
-                        </form>
-                        <div className="lineup">
-                            <select multiple={true} value={this.state.values} onChange={this.handleChange}>
-                                <option value="general">Donate to General</option>
-                                <option value="neighborhood">Donate to Neighborhoods</option>
-                                <option value="homelessness">Donate to Homelessness</option>
-                                <option value="domestic-abuse">Donate to Domestic Abuse</option>
-                                <option value="foster-adopt">Donate to Foster/Adopt</option>
-                                <option value="love-fullerton">Donate to Love Fullerton</option>
-                                <option value="love-placentia">Donate to Love Placentia</option>
-                                <option value="love-orange">Donate to Love Orange</option>
-                                <option value="love-buena-park">Donate to Love Buena Park</option>
-                                <option value="love-anaheim">Donate to Love Anaheim</option>
-                                <option value="love-brea">Donate to Love Brea</option>
-                                <option value="love-tustin">Donate to Love Tustin</option>
-                                <option value="love-yorda-linda">Donate to Love Yorba Linda</option>
-                            </select>
-                        </div>
-                        <div className="lineup">
-                            <select>
-                                <option>One Time</option>
-                                <option>Monthly</option>
-                                <option>Yearly</option>
-                            </select>
-                        </div>
-                        <div className="ModalNav">
-                            <button className="cancel" onClick={this.closeModal}>Cancel</button>
-                            <button className="next" onClick={this.next}>Next</button>
-                        </div>
+                            <div className="ModalNav">
+                                <button className="cancel" onClick={this.closeModal}>Cancel</button>
+                                <button className="next" onClick={this.next}>Next</button>
+                            </div>
                     </div>
                 );
             case 1:

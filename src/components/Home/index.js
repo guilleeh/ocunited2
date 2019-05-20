@@ -13,6 +13,8 @@ import Photos from './images/photos.png';
 import Guardians from './images/fullerton.jpg';
 import PlayButton from './images/play.png';
 
+
+
 class Home extends React.Component{
     state={
         donation_visibility:false,

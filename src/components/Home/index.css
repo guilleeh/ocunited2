@@ -288,8 +288,7 @@ footer{
 
 .contacts-box h3{
     color: #188e93;
-    font-size: 15.008px;
-    font-size: .938rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
     border-bottom: 2px solid rgba(28,167,173,0.5);
     padding-bottom: 15px;
