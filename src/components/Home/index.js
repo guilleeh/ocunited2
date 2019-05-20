@@ -136,8 +136,9 @@ class Home extends React.Component{
                     </div>
                     <div className="newsletter">
                         <h3>Join our mailing list</h3>
+                        <br/>
                         <div className="input-group mb-3">
-                        <input type="email" placeholder="Enter Your Email Address" aria-label="join email" aria-describedby="basic-addon2" />
+                        <input type="email" placeholder=" Enter Your Email Address" aria-label="join email" aria-describedby="basic-addon2" />
                         <div class="input-group-append">
                             <button className="btn btn-outline-secondary" type="button">JOIN</button>
                         </div>

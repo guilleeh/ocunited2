@@ -6,7 +6,7 @@ import logo from './logo.png'
 //dependencies for Stripe
 import {Elements, StripeProvider} from 'react-stripe-elements';
 import CheckoutForm from './CheckoutForm';
-import { Script } from 'vm';
+//import { Script } from 'vm';
 
 
 class Donation extends React.Component{
@@ -39,6 +39,7 @@ class Donation extends React.Component{
 
     next=()=>{
         this.setState({values: this.state.values, currentStep: this.state.currentStep + 1})
+        console.log(this.state.values);
     }
 
     previous=()=>{
@@ -92,15 +93,15 @@ class Donation extends React.Component{
                                 <option value="neighborhood">Donate to Neighborhoods</option>
                                 <option value="homelessness">Donate to Homelessness</option>
                                 <option value="domestic-abuse">Donate to Domestic Abuse</option>
-                                <option value="foster">Donate to Foster/Adopt</option>
-                                <option value="fullerton">Donate to Love Fullerton</option>
-                                <option value="Placentia">Donate to Love Placentia</option>
-                                <option value="Orange">Donate to Love Orange</option>
-                                <option value="buena-park">Donate to Love Buena Park</option>
-                                <option value="aneheim">Donate to Love Anaheim</option>
-                                <option value="brea">Donate to Love Brea</option>
-                                <option value="tustin">Donate to Love Tustin</option>
-                                <option value="yorda-linda">Donate to Love Yorba Linda</option>
+                                <option value="foster-adopt">Donate to Foster/Adopt</option>
+                                <option value="love-fullerton">Donate to Love Fullerton</option>
+                                <option value="love-placentia">Donate to Love Placentia</option>
+                                <option value="love-orange">Donate to Love Orange</option>
+                                <option value="love-buena-park">Donate to Love Buena Park</option>
+                                <option value="love-anaheim">Donate to Love Anaheim</option>
+                                <option value="love-brea">Donate to Love Brea</option>
+                                <option value="love-tustin">Donate to Love Tustin</option>
+                                <option value="love-yorda-linda">Donate to Love Yorba Linda</option>
                             </select>
                         </div>
                         <div className="lineup">
