@@ -1,0 +1,28 @@
+.dynamic-dropdown{
+    width:100%;
+}
+
+.dynamic-select{
+    display:inline-block;
+}
+
+.dynamic-select select{
+    height:30px;
+}
+
+.dynamic-input{
+    display:inline-block;
+}
+
+.field{
+    display:flex;
+    justify-content: space-around;
+    padding: 5px;
+}
+
+#add-field{
+    margin: 20px;
+    position:relative;
+    top:50%; 
+    left:50%;
+}

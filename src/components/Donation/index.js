@@ -4,6 +4,8 @@ import Stepper from 'react-stepper-horizontal';
 import logo from './logo.png'
 import Dropdown from './Dropdown';
 
+import DynamicDropdown from './DynamicDropdown';
+
 //dependencies for Stripe
 import {Elements, StripeProvider} from 'react-stripe-elements';
 import CheckoutForm from './CheckoutForm';
@@ -17,87 +19,7 @@ class Donation extends React.Component{
         this.state = {
             values: [],
             currentStep: 0,
-            organization: [
-                {
-                  id: 0,
-                  title: 'Donate to General',
-                  selected: false,
-                  key: 'organization'
-                },
-                {
-                  id: 1,
-                  title: 'Donate to Neighborhoods',
-                  selected: false,
-                  key: 'organization'
-                },
-                {
-                  id: 2,
-                  title: 'Donate to Homelessness',
-                  selected: false,
-                  key: 'organization'
-                },
-                {
-                  id: 3,
-                  title: 'Donate to Domestic Abuse',
-                  selected: false,
-                  key: 'organization'
-                },
-                {
-                  id: 4,
-                  title: 'Donate to Foster/Adopt',
-                  selected: false,
-                  key: 'organization'
-                },
-                {
-                  id: 5,
-                  title: 'Donate to Love Fullerton',
-                  selected: false,
-                  key: 'organization'
-                },
-                {
-                  id: 6,
-                  title: 'Donate to Love Placentia',
-                  selected: false,
-                  key: 'organization'
-                },
-                {
-                  id: 7,
-                  title: 'Donate to Love Orange',
-                  selected: false,
-                  key: 'organization'
-                },
-                {
-                  id: 8,
-                  title: 'Donate to Love Buena Park',
-                  selected: false,
-                  key: 'organization'
-                },
-                {
-                  id: 9,
-                  title: 'Donate to Love Anaheim',
-                  selected: false,
-                  key: 'organization'
-                },
-                {
-                  id: 10,
-                  title: 'Donate to Love Brea',
-                  selected: false,
-                  key: 'organization'
-                },
-                {
-                  id: 11,
-                  title: 'Donate to Love Tustin',
-                  selected: false,
-                  key: 'organization'
-                },
-                {
-                  id: 12,
-                  title: 'Donate to Love Yorba Linda',
-                  selected: false,
-                  key: 'organization'
-                },
-              ],
-              donation: [
+            donation: [
                 {
                   id: 0,
                   title: '$50',
@@ -123,7 +45,7 @@ class Donation extends React.Component{
                   key: 'donation'
                 },
             ],
-            recurring: [
+          recurring: [
                 {
                   id: 0,
                   title: 'One Time',
@@ -192,7 +114,7 @@ class Donation extends React.Component{
 
     renderStepper(){
         return(
-            <div>
+            <div id="stepper">
             <Stepper
                     steps={ [{title: 'Select Donation Amount'}, {title: 'Add Personal Information'}, {title: 'Add Payment Information'}, {title: 'Submit Donation'}] }
                     activeStep={this.state.currentStep}
@@ -211,25 +133,15 @@ class Donation extends React.Component{
         switch (this.state.currentStep){
             case 0:
                 return(
-                    <div className="App">
+                    <div>
                         {this.renderStepper()}
-                        <div className="dropdowngroup">
-                            <Dropdown
-                                title="Organization"
-                                list={this.state.organization}
-                                resetThenSet={this.resetThenSet}
-                            />
-                            <Dropdown
-                                title="Amount"
-                                list={this.state.donation}
-                                resetThenSet={this.resetThenSet}
-                            />
-                            <Dropdown
+                        <DynamicDropdown />
+                        <Dropdown
                                 title="Make This Donation"
                                 list={this.state.recurring}
                                 resetThenSet={this.resetThenSet}
-                            />
-                        </div>
+                                className="make-donation"
+                          />
                             <div className="ModalNav">
                                 <button className="cancel" onClick={this.closeModal}>Cancel</button>
                                 <button className="next" onClick={this.next}>Next</button>
