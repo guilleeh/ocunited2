@@ -48,10 +48,10 @@
 
 .facts .carousel-control-prev-icon{
   position: absolute;
-  left: 95vh;
+  left: 45vw;
 }
 
 .facts .carousel-control-next-icon{
     position: absolute;
-    right: 95vh;
+    right: 45vw;
 }
