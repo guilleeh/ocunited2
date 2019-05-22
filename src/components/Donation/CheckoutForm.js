@@ -29,7 +29,7 @@ class CheckoutForm extends Component {
         <br/>
         <CardElement className="cardElement" />
         <br/>
-        <button onClick={this.submit}>Submit Donation</button>
+        <button onClick={this.submit}>Process Donation</button>
       </div>
     );
   }
