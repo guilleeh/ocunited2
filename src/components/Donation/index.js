@@ -2,6 +2,8 @@ import React from 'react';
 import './index.css';
 import Stepper from 'react-stepper-horizontal';
 import logo from './logo.png'
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import DynamicDropdown from './DynamicDropdown';
 
@@ -14,12 +16,11 @@ import CheckoutForm from './CheckoutForm';
 class Donation extends React.Component{
     constructor() {
         super();
-
+        this.DynamicDropdown1 = React.createRef();
         this.state = {
             values: [],
             currentStep: 0,
         }
-        this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange = (e) => {
@@ -41,7 +42,6 @@ class Donation extends React.Component{
 
     next=()=>{
         this.setState({values: this.state.values, currentStep: this.state.currentStep + 1})
-        console.log(this.state.values);
     }
 
     previous=()=>{
@@ -82,13 +82,39 @@ class Donation extends React.Component{
             </div>
         );
     }
+
+    checkCaseZero=()=>{
+        let selections = this.DynamicDropdown1.current.state.selections;
+        if (selections.length===0){
+            toast.error("Please add at least one field.");
+            return;
+        }
+        for(let i=0;i<selections.length;i++){
+            if (selections[i][1]===""){
+                toast.error("Please input valid montary values.");
+                return;
+            }
+
+        }
+        this.next();
+    }
+
+
     renderField(){
         switch (this.state.currentStep){
             case 0:
                 return(
                     <div>
+                        <ToastContainer
+                        position="top-center"
+                        autoClose={5000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        />
                         {this.renderStepper()}
-                        <DynamicDropdown />
+                        <DynamicDropdown ref={this.DynamicDropdown1}/>
                         <select id="how-often" class="custom-select w-25">
                             <option>One Time</option>
                             <option>Monthly</option>
@@ -96,7 +122,7 @@ class Donation extends React.Component{
                         </select>
                         <div className="ModalNav">
                             <button className="cancel" onClick={this.closeModal}>Cancel</button>
-                            <button className="next" onClick={this.next}>Next</button>
+                            <button className="next" onClick={this.checkCaseZero}>Next</button>
                         </div>
                     </div>
                 );
