@@ -20,6 +20,19 @@ class Donation extends React.Component{
         this.state = {
             values: [],
             currentStep: 0,
+
+            anon: false,
+            personal_information:{
+                first_name: '',
+                last_name: '',
+                email: '',
+                phone: '',
+                street: '',
+                city: '',
+                state: '',
+                postal: '',
+                country: ''
+            }
         }
     }
 
@@ -46,14 +59,6 @@ class Donation extends React.Component{
 
     previous=()=>{
         this.setState({values: this.state.values, currentStep: this.state.currentStep - 1});
-    }
-
-    generateDays(){
-        let output=[]
-        for (let i=1; i<=31; i++){
-            output.push(<option> {i} </option>);
-        }
-        return output;
     }
 
     resetThenSet = (id, key) => {
@@ -141,7 +146,7 @@ class Donation extends React.Component{
                             <input type="number" placeholder="Postal Code" min="00501"/>
                             <input placeholder="Country" />
                             <br></br>
-                            <input type="checkbox" name="anonymity"/>Donate Anonymously
+                            <input type="checkbox" checked={this.state.anon} onChange={(e)=>this.setState({anon:e.target.value})} name="anonymity"/>Donate Anonymously
                             <div className="ModalNav">
                                 <button onClick={this.closeModal}>Cancel</button>
                                 <button onClick={this.previous}>Previous</button>
