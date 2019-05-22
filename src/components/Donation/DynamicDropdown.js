@@ -92,7 +92,7 @@ class DynamicDropdown extends React.Component{
     renderSelect(index){
         let output=[];
         for (let i=0;i<this.state.organizations.length;i++){
-          if(this.state.selections[index][0]==i){
+          if(this.state.selections[index][0]===i){
             output.push(<option value={this.state.organizations[i].title} selected>{this.state.organizations[i].title}</option>);
           }
           else{
@@ -111,7 +111,7 @@ class DynamicDropdown extends React.Component{
     changeDropdown(e,index){
       let temp=this.state.selections;
       for (let i=0;i<this.state.organizations.length;i++){
-        if (this.state.organizations[i].title==e.target.value){
+        if (this.state.organizations[i].title===e.target.value){
           temp[index][0]=i;
           break;
         }
