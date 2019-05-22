@@ -26,7 +26,10 @@
     margin: 20px;
     position:relative;
     top:50%; 
-    left:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin:0;
+    margin-top: 30px;
 }
 
 .remove-field{
@@ -35,4 +38,12 @@
     width: 30px;
     height: 30px;
     border: 1px solid grey;
+}
+
+#how-often{
+    position:relative;
+    top:50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 30px;
 }

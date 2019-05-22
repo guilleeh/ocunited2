@@ -2,7 +2,6 @@ import React from 'react';
 import './index.css';
 import Stepper from 'react-stepper-horizontal';
 import logo from './logo.png'
-import Dropdown from './Dropdown';
 
 import DynamicDropdown from './DynamicDropdown';
 
@@ -19,52 +18,6 @@ class Donation extends React.Component{
         this.state = {
             values: [],
             currentStep: 0,
-            donation: [
-                {
-                  id: 0,
-                  title: '$50',
-                  selected: false,
-                  key: 'donation'
-                },
-                {
-                  id: 1,
-                  title: '$100',
-                  selected: false,
-                  key: 'donation'
-                },
-                {
-                  id: 2,
-                  title: '$250',
-                  selected: false,
-                  key: 'donation'
-                },
-                {
-                  id: 3,
-                  title: '$500',
-                  selected: false,
-                  key: 'donation'
-                },
-            ],
-          recurring: [
-                {
-                  id: 0,
-                  title: 'One Time',
-                  selected: false,
-                  key: 'recurring'
-                },
-                {
-                  id: 1,
-                  title: 'Monthly',
-                  selected: false,
-                  key: 'recurring'
-                },
-                {
-                  id: 2,
-                  title: 'Yearly',
-                  selected: false,
-                  key: 'recurring'
-                },
-            ]
         }
         this.handleChange = this.handleChange.bind(this);
     }
@@ -136,16 +89,15 @@ class Donation extends React.Component{
                     <div>
                         {this.renderStepper()}
                         <DynamicDropdown />
-                        <Dropdown
-                                title="Make This Donation"
-                                list={this.state.recurring}
-                                resetThenSet={this.resetThenSet}
-                                className="make-donation"
-                          />
-                            <div className="ModalNav">
-                                <button className="cancel" onClick={this.closeModal}>Cancel</button>
-                                <button className="next" onClick={this.next}>Next</button>
-                            </div>
+                        <select id="how-often" class="custom-select w-25">
+                            <option>One Time</option>
+                            <option>Monthly</option>
+                            <option>Yearly</option>
+                        </select>
+                        <div className="ModalNav">
+                            <button className="cancel" onClick={this.closeModal}>Cancel</button>
+                            <button className="next" onClick={this.next}>Next</button>
+                        </div>
                     </div>
                 );
             case 1:
