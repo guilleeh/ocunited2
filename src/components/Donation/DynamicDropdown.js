@@ -96,7 +96,7 @@ class DynamicDropdown extends React.Component{
         }
         return(
             <div className="dynamic-select">
-                <select>
+                <select class="custom-select">
                     {output}
                 </select>
             </div>
@@ -116,8 +116,9 @@ class DynamicDropdown extends React.Component{
     }
 
     handlePercentChange(e,index){
-        this.state.selections[index]=e.target.value;
-        this.setState({selections:this.state.selections});
+        let temp=this.state.selections;
+        temp[index]=e.target.value;
+        this.setState({selections:temp});
     }
 
     render(){
@@ -128,8 +129,13 @@ class DynamicDropdown extends React.Component{
                         return(
                             <div className="field" key={index}>
                                 {this.renderSelect()}
-                                <input className="dyanamic-input" onChange={(e)=>this.handlePercentChange(e,index)} type="number" value={this.state.selections[index]}></input>
-                                <button onClick={()=>this.handleRemove(index)}>Remove</button>
+                                <div class="input-group mb-3 w-25">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon1">$</span>
+                                </div>
+                                <input type="number" class="form-control" placeholder="Amount" aria-label="Username" aria-describedby="basic-addon1" onChange={(e)=>this.handlePercentChange(e,index)} value={this.state.selections[index]}/>
+                                </div>
+                                <button className="remove-field" onClick={()=>this.handleRemove(index)}>-</button>
                             </div>
                         )
                     })
