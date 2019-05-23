@@ -110,6 +110,18 @@ class Donation extends React.Component{
         this.next();
     }
 
+    checkCaseOne=()=>{
+        if(!this.state.anon){
+            for(var key in this.state.personal_information){
+                if(key!=="phone" && this.state.personal_information[key]===""){
+                    toast.error("Please complete all fields.");
+                    return;
+                }
+            }
+        }
+        this.next();
+    }
+
 
     renderField(){
         switch (this.state.currentStep){
@@ -139,24 +151,48 @@ class Donation extends React.Component{
                 );
             case 1:
                 return(
-                    <div className="personal_info">
+                    <div>
+                        <ToastContainer
+                        position="top-center"
+                        autoClose={5000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        />
                         {this.renderStepper()}
                         <div className="personalinfo">
-                            <input placeholder="First Name" />
-                            <input placeholder="Last Name" />
-                            <input type="email" placeholder="Email" />
-                            <input placeholder="Phone Number (Optional)" />
-                            <input placeholder="Street Address" />
-                            <input placeholder="City" />
-                            <input placeholder="State" />
-                            <input type="number" placeholder="Postal Code" min="00501"/>
-                            <input placeholder="Country" />
-                            <br></br>
-                            <input type="checkbox" checked={this.state.anon} onChange={(e)=>this.setState({anon:e.target.value})} name="anonymity"/>Donate Anonymously
+                            <div className="container">
+                                <form>
+                                    <div class="row">
+                                        <input type="text" class="col-md form-control" placeholder="First Name" aria-label="firstname" aria-describedby="basic-addon1"/>
+                                        <input type="text" class="col-md form-control" placeholder="Last Name" aria-label="lastname" aria-describedby="basic-addon1"/>
+                                    </div>
+                                    <div class="row">
+                                        <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1"/>
+                                    </div>
+                                    <div class="row">
+                                        <input type="text" class="form-control" placeholder="Phone Number(optional)" aria-label="phone" aria-describedby="basic-addon1"/>
+                                    </div>
+                                    <div class="row">
+                                        <input type="text" class="form-control" placeholder="Street Address" aria-label="street" aria-describedby="basic-addon1"/>
+                                    </div>
+                                    <div class="row">
+                                        <input type="text" class="col-md form-control" placeholder="City" aria-label="city" aria-describedby="basic-addon1"/>
+                                        <input type="text" class="col-md form-control" placeholder="State" aria-label="state" aria-describedby="basic-addon1"/>
+                                    </div>
+                                    <div class="row">
+                                        <input type="number" class="col-md form-control" placeholder="Postal Code" min="00501" aria-label="state" aria-describedby="basic-addon1"/>
+                                        <input type="text" class="col-md form-control" placeholder="Country" aria-label="country" aria-describedby="basic-addon1"/>
+                                    </div>
+                                </form>
+                                <br></br>
+                                <input type="checkbox" checked={this.state.anon} onChange={(e)=>this.setState({anon:!this.state.anon})} name="anonymity"/><div id="donate_anon">Donate Anonymously</div>
+                            </div>
                             <div className="ModalNav">
                                 <button onClick={this.closeModal}>Cancel</button>
                                 <button onClick={this.previous}>Previous</button>
-                                <button onClick={this.next}>Next</button>
+                                <button onClick={this.checkCaseOne}>Next</button>
                             </div>
                         </div>
                     </div>
@@ -205,7 +241,9 @@ class Donation extends React.Component{
                         <img className="logo" src={logo} alt="Thank you for Donating"/>
                         <div>
                         <h1>Thank you for donating!</h1>
-                        <button onClick={this.closeModal}>Back to Home</button>
+                        <div className="ModalNav">
+                            <button onClick={this.closeModal}>Back to Home</button>
+                        </div>
                         </div>
                     </div>
                 );

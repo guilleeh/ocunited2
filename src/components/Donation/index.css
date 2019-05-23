@@ -112,8 +112,8 @@ html {
 
 .personalinfo {
     text-align: center;
-    display: table;
-    align-items:vertical;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 .logo {
@@ -157,4 +157,11 @@ html {
     left: 50%;
     transform: translate(-50%, -50%);
     margin-top: 30px;
+}
+
+#donate_anon{
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 62.5%;
+  margin-left: 10px;
+  display: inline-block;
 }
