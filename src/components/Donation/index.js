@@ -21,6 +21,8 @@ class Donation extends React.Component{
             values: [],
             currentStep: 0,
 
+            selections:[[0,'']],
+
             anon: false,
             personal_information:{
                 first_name: '',
@@ -34,6 +36,11 @@ class Donation extends React.Component{
                 country: ''
             }
         }
+    }
+
+
+    handleSelectionChange(nSelections){
+        this.setState({selections:nSelections});
     }
 
     handleChange = (e) => {
@@ -89,13 +96,12 @@ class Donation extends React.Component{
     }
 
     checkCaseZero=()=>{
-        let selections = this.DynamicDropdown1.current.state.selections;
-        if (selections.length===0){
+        if (this.state.selections.length===0){
             toast.error("Please add at least one field.");
             return;
         }
-        for(let i=0;i<selections.length;i++){
-            if (selections[i][1]===""){
+        for(let i=0;i<this.state.selections.length;i++){
+            if (this.state.selections[i][1]===""){
                 toast.error("Please input valid montary values.");
                 return;
             }
@@ -119,7 +125,7 @@ class Donation extends React.Component{
                         rtl={false}
                         />
                         {this.renderStepper()}
-                        <DynamicDropdown ref={this.DynamicDropdown1}/>
+                        <DynamicDropdown ref={this.DynamicDropdown1} selections={this.state.selections}  handleSelectionChange={(e) => this.handleSelectionChange(e)} />
                         <select id="how-often" class="custom-select w-25">
                             <option>One Time</option>
                             <option>Monthly</option>

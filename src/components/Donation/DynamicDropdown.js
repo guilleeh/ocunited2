@@ -82,17 +82,19 @@ class DynamicDropdown extends React.Component{
 
             },
           ],
-        selections:[[0,'']]
+        
     }
 
     addSelection(){
-        this.setState({selections:[...this.state.selections,[0,'']]})
+      let temp=this.props.selections;
+      temp.push([0,'']);
+      this.props.handleSelectionChange(temp);
     }
 
     renderSelect(index){
         let output=[];
         for (let i=0;i<this.state.organizations.length;i++){
-          if(this.state.selections[index][0]===i){
+          if(this.props.selections[index][0]===i){
             output.push(<option value={this.state.organizations[i].title} selected>{this.state.organizations[i].title}</option>);
           }
           else{
@@ -109,39 +111,40 @@ class DynamicDropdown extends React.Component{
     }
 
     changeDropdown(e,index){
-      let temp=this.state.selections;
+      let temp=this.props.selections;
       for (let i=0;i<this.state.organizations.length;i++){
         if (this.state.organizations[i].title===e.target.value){
           temp[index][0]=i;
           break;
         }
       }
-      this.setState({selections:this.state.selections});
+      this.props.handleSelectionChange(temp);
     }
 
     renderButton(){
-        if(this.state.selections.length>=6) return;
+        if(this.props.selections.length>=6) return;
         return(
             <button class="btn btn-outline-secondary" id="add-field" onClick={(e)=>this.addSelection(e)}>Add Field</button>
         );
     }
 
     handleRemove(index){
-        this.state.selections.splice(index,1);
-        this.setState({selections:this.state.selections});
+      let temp=this.props.selections;
+      temp.splice(index,1);
+      this.props.handleSelectionChange(temp);
     }
 
     handlePercentChange(e,index){
-        let temp=this.state.selections;
+        let temp=this.props.selections;
         temp[index][1]=e.target.value;
-        this.setState({selections:temp});
+        this.props.handleSelectionChange(temp);
     }
 
     render(){
         return(
             <div className="dyanamic-dropdown">
                 {
-                    this.state.selections.map((selection,index)=>{
+                    this.props.selections.map((selection,index)=>{
                         return(
                             <div className="field" key={index}>
                                 {this.renderSelect(index)}
@@ -149,7 +152,7 @@ class DynamicDropdown extends React.Component{
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="basic-addon1">$</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="Amount" aria-label="Username" aria-describedby="basic-addon1" onChange={(e)=>this.handlePercentChange(e,index)} value={this.state.selections[index][1]}/>
+                                <input type="number" class="form-control" placeholder="Amount" aria-label="Username" aria-describedby="basic-addon1" onChange={(e)=>this.handlePercentChange(e,index)} value={this.props.selections[index][1]}/>
                                 </div>
                                 <button className="remove-field" onClick={()=>this.handleRemove(index)}>-</button>
                             </div>
