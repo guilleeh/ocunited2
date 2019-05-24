@@ -38,7 +38,7 @@ class Donation extends React.Component{
             usersOrgsAndAmounts: {
                 selectedOrganizations: [],
                 amountToOrg: [],
-                amountTotal: 0
+                amountTotal: 0,
             }
         }
     }
@@ -255,13 +255,18 @@ class Donation extends React.Component{
                     </div>
                 );
             case 3:
+                let isAnonymousDonator = "Yes";
+                if(this.state.anon === false){
+                    isAnonymousDonator = "No"; //this will change once we gather the user's name field and will display their name instead.
+                }
+
                 return(
                     <div>
                         {this.renderStepper()}
                         <h3>Donation Amount: ${this.state.usersOrgsAndAmounts.amountTotal}</h3>
                         <h3>Donating To: {this.state.usersOrgsAndAmounts.selectedOrganizations }</h3>
                         <h3>Frequency: __________</h3>
-                        <h3>Anonymous?: __________</h3>
+                        <h3>Anonymous?: { isAnonymousDonator }</h3>
                         <div className="ModalNav">
                             <button onClick={this.closeModal}>Cancel</button>
                             <button onClick={this.previous}>Previous</button>
