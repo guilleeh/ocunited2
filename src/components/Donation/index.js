@@ -69,23 +69,28 @@ class Donation extends React.Component{
         this.setState({values: this.state.values, currentStep: this.state.currentStep + 1})
 
         if(this.state.currentStep === 0){
-        //grabs users selections and amount fields
-        for(let i = 0; i < this.state.selections.length; i++){
-            let org = this.DynamicDropdown1.current.state.organizations[this.state.selections[i][0]].title;
-            let amt = Number(this.state.selections[i][1]); 
+            //grabs users selections and amount fields
+            for(let i = 0; i < this.state.selections.length; i++){
+                let org = this.DynamicDropdown1.current.state.organizations[this.state.selections[i][0]].title;
+                let amt = Number(this.state.selections[i][1]); 
 
-            //add org(s) to state array
-            this.state.usersOrgsAndAmounts.selectedOrganizations.push(org);
-            this.setState({selectedOrganizations: this.state.usersOrgsAndAmounts.selectedOrganizations});
+                //add org(s) to state array
+                if(i + 1 === this.state.selections.length){
+                    this.state.usersOrgsAndAmounts.selectedOrganizations.push(org);
+                }
+                else{
+                    this.state.usersOrgsAndAmounts.selectedOrganizations.push(org+', ');
+                }
+                this.setState({selectedOrganizations: this.state.usersOrgsAndAmounts.selectedOrganizations});
 
-            //add amt to state array
-            this.state.usersOrgsAndAmounts.amountToOrg.push(amt);
-            this.setState({amountToOrg: this.state.usersOrgsAndAmounts.amountToOrg});
+                //add amt to state array
+                this.state.usersOrgsAndAmounts.amountToOrg.push(amt);
+                this.setState({amountToOrg: this.state.usersOrgsAndAmounts.amountToOrg});
 
-            //accumulate totals
-            this.state.usersOrgsAndAmounts.amountTotal += amt;
-            this.setState({amountTotal: this.state.usersOrgsAndAmounts.amountTotal});
-        }
+                //accumulate totals
+                this.state.usersOrgsAndAmounts.amountTotal += amt;
+                this.setState({amountTotal: this.state.usersOrgsAndAmounts.amountTotal });
+            }
         console.log(this.state.usersOrgsAndAmounts);
         console.log(this.state.usersOrgsAndAmounts.amountTotal);
     }
@@ -254,7 +259,7 @@ class Donation extends React.Component{
                     <div>
                         {this.renderStepper()}
                         <h3>Donation Amount: ${this.state.usersOrgsAndAmounts.amountTotal}</h3>
-                        <h3>Donate To: __________</h3>
+                        <h3>Donating To: {this.state.usersOrgsAndAmounts.selectedOrganizations }</h3>
                         <h3>Frequency: __________</h3>
                         <h3>Anonymous?: __________</h3>
                         <div className="ModalNav">
