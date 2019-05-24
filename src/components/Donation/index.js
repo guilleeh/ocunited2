@@ -34,6 +34,10 @@ class Donation extends React.Component{
                 state: '',
                 postal: '',
                 country: ''
+            },
+            usersOrgsAndAmounts: {
+                selectedOrganizations: [],
+                amountToOrg: []
             }
         }
     }
@@ -65,9 +69,17 @@ class Donation extends React.Component{
 
 
         for(let i = 0; i < this.state.selections.length; i++){
-            console.log(this.DynamicDropdown1.current.state.organizations[this.state.selections[i][0]].title +" "+this.state.selections[i][1] ); 
+            let org = this.DynamicDropdown1.current.state.organizations[this.state.selections[i][0]].title;
+            let amt = this.state.selections[i][1]; 
+
+            this.state.usersOrgsAndAmounts.selectedOrganizations.push(org);
+            this.setState({selectedOrganizations: this.state.usersOrgsAndAmounts.selectedOrganizations});
+
+            this.state.usersOrgsAndAmounts.amountToOrg.push(amt);
+            this.setState({amountToOrg: this.state.usersOrgsAndAmounts.amountToOrg});
         }
 
+        console.log(this.state.usersOrgsAndAmounts);
 
     }
 
