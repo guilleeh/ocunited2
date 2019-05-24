@@ -62,6 +62,13 @@ class Donation extends React.Component{
 
     next=()=>{
         this.setState({values: this.state.values, currentStep: this.state.currentStep + 1})
+
+
+        for(let i = 0; i < this.state.selections.length; i++){
+            console.log(this.DynamicDropdown1.current.state.organizations[this.state.selections[i][0]].title +" "+this.state.selections[i][1] ); 
+        }
+
+
     }
 
     previous=()=>{
