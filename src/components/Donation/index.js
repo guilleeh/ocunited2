@@ -115,12 +115,12 @@ class Donation extends React.Component{
 
     next=()=>{
         this.setState({values: this.state.values, currentStep: this.state.currentStep + 1})
-        setUserOrgAndAmounts();
+        this.setUserOrgAndAmounts();
     }
 
     previous=()=>{
         this.setState({values: this.state.values, currentStep: this.state.currentStep - 1});
-        resetUsersOrgAndAmounts();
+        this.resetUsersOrgAndAmounts();
     }
 
     resetThenSet = (id, key) => {
