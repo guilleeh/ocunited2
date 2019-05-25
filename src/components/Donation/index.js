@@ -100,6 +100,23 @@ class Donation extends React.Component{
 
     previous=()=>{
         this.setState({values: this.state.values, currentStep: this.state.currentStep - 1});
+
+        if(this.state.currentStep === 1){
+            //reset totals
+            this.state.usersOrgsAndAmounts.amountTotal = 0;
+            this.setState({amountTotal: this.state.usersOrgsAndAmounts.amountTotal });
+            for(let i = 0; i < this.state.selections.length; i++){
+                //reset arrays 
+                this.state.usersOrgsAndAmounts.selectedOrganizations.pop();
+                this.setState({selectedOrganizations: this.state.usersOrgsAndAmounts.selectedOrganizations});
+
+                this.state.usersOrgsAndAmounts.amountToOrg.pop();
+                this.setState({amountToOrg: this.state.usersOrgsAndAmounts.amountToOrg});
+
+            }
+        console.log(this.state.usersOrgsAndAmounts);
+        console.log(this.state.usersOrgsAndAmounts.amountTotal);
+    }
     }
 
     resetThenSet = (id, key) => {
