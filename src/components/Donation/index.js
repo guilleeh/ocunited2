@@ -65,9 +65,7 @@ class Donation extends React.Component{
         this.props.hide_modal();
     }
 
-    next=()=>{
-        this.setState({values: this.state.values, currentStep: this.state.currentStep + 1})
-
+    setUserOrgAndAmounts = () =>{
         if(this.state.currentStep === 0){
             //grabs users selections and amount fields
             for(let i = 0; i < this.state.selections.length; i++){
@@ -91,16 +89,12 @@ class Donation extends React.Component{
                 this.state.usersOrgsAndAmounts.amountTotal += amt;
                 this.setState({amountTotal: this.state.usersOrgsAndAmounts.amountTotal });
             }
-        console.log(this.state.usersOrgsAndAmounts);
-        console.log(this.state.usersOrgsAndAmounts.amountTotal);
+            console.log(this.state.usersOrgsAndAmounts);
+            console.log(this.state.usersOrgsAndAmounts.amountTotal);
+        }
     }
 
-
-    }
-
-    previous=()=>{
-        this.setState({values: this.state.values, currentStep: this.state.currentStep - 1});
-
+    resetUsersOrgAndAmounts = () => {
         if(this.state.currentStep === 1){
             //reset totals
             this.state.usersOrgsAndAmounts.amountTotal = 0;
@@ -114,9 +108,19 @@ class Donation extends React.Component{
                 this.setState({amountToOrg: this.state.usersOrgsAndAmounts.amountToOrg});
 
             }
-        console.log(this.state.usersOrgsAndAmounts);
-        console.log(this.state.usersOrgsAndAmounts.amountTotal);
+            console.log(this.state.usersOrgsAndAmounts);
+            console.log(this.state.usersOrgsAndAmounts.amountTotal);
+        }
     }
+
+    next=()=>{
+        this.setState({values: this.state.values, currentStep: this.state.currentStep + 1})
+        setUserOrgAndAmounts();
+    }
+
+    previous=()=>{
+        this.setState({values: this.state.values, currentStep: this.state.currentStep - 1});
+        resetUsersOrgAndAmounts();
     }
 
     resetThenSet = (id, key) => {
