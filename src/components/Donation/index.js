@@ -39,7 +39,8 @@ class Donation extends React.Component{
                 selectedOrganizations: [],
                 amountToOrg: [],
                 amountTotal: 0,
-            }
+            },
+            donationFrequency: 'One Time',
         }
     }
 
@@ -48,16 +49,9 @@ class Donation extends React.Component{
         this.setState({selections:nSelections});
     }
 
-    handleChange = (e) => {
-        let options = e.target.options;
-        let selectedOptions = [];
-
-        for(let i = 0; i < options.length; i++) {
-            if( options[i].selected ) {
-                selectedOptions.push(options[i].value);
-            }
-        }
-        this.setState({values: selectedOptions, currentStep: this.state.currentStep});
+    // Handles event where user chooses the frequency of their donations.
+    handleFrequencyChange = (e) => {
+        this.setState({donationFrequency: e.target.value});
     }
 
 
@@ -193,7 +187,7 @@ class Donation extends React.Component{
                         />
                         {this.renderStepper()}
                         <DynamicDropdown ref={this.DynamicDropdown1} selections={this.state.selections}  handleSelectionChange={(e) => this.handleSelectionChange(e)} />
-                        <select id="how-often" class="custom-select w-25">
+                        <select id="how-often" class="custom-select w-25" value={this.state.donationFrequency} onChange={this.handleFrequencyChange}>
                             <option>One Time</option>
                             <option>Monthly</option>
                             <option>Yearly</option>
@@ -286,7 +280,7 @@ class Donation extends React.Component{
                         {this.renderStepper()}
                         <h3>Donation Amount: ${this.state.usersOrgsAndAmounts.amountTotal}</h3>
                         <h3>Donating To: {this.state.usersOrgsAndAmounts.selectedOrganizations }</h3>
-                        <h3>Frequency: __________</h3>
+                        <h3>Frequency: {this.state.donationFrequency}</h3>
                         <h3>Anonymous?: { isAnonymousDonator }</h3>
                         <div className="ModalNav">
                             <button onClick={this.closeModal}>Cancel</button>
