@@ -110,7 +110,6 @@ class Donation extends React.Component{
     next=()=>{
         this.setState({values: this.state.values, currentStep: this.state.currentStep + 1})
         this.setUserOrgAndAmounts();
-        console.log(this.state.personal_information)
     }
 
     previous=()=>{
@@ -287,7 +286,9 @@ class Donation extends React.Component{
                             <StripeProvider apiKey="pk_test_mVIHxjDBueW9FOhHUrp3uD7d0042aj7bq6">
                                 <div className="oc-united-stripe-element">
                                     <Elements>
-                                        <CheckoutForm />
+                                        <CheckoutForm personal_information={this.state.personal_information} 
+                                        anon={this.state.anon} amount={this.state.usersOrgsAndAmounts} 
+                                        frequency={this.state.donationFrequency}/>
                                     </Elements>
                                 </div>
                             </StripeProvider>

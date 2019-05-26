@@ -4,17 +4,23 @@ import {CardElement, injectStripe} from 'react-stripe-elements';
 class CheckoutForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {complete: false};
+    this.state = {complete: false, 
+                  personal_information : this.props.personal_information,
+                  anon : this.props.anon,
+                  amount : this.props.amount,
+                  frequency : this.props.frequency};
     this.submit = this.submit.bind(this);
+    console.log(this.state);
   }
 
   async submit(ev) {
-    // User clicked submit
-    let {token} = await this.props.stripe.createToken({name: "Name"});
+    console.log(this.state.personal_information);
+    console.log(this.state.amount);
+    let token =  await this.props.stripe.createToken({name: "Name"})
     let response = await fetch("/charge", {
-      method: "POST",
-      headers: {"Content-Type": "text/plain"},
-      body: token.id
+      method: "post",
+      headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
+      body: JSON.stringify({id: token, data: this.state.personal_information, donations: this.state.amount, anon: this.state.anon}),
     });
   
     if (response.ok) this.setState({complete: true});
