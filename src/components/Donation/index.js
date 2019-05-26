@@ -110,6 +110,7 @@ class Donation extends React.Component{
     next=()=>{
         this.setState({values: this.state.values, currentStep: this.state.currentStep + 1})
         this.setUserOrgAndAmounts();
+        console.log(this.state.personal_information)
     }
 
     previous=()=>{
@@ -162,7 +163,7 @@ class Donation extends React.Component{
     checkCaseOne=()=>{
         if(!this.state.anon){
             for(var key in this.state.personal_information){
-                if(key!=="phone" && this.state.personal_information[key]===""){
+                if(key !== "phone" && this.state.personal_information[key] === ""){
                     toast.error("Please complete all fields.");
                     return;
                 }
@@ -171,6 +172,37 @@ class Donation extends React.Component{
         this.next();
     }
 
+    personalInfoChangeHandler = event => {
+
+        const name = event.target.name;
+        const value = event.target.value;
+        this.setState({
+            personal_information: {
+                ...this.state.personal_information,
+                [name] : value,
+            }
+        });
+    }
+
+    donateAnnonymouslyChangeHandler = event => {
+        this.setState({ anon: !this.state.anon })
+        //Clear out the form if the user wants to donate annonymously.
+        if(!this.state.anon) {
+            this.setState({
+                personal_information: {
+                    first_name: '',
+                    last_name: '',
+                    email: '',
+                    phone: '',
+                    street: '',
+                    city: '',
+                    state: '',
+                    postal: '',
+                    country: ''
+                }
+            });
+        }
+    }
 
     renderField(){
         switch (this.state.currentStep){
@@ -214,29 +246,29 @@ class Donation extends React.Component{
                             <div className="container">
                                 <form>
                                     <div class="row">
-                                        <input type="text" class="col-md form-control" placeholder="First Name" aria-label="firstname" aria-describedby="basic-addon1"/>
-                                        <input type="text" class="col-md form-control" placeholder="Last Name" aria-label="lastname" aria-describedby="basic-addon1"/>
+                                        <input type="text" name="first_name" value={this.state.personal_information.first_name} onChange={this.personalInfoChangeHandler} class="col-md form-control" placeholder="First Name" aria-label="firstname" aria-describedby="basic-addon1"/>
+                                        <input type="text" name="last_name" value={this.state.personal_information.last_name} onChange={this.personalInfoChangeHandler} class="col-md form-control" placeholder="Last Name" aria-label="lastname" aria-describedby="basic-addon1"/>
                                     </div>
                                     <div class="row">
-                                        <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1"/>
+                                        <input type="email" name="email" value={this.state.personal_information.email} onChange={this.personalInfoChangeHandler} class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1"/>
                                     </div>
                                     <div class="row">
-                                        <input type="text" class="form-control" placeholder="Phone Number(optional)" aria-label="phone" aria-describedby="basic-addon1"/>
+                                        <input type="text" name="phone" value={this.state.personal_information.phone} onChange={this.personalInfoChangeHandler} class="form-control" placeholder="Phone Number(optional)" aria-label="phone" aria-describedby="basic-addon1"/>
                                     </div>
                                     <div class="row">
-                                        <input type="text" class="form-control" placeholder="Street Address" aria-label="street" aria-describedby="basic-addon1"/>
+                                        <input type="text" name="street" value={this.state.personal_information.street} onChange={this.personalInfoChangeHandler} class="form-control" placeholder="Street Address" aria-label="street" aria-describedby="basic-addon1"/>
                                     </div>
                                     <div class="row">
-                                        <input type="text" class="col-md form-control" placeholder="City" aria-label="city" aria-describedby="basic-addon1"/>
-                                        <input type="text" class="col-md form-control" placeholder="State" aria-label="state" aria-describedby="basic-addon1"/>
+                                        <input type="text" name="city" value={this.state.personal_information.city} onChange={this.personalInfoChangeHandler} class="col-md form-control" placeholder="City" aria-label="city" aria-describedby="basic-addon1"/>
+                                        <input type="text" name="state" value={this.state.personal_information.state} onChange={this.personalInfoChangeHandler} class="col-md form-control" placeholder="State" aria-label="state" aria-describedby="basic-addon1"/>
                                     </div>
                                     <div class="row">
-                                        <input type="number" class="col-md form-control" placeholder="Postal Code" min="00501" aria-label="state" aria-describedby="basic-addon1"/>
-                                        <input type="text" class="col-md form-control" placeholder="Country" aria-label="country" aria-describedby="basic-addon1"/>
+                                        <input type="number" name="postal" value={this.state.personal_information.postal} onChange={this.personalInfoChangeHandler} class="col-md form-control" placeholder="Postal Code" min="00501" aria-label="state" aria-describedby="basic-addon1"/>
+                                        <input type="text" name="country" value={this.state.personal_information.country} onChange={this.personalInfoChangeHandler} class="col-md form-control" placeholder="Country" aria-label="country" aria-describedby="basic-addon1"/>
                                     </div>
                                 </form>
                                 <br></br>
-                                <input type="checkbox" checked={this.state.anon} onChange={(e)=>this.setState({anon:!this.state.anon})} name="anonymity"/><div id="donate_anon">Donate Anonymously</div>
+                                <input type="checkbox" checked={this.state.anon} onChange={this.donateAnnonymouslyChangeHandler} name="anonymity"/><div id="donate_anon">Donate Anonymously</div>
                             </div>
                             <div className="ModalNav">
                                 <button onClick={this.closeModal}>Cancel</button>
@@ -252,13 +284,13 @@ class Donation extends React.Component{
                         {this.renderStepper()}
 
                         <div className="card-details">
-                        <StripeProvider apiKey="pk_test_mVIHxjDBueW9FOhHUrp3uD7d0042aj7bq6">
-                        <div className="oc-united-stripe-element">
-                         <Elements>
-                        <CheckoutForm />
-                        </Elements>
-                        </div>
-                        </StripeProvider>
+                            <StripeProvider apiKey="pk_test_mVIHxjDBueW9FOhHUrp3uD7d0042aj7bq6">
+                                <div className="oc-united-stripe-element">
+                                    <Elements>
+                                        <CheckoutForm />
+                                    </Elements>
+                                </div>
+                            </StripeProvider>
                         </div>
 
 
