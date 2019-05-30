@@ -192,3 +192,18 @@ html {
   padding-left: 5%;
   padding-top: 2%;
 }
+.summaryStyling{
+  padding-top: 3%;
+  text-align: center;
+  font-style: italic;
+}
+
+.summaryStyling h3 {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.usersOrgsDisplay {
+  padding-left: 30%;
+  padding-right: 30%;
+}

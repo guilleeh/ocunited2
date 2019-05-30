@@ -64,7 +64,7 @@ class Donation extends React.Component{
             //grabs users selections and amount fields
             for(let i = 0; i < this.state.selections.length; i++){
                 let org = this.DynamicDropdown1.current.state.organizations[this.state.selections[i][0]].title;
-                let amt = Number(this.state.selections[i][1]); 
+                let amt = parseFloat(this.state.selections[i][1]); 
 
                 //add org(s) to state array
                 if(i + 1 === this.state.selections.length){
@@ -130,7 +130,7 @@ class Donation extends React.Component{
         return(
             <div id="stepper">
             <Stepper
-                    steps={ [{title: 'Select Donation Amount'}, {title: 'Add Personal Information'}, {title: 'Add Payment Information'}, {title: 'Submit Donation'}] }
+                    steps={ [{title: 'Select Donation Amount'}, {title: 'Add Personal Information'}, {title: 'Submit Your Donation'}, {title: 'Summary'}] }
                     activeStep={this.state.currentStep}
                     activeColor="#ffb547"
                     completeColor="#ffb547"
@@ -149,8 +149,12 @@ class Donation extends React.Component{
             toast.error("Please add at least one field.");
             return;
         }
+
+
         for(let i=0;i<this.state.selections.length;i++){
-            if (this.state.selections[i][1]===""){
+            let num = parseFloat(this.state.selections[i][1]);
+            
+            if (this.state.selections[i][1]==="" || num < 1){
                 toast.error("Please input valid montary values.");
                 return;
             }
@@ -305,16 +309,22 @@ class Donation extends React.Component{
             case 3:
                 let isAnonymousDonator = "Yes";
                 if(this.state.anon === false){
-                    isAnonymousDonator = "No"; //this will change once we gather the user's name field and will display their name instead.
+                    isAnonymousDonator = "No"; 
                 }
 
                 return(
                     <div>
                         {this.renderStepper()}
+                        <div className="summaryStyling">
                         <h3>Donation Amount: ${this.state.usersOrgsAndAmounts.amountTotal}</h3>
-                        <h3>Donating To: {this.state.usersOrgsAndAmounts.selectedOrganizations }</h3>
+                        <br/>
+                        <h3>You Chose To: </h3><p className="usersOrgsDisplay">{this.state.usersOrgsAndAmounts.selectedOrganizations }</p>
+                        <br/>
                         <h3>Frequency: {this.state.donationFrequency}</h3>
+                        <br/>
                         <h3>Anonymous?: { isAnonymousDonator }</h3>
+                        <br/>
+                        </div>
                         <div className="ModalNav">
                             <button onClick={this.closeModal}>Cancel</button>
                             <button onClick={this.previous}>Previous</button>
