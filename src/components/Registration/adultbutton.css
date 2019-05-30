@@ -1,0 +1,96 @@
+
+   
+   .regcontainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 200px;
+    }
+   .counter {
+    width: 300px;
+    margin: auto;
+    background: #0E1F2C;
+    box-shadow: 0px 5px 0px rgb(5, 46, 78);
+    border-radius: 5px;
+    color: white;
+    padding: 20px;
+    text-align: center;
+   }
+   
+   .counter h1 {
+    margin: 0;
+    padding: 20px;
+    font-size: 36px;
+   }
+   .counter button {
+    background: #ffB547;
+    border: 0;
+    box-shadow: 0px 5px 0px #927608;
+    padding: 20px;
+    margin: 10px 5px 0 5px;
+    width: 29%; /*45%*/
+    outline: none;
+    border-radius: 50%; /*3px*/
+    color: #0E1F2C;
+    font-weight: bold;
+   }
+   .counter2 {
+    width: 300px;
+    margin: auto;
+    background: #0E1F2C;
+    box-shadow: 0px 5px 0px rgb(5, 46, 78);
+    border-radius: 5px;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    }
+   .counter2 h1 {
+    margin: 0;
+    padding: 20px;
+    font-size: 36px;
+   }
+   .counter2 button {
+    background: #ffB547;
+    border: 0;
+    box-shadow: 0px 5px 0px #927608;
+    padding: 20px;
+    margin: 10px 5px 0 5px;
+    width: 29%; /*45%*/
+    outline: none;
+    border-radius: 50%; /*3px*/
+    color: #0E1F2C;
+    font-weight: bold;
+   }
+   
+   /***Inputcounter.js***/
+span {cursor:pointer; }
+.number{
+ margin:100px;
+}
+.number2{
+ margin:100px;
+}
+.minus, .plus{
+ width:20px;
+ height:20px;
+ background:#f2f2f2;
+ border-radius:4px;
+ padding-bottom: 25px;
+ border:1px solid #ddd;
+ display: inline-block;
+ vertical-align: middle;
+ text-align: center;
+}
+input{
+ height:34px;
+ width: 100px;
+ text-align: center;
+ font-size: 26px;
+ border:1px solid #ddd;
+ border-radius:4px;
+ display: inline-block;
+ vertical-align: middle;
+}
+.title{
+ padding-left: 45px;
+}
+ 

@@ -1,5 +1,5 @@
 html {
-    cursor: default;
+  cursor: default;
 }
 
 .checkout {
@@ -164,4 +164,31 @@ html {
   font-size: 62.5%;
   margin-left: 10px;
   display: inline-block;
+}
+
+.inputcontainer{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: auto;
+ }
+ 
+.hr-text{
+  display:block;
+    border:none;
+    color:white;
+    height:1px;
+    background:black;
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#081f4c), to(#e5e5e5));
+}
+.paragraph{
+  font-size: 14px;
+}
+
+.summary-container{
+  text-align: center;
+}
+
+.map{
+  padding-left: 5%;
+  padding-top: 2%;
 }
