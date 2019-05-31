@@ -12,8 +12,8 @@ library.add(faAngleUp, faAngleDown, faCheck);
 class App extends React.Component{
     render(){
         return(
-           //<Home />
-           <UpcomingEvents />
+           <Home />
+           //<UpcomingEvents />
         );
     }
 }

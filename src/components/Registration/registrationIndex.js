@@ -200,6 +200,7 @@ class Registration extends React.Component{
                return(
                   <div>
                        {this.renderStepper()}
+                       <h3 className="donationDescription">Optional Donation</h3>
 
                        <div className="card-details">
                        <StripeProvider apiKey="pk_test_mVIHxjDBueW9FOhHUrp3uD7d0042aj7bq6">
