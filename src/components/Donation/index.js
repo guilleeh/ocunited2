@@ -326,9 +326,7 @@ class Donation extends React.Component{
                         <br/>
                         </div>
                         <div className="ModalNav">
-                            <button onClick={this.closeModal}>Cancel</button>
-                            <button onClick={this.previous}>Previous</button>
-                            <button onClick={this.next}>Next</button>
+                            <button onClick={this.next}>Finish</button>
                         </div>
                     </div>
                 );
