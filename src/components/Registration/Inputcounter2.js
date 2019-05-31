@@ -35,7 +35,7 @@ class Inputcounter2 extends React.Component{
          Children
          </div>
          <span className="minus">-</span>
-         <input type="text" value="1"/>
+         <input className="num2-input" type="text" value="1"/>
          <span className="plus">+</span>
        </div>
      );
