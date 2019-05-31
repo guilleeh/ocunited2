@@ -207,3 +207,12 @@ html {
   padding-left: 30%;
   padding-right: 30%;
 }
+
+.donationDescription {
+  text-align: center;
+  padding-top: 10%;
+}
+
+.checkout {
+  padding-top: 0;
+}

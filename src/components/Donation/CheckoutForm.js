@@ -31,7 +31,6 @@ class CheckoutForm extends Component {
     
     return (
       <div className="checkout">
-        <p><i><strong>Optional Donation</strong></i></p>
         <br/>
         <CardElement className="cardElement" />
         <br/>
