@@ -27,6 +27,8 @@ class Registration extends React.Component{
 
            selections:[[0,'']],
 
+           optionalDonationAmount: '',
+
           
            personal_information:{
                first_name: '',
@@ -200,7 +202,12 @@ class Registration extends React.Component{
                return(
                   <div>
                        {this.renderStepper()}
-                       <h3 className="donationDescription">Optional Donation</h3>
+                       <h3 className="donationDescription">**Optional Donation**</h3>
+                       <div className="optionalDiv">
+                           <div className="input-group-prepend"><span class="input-group-text" id="basic-addon1">$</span>
+                       <input type="number" min="1" max="50000" class="form-control" id="optionalD" placeholder="Amount" aria-label="Username" aria-describedby="basic-addon1" />
+                        </div>
+                        </div>
 
                        <div className="card-details">
                        <StripeProvider apiKey="pk_test_mVIHxjDBueW9FOhHUrp3uD7d0042aj7bq6">

@@ -94,3 +94,8 @@ span {cursor:pointer; }
  padding-left: 45px;
 }
  
+
+.optionalDiv {
+   padding-left: 40%;
+   padding-right: 40%;
+}
