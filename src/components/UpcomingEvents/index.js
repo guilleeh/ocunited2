@@ -1,7 +1,7 @@
 import React from 'react';
 import Heading from '../Heading';
-//import './css/style.css';
-import '../Donation/index.css';
+import './css/style.css';
+//import '../Donation/index.css';
 import Sponsors from './images/Sponsors.png';
 import Woman from './images/woman.png';
 import Group from './images/group.png';
@@ -40,7 +40,7 @@ class UpcomingEvents extends React.Component{
 
   render(){
       return(
-          <div className = "container">
+          <div className = "events-container">
           <div className = "square"> </div> 
               <Heading />
               <ReactModal 
