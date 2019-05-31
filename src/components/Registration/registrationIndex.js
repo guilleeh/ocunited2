@@ -249,7 +249,7 @@ class Registration extends React.Component{
                        <div className="ModalNav">
                            <button onClick={this.closeModal}>Cancel</button>
                            <button onClick={this.previous}>Previous</button>
-                           <button onClick={this.next}>Next</button>
+                           <button onClick={this.next}>Submit</button>
                        </div>
                    </div>
                );
@@ -265,7 +265,8 @@ class Registration extends React.Component{
                        </div>
                    </div>
                );
-               
+               default: 
+               return;
        }
    }
 
