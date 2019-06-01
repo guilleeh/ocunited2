@@ -27,7 +27,7 @@ import Image from 'react-image-resizer';
 class UpcomingEvents extends React.Component{
     state={
         donation_visibility:false,
-        
+
     };
 
     show_modal = () =>{
@@ -46,19 +46,21 @@ class UpcomingEvents extends React.Component{
           <div className = "events-container">
           <div className="square">
           <section class="banner">
-                
+
                 <ReactPlayer className='react-player'
-                url='https://vimeo.com/262118519' 
+                url='https://vimeo.com/262118519'
                 width='100%' height='100%'
                 autoPlay loop muted playing
                 />
 
             </section>
+            <h1>RESTORING FAMILIES &amp; COMMUNITIES TOGETHER</h1>
+            <h4>THE LOVE OF OUR NEIGHBOR IN ALL ITS FULLNESS SIMPLY MEANS BEING ABLE TO SAY, "WHAT ARE YOU GOING THROUGH?" </h4>    
           </div>
               <Heading />
-        
+
                 );
-              <ReactModal 
+              <ReactModal
                     isOpen={this.state.donation_visibility}
                     onRequestClose={this.hide_modal}
                     shouldCloseOnOverlayClick={true}
@@ -72,12 +74,12 @@ class UpcomingEvents extends React.Component{
                 <div className="buttons">
                         <li onClick={this.show_modal}><div className="buttontext">Register</div></li>
                 </div>
-           
+
                 <br></br>
               <section class="container1">
                   <h2 className="sponsor-header">MADE POSSIBLE BY:</h2>
                   <div className="sponsors">
-                  <Image  
+                  <Image
                     src={Sponsors}
                     height={350}
                     width={750}
@@ -102,7 +104,7 @@ class UpcomingEvents extends React.Component{
                       <li>12:15 PM – Media Team Arrive at Fullerton College to capture Luncheon</li>
                       <li>01:00 PM – Debrief</li>
                   </ul>
-                 
+
                   <button type="submit" form="#" value="Submit">Register</button>
                   </section>
                   <section class="event-two">

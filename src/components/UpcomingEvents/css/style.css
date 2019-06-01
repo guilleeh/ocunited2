@@ -45,8 +45,8 @@ code {
 	grid-area: header;
   background-color: #0E1F2C;
   align-self: start;
- 
-  
+
+
 }
 
 .page-header div{
@@ -81,8 +81,8 @@ nav{
   height: 64.328px;
   width: 100%;
   background-color: #001D34;
-  
-} 
+
+}
 
 .site-branding-events{
   background-color: #0E1F2C;
@@ -94,27 +94,45 @@ nav{
 	text-align: center;
 	align-items: center;
   background-image: HeaderImage;
-  
+
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
 	padding-top: 0px;
- 
+
 }
 
 .react-player {
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 0.4;
 }
 
  .banner .background {
   width: 100%;
 
-} 
+}
 
-.banner h1{
+.square h1{
+  font-size: 50px;
+  text-align: center;
+  font-weight: bold;
+  color: #0E1F2C;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.square h4{
   font-size: large;
-  color: blue;
+  font-style: italic;
+  text-align: center;
+  color: #F36C21;
+  position: absolute;
+  top: 435px;
+  left: 200px;
+  tranform: translate(-50%, -50%);
 }
 
 .banner .centered{
@@ -255,6 +273,3 @@ nav{
 .container1 {
   padding-top: 350px;
 }
-
-
-
