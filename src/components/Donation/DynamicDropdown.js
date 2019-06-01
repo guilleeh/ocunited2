@@ -152,7 +152,7 @@ class DynamicDropdown extends React.Component{
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="basic-addon1">$</span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="Amount" aria-label="Username" aria-describedby="basic-addon1" onChange={(e)=>this.handlePercentChange(e,index)} value={this.props.selections[index][1]}/>
+                                <input type="number" min="1" max="50000" class="form-control" placeholder="Amount" aria-label="Username" aria-describedby="basic-addon1" onChange={(e)=>this.handlePercentChange(e,index)} value={this.props.selections[index][1]}/>
                                 </div>
                                 <button className="remove-field" onClick={()=>this.handleRemove(index)}>-</button>
                             </div>

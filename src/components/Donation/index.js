@@ -285,7 +285,6 @@ class Donation extends React.Component{
                 return(
                    <div>
                         {this.renderStepper()}
-                        <h3 className="donationDescription">Please Enter Card Details</h3>
 
                         <div className="card-details">
                             <StripeProvider apiKey="pk_test_mVIHxjDBueW9FOhHUrp3uD7d0042aj7bq6">
@@ -327,9 +326,7 @@ class Donation extends React.Component{
                         <br/>
                         </div>
                         <div className="ModalNav">
-                            <button onClick={this.closeModal}>Cancel</button>
-                            <button onClick={this.previous}>Previous</button>
-                            <button onClick={this.next}>Next</button>
+                            <button onClick={this.next}>Finish</button>
                         </div>
                     </div>
                 );

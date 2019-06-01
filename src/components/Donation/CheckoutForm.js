@@ -27,11 +27,14 @@ class CheckoutForm extends Component {
   }
 
   render() {
-    if (this.state.complete) return <p>Donation successful!</p>;
+    if (this.state.complete) {
+      return <h1>Donation successful!</h1>;
+    }
     
     return (
       <div className="checkout">
         <br/>
+        <h3 className="donationDescription">Please Enter Card Details</h3>
         <CardElement className="cardElement" />
         <br/>
         <button onClick={this.submit}>Process Donation</button>
