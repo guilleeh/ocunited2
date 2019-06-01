@@ -160,7 +160,7 @@ nav{
   display: flex;
   text-align: center;
   font-size: 50px;
-  margin-top: 150px;
+  margin-top: 110px;
 
   justify-content: center;
   flex-direction: column;
@@ -179,6 +179,14 @@ nav{
   justify-self: center;
 }
 
+.container1 h2{
+  color: #0E1F2C;
+  font-size: 34px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 10px;
+  text-align: center;
+}
 
 /* ================= Section 3 - Event one =============== */
 
