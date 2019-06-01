@@ -46,7 +46,7 @@ class UpcomingEvents extends React.Component{
           <div className="square">
           <section class="banner">
                 
-                <div class="background"><video src={Gathering} autoplay="true" loop="true" alt="headerImage"/>
+                <div class="background"><video src={Gathering} autoPlay loop muted/>
                 
                 </div>
             </section>
