@@ -70,7 +70,7 @@ class UpcomingEvents extends React.Component{
                 </div>
               <section class="banner">
                 
-                  <div class="background"> alt="headerImage"/>
+                  <div class="background">
                   <div class = "centered">RESTORING FAMILIES &amp; COMMUNITIES TOGETHER</div>
                   <div class = "quote_centered">THE LOVE OF OUR NEIGHBOR IN ALL ITS FULLNESS SIMPLY MEANS BEING ABLE TO SAY, "WHAT ARE GOING THROUGH?" </div>
                   </div>
