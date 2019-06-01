@@ -15,7 +15,8 @@ import Social from './images/Social.png';
 import FooterLogo from './images/footer-logo.png';
 import Registration from '../Registration/registrationIndex';
 import ReactModal from 'react-modal';
-import Gathering from './videos/gathering.mp4';
+import ReactPlayer from 'react-player';
+import Image from 'react-image-resizer';
 
 
 
@@ -46,9 +47,12 @@ class UpcomingEvents extends React.Component{
           <div className="square">
           <section class="banner">
                 
-                <div class="background"><video src={Gathering} autoPlay loop muted/>
-                
-                </div>
+                <ReactPlayer className='react-player'
+                url='https://vimeo.com/262118519' 
+                width='100%' height='100%'
+                autoPlay loop muted playing
+                />
+
             </section>
           </div>
               <Heading />
@@ -68,17 +72,17 @@ class UpcomingEvents extends React.Component{
                 <div className="buttons">
                         <li onClick={this.show_modal}><div className="buttontext">Register</div></li>
                 </div>
-              <section class="banner">
-                
-                  <div class="background">
-                  <div class = "centered">RESTORING FAMILIES &amp; COMMUNITIES TOGETHER</div>
-                  <div class = "quote_centered">THE LOVE OF OUR NEIGHBOR IN ALL ITS FULLNESS SIMPLY MEANS BEING ABLE TO SAY, "WHAT ARE GOING THROUGH?" </div>
-                  </div>
-              </section>
-              <br></br>
+           
+                <br></br>
               <section class="container1">
-                  <h2>MADE POSSIBLE BY:</h2>
-                  <div className="sponsors"> <img src={Sponsors} alt="sponsors"/></div>
+                  <h2 className="sponsor-header">MADE POSSIBLE BY:</h2>
+                  <div className="sponsors">
+                  <Image  
+                    src={Sponsors}
+                    height={350}
+                    width={750}
+                  />
+                  </div>
               </section>
               <main>
                   <section class="event-one">

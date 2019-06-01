@@ -93,14 +93,24 @@ nav{
 	grid-area: section1;
 	text-align: center;
 	align-items: center;
-	background-image: HeaderImage;
+  background-image: HeaderImage;
+  
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 0px;
+ 
 }
 
-.banner .background img{
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+ .banner .background {
   width: 100%;
-  height: 500px;
 
-}
+} 
 
 .banner h1{
   font-size: large;
@@ -129,13 +139,26 @@ nav{
 /* ================= Section 2 - sponsors =============== */
 
 .container1 {
+  display: flex;
   text-align: center;
   font-size: 50px;
+  margin-top: 150px;
+
+  justify-content: center;
+  flex-direction: column;
 }
 
 .sponsors{
 	grid-area: section2;
-	text-align: center;
+  text-align: center;
+  padding-left: 380px;
+  background-size: 150px;
+  width: 300px;
+  height: 300px;
+}
+
+.sponsor-header {
+  justify-self: center;
 }
 
 
