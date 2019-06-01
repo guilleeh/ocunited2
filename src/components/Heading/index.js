@@ -3,6 +3,7 @@ import './index.css';
 import ReactModal from 'react-modal';
 import Donation from '../Donation';
 import EventDropdown from './eventdropdown';
+import { Link } from 'react-router-dom';
 
 
 class Heading extends React.Component{
@@ -48,9 +49,11 @@ class Heading extends React.Component{
                     <Donation hide_modal={this.hide_modal} />
                 </ReactModal>
                 <header className="site-header">
+                <Link className="linkItem" to='/'>
                     <div className="site-branding">
                         <img alt="logo" src="https://ocunited.org/wp-content/themes/ocunited/images/ocu-logo.png"/> 
                     </div>
+                    </Link>
                     <nav className="main-navigation">
                         <ul className="main-menu">
                             <li>

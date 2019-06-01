@@ -21,10 +21,12 @@ class EventDropdown extends React.Component {
         tabIndex="0"
         id="dropdown-button"
       >
+        <Link className='linkItem' to='/upcoming'>
         events
+        </Link>
         {this.state.open && (
           <div className="dropdown-items arrow-top">
-            <div className="event-item"><Link className='event-item' to='/upcoming'> Upcoming Events </Link></div>
+            <div className="event-item"> Upcoming Events</div>
             <div className="event-item">Past Events</div>
           </div>
         )}
