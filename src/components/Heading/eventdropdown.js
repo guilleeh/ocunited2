@@ -1,6 +1,8 @@
 import React from "react";
 import './index.css';
 
+import { Link } from 'react-router-dom';
+
 
 class EventDropdown extends React.Component {
   state = {
@@ -22,7 +24,7 @@ class EventDropdown extends React.Component {
         events
         {this.state.open && (
           <div className="dropdown-items arrow-top">
-            <div className="event-item">Upcoming Events</div>
+            <div className="event-item"><Link className='event-item' to='/upcoming'> Upcoming Events </Link></div>
             <div className="event-item">Past Events</div>
           </div>
         )}
