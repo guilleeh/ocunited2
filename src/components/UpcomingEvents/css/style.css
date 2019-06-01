@@ -229,7 +229,9 @@ nav{
   grid-area: copyright_info;
 }
 
-
+.container1 {
+  padding-top: 350px;
+}
 
 
 
