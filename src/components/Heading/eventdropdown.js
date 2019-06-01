@@ -13,20 +13,23 @@ class EventDropdown extends React.Component {
     this.setState({ open: !this.state.open });
   }
 
+
   render() {
+    console.log(this.state.open);
     return (
+      <div>
       <div
-        onBlur={() => this.toggleDropdown()}
-        onFocus={() => this.toggleDropdown()}
+        
+        onClick={() => this.toggleDropdown()}
         tabIndex="0"
         id="dropdown-button"
       >
-        <Link className='linkItem' to='/upcoming'>
+        
         events
-        </Link>
+        </div>
         {this.state.open && (
           <div className="dropdown-items arrow-top">
-            <div className="event-item"> Upcoming Events</div>
+            <Link className='linkItem' to='/upcoming' onClick={() => this.toggleDropdown()}><div className="event-item"> Upcoming Events</div></Link>
             <div className="event-item">Past Events</div>
           </div>
         )}
