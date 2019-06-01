@@ -34,7 +34,6 @@ code {
   max-width: 100%;
   padding: 0%;
 
-
 }
 
 
@@ -78,12 +77,12 @@ nav{
   color: #fff;
 }
 
-.square{
+ .square{
   height: 64.328px;
   width: 100%;
   background-color: #001D34;
-  position: fixed;
-}
+  
+} 
 
 .site-branding-events{
   background-color: #0E1F2C;
@@ -126,6 +125,7 @@ nav{
   font-style: italic;
   color: #FF8C00;
 }
+
 /* ================= Section 2 - sponsors =============== */
 
 .container1 {

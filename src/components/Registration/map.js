@@ -14,6 +14,7 @@ class MapContainer extends React.Component {
              {latitude: 47.6307081, longitude: -122.1434325},
              {latitude: 47.3084488, longitude: -122.2140121},
              {latitude: 47.5524695, longitude: -122.0425407}]
+
    }
  }
 
@@ -26,6 +27,8 @@ class MapContainer extends React.Component {
     onClick={() => console.log("You clicked me!")} />
    })
  }
+
+ 
   render() {
    return (
        <Map

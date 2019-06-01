@@ -133,6 +133,7 @@ class Registration extends React.Component{
                       
                        
                        <hr class="hr-text" />
+                       <h3 className="ticket-header">Select your type of tickets</h3>
                             <div className="inputcontainer">
                                 <Inputcounter />
                                 <Inputcounter2 />

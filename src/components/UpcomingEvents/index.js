@@ -13,9 +13,11 @@ import Quote from './images/quote.png';
 import Employees from './images/employees.png';
 import Social from './images/Social.png';
 import FooterLogo from './images/footer-logo.png';
-import HeaderImage from './images/HeaderImage.png';
 import Registration from '../Registration/registrationIndex';
 import ReactModal from 'react-modal';
+import Gathering from './videos/gathering.mp4';
+
+
 
 
 
@@ -41,8 +43,17 @@ class UpcomingEvents extends React.Component{
   render(){
       return(
           <div className = "events-container">
-          <div className = "square"> </div> 
+          <div className="square">
+          <section class="banner">
+                
+                <div class="background"><video src={Gathering} autoplay="true" loop="true" alt="headerImage"/>
+                
+                </div>
+            </section>
+          </div>
               <Heading />
+        
+                );
               <ReactModal 
                     isOpen={this.state.donation_visibility}
                     onRequestClose={this.hide_modal}
@@ -58,7 +69,8 @@ class UpcomingEvents extends React.Component{
                         <li onClick={this.show_modal}><div className="buttontext">Register</div></li>
                 </div>
               <section class="banner">
-                  <div class="background"><img src={HeaderImage} alt="headerImage"/>
+                
+                  <div class="background"> alt="headerImage"/>
                   <div class = "centered">RESTORING FAMILIES &amp; COMMUNITIES TOGETHER</div>
                   <div class = "quote_centered">THE LOVE OF OUR NEIGHBOR IN ALL ITS FULLNESS SIMPLY MEANS BEING ABLE TO SAY, "WHAT ARE GOING THROUGH?" </div>
                   </div>

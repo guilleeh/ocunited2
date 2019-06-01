@@ -216,3 +216,8 @@ html {
 .checkout {
   padding-top: 0;
 }
+
+.ticket-header{
+  text-align: center;
+  padding-top: 10%;
+}
