@@ -121,6 +121,7 @@ nav{
   position: absolute;
   top: 50%;
   left: 50%;
+  width:70%;
   transform: translate(-50%, -50%);
 }
 
@@ -130,9 +131,9 @@ nav{
   text-align: center;
   color: #F36C21;
   position: absolute;
-  top: 435px;
-  left: 200px;
-  tranform: translate(-50%, -50%);
+  top: 62%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .banner .centered{
@@ -150,6 +151,7 @@ nav{
   position: absolute;
   left: 20%;
   top: 70%;
+  
   font-style: italic;
   color: #FF8C00;
 }
@@ -177,15 +179,18 @@ nav{
 
 .sponsor-header {
   justify-self: center;
+  padding: 40px;
+  padding-bottom: 0px;
 }
 
 .container1 h2{
   color: #0E1F2C;
-  font-size: 34px;
+  font-size: px;
   font-weight: bold;
   text-align: center;
   line-height: 10px;
   text-align: center;
+  text-transform: uppercase;
 }
 
 /* ================= Section 3 - Event one =============== */
@@ -194,11 +199,29 @@ nav{
 .event-one{
 	grid-area: section3;
 	text-align: center;
-	background-color: blue;
+	background-color: white;
 	font-family: DIN-Black;
 	font-size: 50px;
 	line-height: 98%;
-	color: #0E1F2C;
+  color: #0E1F2C;
+  padding-top: 100px; 
+}
+
+.event-one hr{
+  width: 50%;
+}
+
+.event-one h1{
+  font-size: 36px;
+  line-height: 43px;
+  letter-spacing: 0.19em;
+}
+
+#yellowcircle{
+  width: 1129px;
+  height: 1129px;
+  background: rgba(255, 206, 7, 0.14);
+  border-radius: 50%;
 }
 
 .container1 .sponsors{

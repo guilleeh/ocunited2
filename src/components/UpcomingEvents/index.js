@@ -58,8 +58,6 @@ class UpcomingEvents extends React.Component{
             <h4>THE LOVE OF OUR NEIGHBOR IN ALL ITS FULLNESS SIMPLY MEANS BEING ABLE TO SAY, "WHAT ARE YOU GOING THROUGH?" </h4>    
           </div>
               <Heading />
-
-                );
               <ReactModal
                     isOpen={this.state.donation_visibility}
                     onRequestClose={this.hide_modal}
@@ -77,7 +75,7 @@ class UpcomingEvents extends React.Component{
 
                 <br></br>
               <section class="container1">
-                  <h2 className="sponsor-header">MADE POSSIBLE BY:</h2>
+                  <h2 className="sponsor-header">Made Possible By:</h2>
                   <div className="sponsors">
                   <Image
                     src={Sponsors}
@@ -88,7 +86,9 @@ class UpcomingEvents extends React.Component{
               </section>
               <main>
                   <section class="event-one">
-                  <h2>EVENTS SUMMARY</h2>
+                  <h1>EVENTS SUMMARY</h1>
+                  <hr></hr>
+                  <div id="yellowcircle"></div>
                   <h3>NO JOB TOO BIG OR SMALL</h3>
                   <h2>COMMUNITY SERVICE HELPS ALL</h2>
                   <div className="womanVolunteer"> <img src={Woman} alt="womanVolunteer"/></div>
