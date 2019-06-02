@@ -43,7 +43,6 @@ code {
   grid-template-columns: 1fr 2fr 1fr;
   grid-auto-rows: minmax(10px, auto);
 	grid-area: header;
-  background-color: #0E1F2C;
   align-self: start;
 
 
@@ -77,13 +76,6 @@ nav{
   color: #fff;
 }
 
- .square{
-  height: 64.328px;
-  width: 100%;
-  background-color: #001D34;
-
-}
-
 .site-branding-events{
   background-color: #0E1F2C;
 }
@@ -92,12 +84,12 @@ nav{
 .banner{
 	grid-area: section1;
 	text-align: center;
-	align-items: center;
-  background-image: HeaderImage;
+  align-items: center;
+  background-color:gray;
 
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
-	padding-top: 0px;
+  padding-top: 0px;
 
 }
 
@@ -105,12 +97,11 @@ nav{
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
  .banner .background {
   width: 100%;
-
 }
 
 .square h1{
@@ -162,8 +153,6 @@ nav{
   display: flex;
   text-align: center;
   font-size: 50px;
-  margin-top: 110px;
-
   justify-content: center;
   flex-direction: column;
 }

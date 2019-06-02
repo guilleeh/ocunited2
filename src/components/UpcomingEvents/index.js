@@ -72,8 +72,6 @@ class UpcomingEvents extends React.Component{
                 <div className="buttons">
                         <li onClick={this.show_modal}><div className="buttontext">Register</div></li>
                 </div>
-
-                <br></br>
               <section class="container1">
                   <h2 className="sponsor-header">Made Possible By:</h2>
                   <div className="sponsors">
