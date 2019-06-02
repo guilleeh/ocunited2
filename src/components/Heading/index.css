@@ -259,6 +259,7 @@ img{
     color: #001D34;
     text-align:center;
     border: 1px solid #001D34;
+    padding-top: 10px;
 }
 
 .dropdown-items:after, .dropdown-items:before {
