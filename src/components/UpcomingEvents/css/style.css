@@ -7,104 +7,61 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-}
-
-code {
+ 
+ }
+ 
+ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-.events-container {
+ }
+ 
+ @media (min-width: 300px){
+ .events-container {
   display: grid;
-  /*grid-template-columns: repeat(3, 1fr);*/
-  grid-auto-rows: minmax(100px, auto);
-	grid-template-areas:
-	"header"
-	"section1" /*banner*/
-	"section1"
-	"section1"
-	"section1"
-	"section2" /*sponsors*/
-	"section3" /*event one*/
-	"section4" /*event two*/
-	"section5" /*event three*/
-	"section6"; /*connect and footer*/
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-rows: minmax(min-content, max-content);
   margin: auto;
   max-width: 100%;
   padding: 0%;
-
+  gap: 10px;
+ }
 }
-
-
-/*======= HEADER ========*/
-.page-header{
-  display:grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-auto-rows: minmax(10px, auto);
-	grid-area: header;
-  align-self: start;
-
-
-}
-
-.page-header div{
-  padding-left: 1em;
-  padding-top: 1em;
-}
-
-.page-header #logo img {
-  width: 225px;
-  height: 33px;
-}
-.page-header nav {
-  padding: 1em;
-}
-.page-header nav ul {
-  list-style-type: none;
-  text-align: center;
-  padding-left: 11px;
-}
-.page-header nav ul li {
-  display: inline-block;
-}
-.page-header .right-nav ul {
-  text-align: right;
-  padding-right: 14px;
-}
-nav{
+ 
+ /*======= HEADER ========*/
+ nav{
   color: #fff;
-}
-
-.site-branding-events{
+ }
+ 
+ .site-branding-events{
   background-color: #0E1F2C;
-}
-
-/* ================= Section 1 - banner =============== */
-.banner{
-	grid-area: section1;
-	text-align: center;
+ }
+ 
+ /* ================= Section 1 - banner =============== */
+ .banner{
+   text-align: center;
   align-items: center;
   background-color:gray;
-
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
   padding-top: 0px;
-
-}
-
-.react-player {
+  }
+ 
+ .react-player {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0.5;
-}
-
+ }
+ 
  .banner .background {
   width: 100%;
-}
-
-.square h1{
+ }
+ 
+ .square {
+  grid-column: 1/span 13;
+  grid-row: auto;
+ }
+ .square h1{
   font-size: 50px;
   text-align: center;
   font-weight: bold;
@@ -114,9 +71,9 @@ nav{
   left: 50%;
   width:70%;
   transform: translate(-50%, -50%);
-}
-
-.square h4{
+ }
+ 
+ .square h4{
   font-size: large;
   font-style: italic;
   text-align: center;
@@ -125,9 +82,9 @@ nav{
   top: 62%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.banner .centered{
+ }
+ 
+ .banner .centered{
   position: absolute;
   top: 60%;
   left: 50%;
@@ -136,160 +93,558 @@ nav{
   font-weight: bold;
   color: #0E1F2C;
   line-height: 98%;
-}
-
-.banner .quote_centered{
+ }
+ 
+ .banner .quote_centered{
   position: absolute;
   left: 20%;
   top: 70%;
-  
-  font-style: italic;
+   font-style: italic;
   color: #FF8C00;
-}
-
-/* ================= Section 2 - sponsors =============== */
-
-.container1 {
+ }
+ 
+ 
+ /* ================= Section 2 - sponsors =============== */
+ 
+ .container1 {
+  grid-column: 1 / span 13;
+  grid-row: auto;
   display: flex;
-  text-align: center;
   font-size: 50px;
-  justify-content: center;
   flex-direction: column;
-}
-
-.sponsors{
-	grid-area: section2;
-  text-align: center;
-  padding-left: 380px;
+  padding-top: 100px;
+ }
+ 
+ .sponsors{
+  margin: auto;
   background-size: 150px;
   width: 300px;
   height: 300px;
-}
-
-.sponsor-header {
-  justify-self: center;
-  padding: 40px;
-  padding-bottom: 0px;
-}
-
-.container1 h2{
+ }
+ 
+ .sponsor-header {
+  margin: auto;
+  padding-bottom: 10px;
+ }
+ 
+ .container1 h2{
   color: #0E1F2C;
-  font-size: px;
+  font-size: 36px;
+  font-family: DIN-Black;
   font-weight: bold;
   text-align: center;
   line-height: 10px;
   text-align: center;
   text-transform: uppercase;
-}
-
-/* ================= Section 3 - Event one =============== */
-
-
-.event-one{
-	grid-area: section3;
-	text-align: center;
-	background-color: white;
-	font-family: DIN-Black;
-	font-size: 50px;
-	line-height: 98%;
+ }
+ 
+ /* ================= Section 3 - Event one =============== */
+ 
+ 
+ .event-one{
+  grid-column: 1 / span 13;
+  grid-row: auto;
+  display:flex;
+  flex-direction: column;
+   text-align: center;
+   background-color:#fff;
+   font-family: DIN-Black;
+   font-size: 50px;
+   line-height: 98%;
   color: #0E1F2C;
-  padding-top: 100px; 
-}
-
-.event-one hr{
+  padding-top: 100px;
+ }
+ 
+ .event-one-items{
+  display:grid;
+  grid-template-columns: repeat(4fr 2fr 2fr 3fr 6fr, minmax(320px, 1fr));
+  grid-auto-rows: auto;
+ }
+ .event-one #yellowcircle {
+  margin: auto;
+ }
+ .event-one hr{
+  grid-column: 1 / span 12;
+  grid-row: 2  / span 1;
   width: 50%;
-}
-
-.event-one h1{
+ }
+ 
+ .event-one h1{
+  grid-column: 1 / span 12;
+  grid-row: 1 / span 1;
   font-size: 36px;
   line-height: 43px;
   letter-spacing: 0.19em;
-}
-
-#yellowcircle{
-  width: 1129px;
-  height: 1129px;
+ }
+ 
+ #yellowcircle{
+  grid-column: 1 / span 12;
+  grid-row: 3  / span 1;
+  width: 801px;
+  height: 801px;
   background: rgba(255, 206, 7, 0.14);
   border-radius: 50%;
-}
-
-.container1 .sponsors{
+ }
+ 
+ .womanVolunteer {
+  position: relative;
+  left: 290px;
+  bottom: 60px;
+  grid-column: 1 / span 3;
+  grid-row: 3  / span 1;
+  z-index: 1;
+ }
+ 
+ .group {
+  position: relative;
+  grid-column: 4 / span 3;
+  grid-row: 3  / span 1;
+  right: 350px;
+  top: 130px;
+  
+  
+  
+ }
+ 
+ .event-one-items .header3 {
+  position: relative;
+  top: 310px;
+  left: 500px;
+  grid-column: 1 / span 3;
+  grid-row: 3  / span 1;
+  font-size: 20px;
+  font-family: D-DINCondensed;
+  font-weight: 600;
+ }
+ 
+ .event-one-items h2 {
+  position: relative;
+  top: 320px;
+  left: 205px;
+  grid-column: 1 / span 3;
+  grid-row: 3  / span 1;
+  padding-top: 2%;
+  font-size: 36px;
+  font-family: Din-Black;
+  letter-spacing: 6%;
+  font-weight: 900;
+  text-align: end;
+ }
+ 
+ .event-one-items .yellow-line {
+  position: relative;
+  right: 340px;
+  grid-column: 1 / span 3;
+  grid-row: 3  / span 1;
+  width: 65%;
+  margin-left: 895px;
+  margin-right: auto;
+  height: 5px;
+  background-color: #ffce07;
+  opacity: 0.8;
+  margin-top: 435px;
+  }
+ 
+ .container1 .sponsors{
+  position: relative;
+  right: 140px;
   height: 30%;
   width: 30%;
   text-align: center;
+ }
+ 
+ .event-one-btn{
+  width: 300px;
+  height: 300px;
+  top: calc(50% - 150px);
+  left: calc(50% - 150px);
+  background: #F99200;
+  z-index: 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  border-radius: 300px;
+ }
+ .event-one-text{
+  grid-column: 3 / span 1;
+  grid-row: 4  / span 1;
+  text-decoration: none;
+  display: block;
+  color: #0E1F2C;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1;
+  text-transform: uppercase;
+  padding: 8px 15px;
+  position: relative;
+  bottom: 500px;
+  left: 220px;
+  z-index: 1;
+ }
+ .event-one-text h3 {
+   font-family: DIN-Black;
+   font-size: 24px;
+   font-weight: 600;
+ }
+
+ .event-one-text h4 {
+  position: relative;
+  font-family: DIN-Black;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffce07;
+  left: 170px;
+  text-align: start;
+  line-height: 3rem;
+
+ }
+ 
+ .event-one-text li {
+  position: relative;
+  font-family: MinionPro-Regular;
+  list-style: none;
+  text-align: start;
+  font-weight: bold;
+  left: 130px;
+  line-height: 1.9rem;
+  font-size: 12px;
+ }
+
+ .event-one-text #long-text{
+   white-space: nowrap;
+ }
+ .triangle {
+  display: block;
+  position: relative;
+  background: #ffce07;
+  padding: 0;
+  border: 1px solid #ffce07;
+  margin-top: 20px;
+  opacity: 14%;
+  left:170px;
 }
-/* ================= Section 4 - Event two =============== */
+.triangle:before, .triangle:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  width: 0;
+  height: 0;
+}
+.triangle:before {
+  left: 100px;
+  border: 0px solid transparent;
+  border-bottom-color: #ffce07;
+  opacity: 14%;
+}
+.triangle:after {
+  left: 40px;
+  border: 10px solid transparent;
+  border-bottom-color: #ffcd07fa;
+  opacity: 70%
+}
+ /* ================= Section 4 - Event two =============== */
+ 
+ 
+ .event-two{
+   grid-column: 1 / span 13;
+   grid-row: auto;
+   text-align: center;
+ }
 
+ .event-two #bluecircle {
+    margin: auto;
+    width: 700px;
+    height: 700px;
+    background: #0e1f2c;
+    opacity: 0.73;
+    border-radius: 50%;
+ }
 
-.event-two{
-	grid-area: section4;
-	text-align: center;
-	background-color: yellow;
+ .event-two .singer {
+   box-sizing: border-box;
+   position: relative;
+   left: 39%;
+   bottom: 51.5%;
+   margin: auto;
+ }
+ .event-two #event-two-h2 {
+  box-sizing: border-box;
+  position: relative;
+  top: 620px;
+  left: 436px;
+  font-family: DIN-Black;
+  color: #F36C21;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: start;
+  word-spacing: 0.6rem;
+  z-index: 1;
+ }
+
+ .event-two #event-two-h3 {
+   position: relative;
+   top: 615px;
+   right: 235px;
+   font-family: D-DINCondensed;
+   color: #F36C21;
+   letter-spacing: 0.01rem;
+   z-index: 1;
+ }
+
+ .event-two .blue-line {
+  position: relative;
+  right: 30px;
+  top: 190px;
+  width: 40%;
+  height: 2px;
+  background-color: #0e1f2c;
+  margin-top: 435px;
+ }
+
+ .event-two .stage {
+  box-sizing: border-box;
+  position: relative;
+  left: 31%;
+  bottom: 21%;
+  margin: auto;
+ }
+
+ .event-two #schedule-header-evt2 {
+   box-sizing: border-box;
+   position: relative;
+   bottom: 66.3%;
+   right: 9.4%;
+   font-weight: bold;
+   font-size: 24px;
+   color: #0E1F2C;
+   
+ }
+
+ .event-two .blue-triangle {
+  display: block;
+  position: relative;
+  bottom: 66.4%;
+  left:31%;
+  background: #0E1F2C;
+  padding: 0;
+  border: 1px solid #0E1F2C;
+  width: 25%;
+  
+ }
+
+ .event-two .schedule-header2-evt2 {
+  box-sizing: border-box;
+  position: relative;
+  bottom: 66.2%;
+  right: 9.4%;
+  font-size: 19px;
+  color: #0E1F2C;
+ }
+
+ .event-two .schedule-header2-evt2 h4 {
+   position: relative;
+   font-weight: bold;
+   text-align: start;
+   left: 40.5%;
+   line-height: 2.3rem;
+ }
+
+ .event-two .schedule-header2-evt2 p {
+  box-sizing: border-box;
+  position: relative;
+  font-family: MinionPro-Regular;
+  list-style: none;
+  text-align: start;
+  font-weight: bold;
+  left: 40.5%;
+  line-height: 1.9rem;
+  font-size: 12px;
+ }
+
+ .schedule-container2 {
+   position: relative;
+   bottom:65.8%;
+ }
+
+ .schedule-container2 ul {
+   position: relative;
+   list-style: none;
+   text-align: start;
+   left: 28.4%;
+   font-size: 12px;
+ }
+
+ .schedule-container2 #child1 {
+   font-style: DIN-Black;
+   font-size: 17px;
+   font-weight: bold;
+ }
+ 
+ /* ================= Section 5 - Event three =============== */
+ 
+ 
+ .event-three{
+  grid-column: 1 / span 13;
+  grid-row: auto;
+  text-align: center;
+ }
+
+ .event-three #redcircle {
+  margin: auto;
+  width: 700px;
+  height: 700px;
+  background: #c24327;
+  opacity: 0.58;
+  border-radius: 50%;
+ }
+
+ .event-three h3 {
+   position: relative;
+   top: 13.4%;
+   left: 14%;
+   font-family: D-DINCondensed;
+   color: #0E1F2C;
+   font-family: D-DINCondensed;
+   letter-spacing: 0.01rem;
+   z-index: 1;
+ }
+
+ .event-three h2 {
+   position: relative;
+   font-family: DIN-Black;
+   font-weight: bolder;
+   font-size: 30px;
+   text-align: end;
+   right: 30%;
+   top: 13.4%;
+   word-spacing: 0.2rem;
+   z-index: 1;
+ }
+
+ .event3-line {
+  position: relative;
+  left: 4%;
+  top: 180px;
+  width: 40%;
+  height: 2px;
+  background-color: #000;
+  margin-top: 435px;
+  z-index: 0;
+ }
+
+ .golf-course {
+  box-sizing: border-box;
+  position: relative;
+  left: 35%;
+  bottom: 57.5%;
+  margin: auto;
+ }
+
+ .golfer {
+  box-sizing: border-box;
+  position: relative;
+  left: 23%;
+  bottom: 27%;
+  margin: auto;
+  z-index: 1;
+ }
+
+ .event3-header1 {
+   box-sizing: border-box;
+   position: relative;
+   bottom: 71%;
+   left: 6%;
+   font-family: DIN-Black;
+   font-size: 24px;
+   font-weight: bold;
+  
+ }
+
+ .black-triangle {
+  display: block;
+  position: relative;
+  bottom: 70.5%;
+  left: 44.3%;
+  background: #000;
+  padding: 0;
+  border: 1px solid #000;
+  width: 25%;
+ }
+
+ .schedule-container3 {
+  position: relative;
+  bottom: 70%;
+  left: 13.3%;
+ }
+ .schedule-container3 ul {
+ position: relative;
+ list-style: none;
+ text-align: start;
+ left: 28.4%;
+ font-size: 12px;
+ font-weight: light;
+ }
+
+ .schedule-container3 h4 {
+  position: relative;
+  left: 31%;
+  font-style: DIN-Black;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: start;
 }
 
-/* ================= Section 5 - Event three =============== */
-
-
-.event-three{
-	grid-area: section5;
-	text-align: center;
-	background-color: blue;
+.schedule-container3 p {
+  position: relative;
+  left: 31%;
+  font-style: MinionPro;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: start;
 }
 
-/* ================= Section 6 - Connect =============== */
-
-.connect{
-	grid-area: section6;
-	text-align: center;
-	background-color: yellow;
+.schedule-container3 #child2 {
+   font-style: DIN-Black;
+   font-size: 17px;
+   font-weight: bold;
 }
-
-/* ================= Footer - footer =============== */
-
-.footer{
-	grid-area: section6;
-	text-align: center;
-	background-color: blue;
-}
-
-/* ================ having a container within a container ===========*/
-
-.container_footer{
-  display: grid;
-  grid-auto-columns: auto;
-  grid-auto-rows: auto;
-  grid-template-areas:
-  "contact_info" "connect_with_us" "mailing_list"
-  "terms_of_use" "oc_logo" "copyright_info";
+ /* ================= Section 6 - Connect =============== */
+ 
+ .connect{
+   grid-area: section6;
+   text-align: center;
+   background-color: yellow;
+ }
+ 
+ /* ================= Footer - footer =============== */
+ 
+ .footer{
+   text-align: center;
+   background-color: blue;
+ }
+ 
+ /* ================ having a container within a container ===========*/
+ 
+ .container_footer{
+  grid-column: 1 / span 13;
+  grid-row: auto;
   margin: auto;
   max-width:100%;
-}
-
-.contact h5{
+ }
+ 
+ .contact h5{
   grid-area: contact_info;
-}
-
-.connect_with_us{
+ }
+ 
+ .connect_with_us{
   grid-area: connect_with_us;
   text-align: center;
-}
-
-.connect_with_us h4{
-  grid-area: mailing_list;
-}
-
-.left{
-  grid-area: terms_of_use;
-}
-
-.middle{
-  grid-area: oc_logo;
-}
-
-.right{
-  grid-area: copyright_info;
-}
-
-.container1 {
-  padding-top: 350px;
-}
+ }
+ 
+ .testimonials {
+  grid-column: 1 / span 13;
+  grid-row: auto;
+ }
+ 
