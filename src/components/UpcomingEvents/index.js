@@ -210,8 +210,17 @@ class UpcomingEvents extends React.Component{
                     </div>
                  </section>
                  <section className="testimonials">
-                   <div className="quote"> <img src={Quote} alt="quote-mark"/></div>
-                   <p>“Love Fullerton was an awesome experience for our families. All the volunteers made our ladies feel wonderful, not only did they do haircuts, but they also did manicures and pedicures. Not only did the ladies enjoy themselves but the children as well, received haircuts, manicures, and pedicures... every one of them were so grateful and ecstatic about their new looks. It truly had the “spa day” feel... All that participated were immensely pleased and loved their new looks and their colored toes and fingernails! We take our hats off to Grace and all the volunteers that made this day a special one!” </p>
+                   <div className="footer-circle">
+                        <div className="quote-mark">
+                            <Image
+                                src={Quote}
+                                height={50}
+                                width={50}
+                                alt="quote-mark"
+                            />
+                        </div>
+                        <p className="footer-paragraph">“Love Fullerton was an awesome experience for our families. All the volunteers made our ladies feel wonderful, not only did they do haircuts, but they also did manicures and pedicures. Not only did the ladies enjoy themselves but the children as well, received haircuts, manicures, and pedicures... every one of them were so grateful and ecstatic about their new looks. It truly had the “spa day” feel... All that participated were immensely pleased and loved their new looks and their colored toes and fingernails! We take our hats off to Grace and all the volunteers that made this day a special one!” </p>
+                   </div> 
                  </section>
 
              <div className = "container_footer">

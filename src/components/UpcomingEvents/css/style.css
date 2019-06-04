@@ -610,7 +610,42 @@ body {
    font-size: 17px;
    font-weight: bold;
 }
- /* ================= Section 6 - Connect =============== */
+
+/*  ================= Section 6 - Testimonials ========== */
+
+.footer-circle {
+  margin: auto;
+  width: 700px;
+  height: 700px;
+  background-image: linear-gradient(#0e1f2c, #c24327);
+  opacity: 0.73;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+}
+.footer-paragraph {
+ position: relative;
+ top: 30%;
+ text-align: center;
+ font-size: 14px;
+}
+
+.quote-mark {
+  position: relative;
+  top: 30%;
+  left: 3.5%;
+  
+}
+
+.testimonials {
+  grid-column: 1 / span 13;
+  grid-row: auto;
+ }
+
+
+
+
+ /* ================= Section 7 - Connect =============== */
  
  .connect{
    grid-area: section6;
@@ -634,17 +669,10 @@ body {
   max-width:100%;
  }
  
- .contact h5{
-  grid-area: contact_info;
- }
- 
  .connect_with_us{
   grid-area: connect_with_us;
   text-align: center;
  }
  
- .testimonials {
-  grid-column: 1 / span 13;
-  grid-row: auto;
- }
+ 
  
