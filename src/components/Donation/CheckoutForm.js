@@ -8,10 +8,13 @@ class CheckoutForm extends Component {
                   personal_information : this.props.personal_information,
                   anon : this.props.anon,
                   amount : this.props.amount,
-                  frequency : this.props.frequency};
+                  frequency : this.props.frequency,
+                  next: this.props.next,
+                  current: this.props.current};
     this.submit = this.submit.bind(this);
     console.log(this.state);
   }
+
 
   async submit(ev) {
     console.log(this.state.personal_information);
@@ -23,12 +26,14 @@ class CheckoutForm extends Component {
       body: JSON.stringify({id: token, data: this.state.personal_information, donations: this.state.amount, anon: this.state.anon}),
     });
   
-    if (response.ok) this.setState({complete: true});
+    if (response.ok) {
+      this.setState({complete: true});
+    }
   }
 
   render() {
     if (this.state.complete) {
-      return <h1>Donation successful!</h1>;
+      this.state.next();
     }
     
     return (

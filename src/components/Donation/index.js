@@ -290,7 +290,7 @@ class Donation extends React.Component{
                             <StripeProvider apiKey="pk_test_mVIHxjDBueW9FOhHUrp3uD7d0042aj7bq6">
                                 <div className="oc-united-stripe-element">
                                     <Elements>
-                                        <CheckoutForm personal_information={this.state.personal_information} 
+                                        <CheckoutForm current={this.state.currentStep} next={this.next} personal_information={this.state.personal_information} 
                                         anon={this.state.anon} amount={this.state.usersOrgsAndAmounts} 
                                         frequency={this.state.donationFrequency}/>
                                     </Elements>
@@ -302,7 +302,7 @@ class Donation extends React.Component{
                         <div className="ModalNav">
                             <button onClick={this.closeModal}>Cancel</button>
                             <button onClick={this.previous}>Previous</button>
-                            <button onClick={this.next}>Next</button>
+                            
                         </div>
                     </div>
                 );
