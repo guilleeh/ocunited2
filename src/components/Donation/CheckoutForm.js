@@ -9,8 +9,7 @@ class CheckoutForm extends Component {
                   anon : this.props.anon,
                   amount : this.props.amount,
                   frequency : this.props.frequency,
-                  next: this.props.next,
-                  current: this.props.current};
+                  next: this.props.next};
     this.submit = this.submit.bind(this);
     console.log(this.state);
   }
