@@ -18,7 +18,11 @@ class CheckoutForm extends Component {
   async submit(ev) {
     console.log(this.state.personal_information);
     console.log(this.state.amount);
-    let token =  await this.props.stripe.createToken({name: "Name"})
+    var name = "Annonymous"
+    if(!this.state.anon){
+      name = this.state.personal_information.first_name
+    }
+    let token =  await this.props.stripe.createToken({name: name})
     let response = await fetch("/charge", {
       method: "post",
       headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
