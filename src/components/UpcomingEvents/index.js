@@ -95,7 +95,20 @@ render(){
                                width={500}
                                alt="woman-volunteer"
                            />
+                        <div className="buttons">
+                                <li id="register" onClick={this.show_modal}><div className="buttontext">Register</div></li>
+                            </div>
                        </div>
+                       <ReactModal
+                            isOpen={this.state.donation_visibility}
+                            onRequestClose={this.hide_modal}
+                            shouldCloseOnOverlayClick={true}
+                            shouldCloseOnEsc={true}
+                            className="DonationModal"
+                            overlayClassName="Overlay">
+                            <div id = "makeadonation">Event Registration</div>
+                            <Registration hide_modal={this.hide_modal} />
+                        </ReactModal>
                        <div className="group">
                            <Image
                                src={Group}
