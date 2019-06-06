@@ -410,6 +410,11 @@
    background: #FF4901 ;
    border: 2px solid #FF4901;
  }
+
+ .buttons #register-section-b:hover {
+  background: #F99200;
+  border-color: #F99200;
+}
  
  .buttons #register-section-c {
   position: relative;
