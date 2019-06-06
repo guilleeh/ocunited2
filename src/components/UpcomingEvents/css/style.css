@@ -429,6 +429,19 @@
  .right {
   text-align: end;
  }
+
+ .buttons #register {
+   position: relative;
+   top: 32rem;
+   right: 47rem;
+   background: #FF4901 ;
+   border: 2px solid #FF4901;
+ }
+
+ .buttons #register:hover {
+    background: #F99200;
+    border-color: #F99200;
+ }
  
  /* Media Queries */
  
@@ -460,4 +473,6 @@
     grid-column: span 1;
   }
  }
+
+
  
