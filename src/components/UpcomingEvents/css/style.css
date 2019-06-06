@@ -96,24 +96,26 @@
   width: 100%;
   height: 450px;
  }
- 
+
  #showcase h1 {
-  position: absolute;
-  left: 940px;
-  bottom: 350px;
+  position: relative;
+  font-size: 30px;
+  top: 15em;
   color: #0e1f2c;
   margin: 0;
   padding: 1em 0;
   text-align: center;
+  font-weight: bold;
+
  }
  
  #showcase h4 {
-  position: absolute;
-  left: 800px;
-  bottom: 300px;
+  position: relative;
+  top: 30em;
   font-style: italic;
   color: #f36c21;
   text-align: center;
+  font-weight: bold;
  }
  
  #showcase .content-wrap,
@@ -124,35 +126,6 @@
   padding: 0 1.5em;
  }
 
- .video-header {
-  position: absolute;
-  top: 50%;
-  left: -2.3em;
-  width:70%;
-  z-index: 1;
- }
- 
- .video-header h1 {
-  font-size: 50px;
-  text-align: center;
-  font-weight: bold;
-  color: #0E1F2C;
-  margin: 0;
-  padding: 1em 0;
-  top: 4em;
-  right: 2.3em;
- }
- 
- .video-header h4 {
-  font-size: large;
-  font-style: italic;
-  text-align: center;
-  color: #F36C21;
-  top: 22em;
-  right: -1em;
-  
- }
- 
  .react-player {
   position: absolute;
   top: 0;
