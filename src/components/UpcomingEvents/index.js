@@ -96,7 +96,7 @@ render(){
                                alt="woman-volunteer"
                            />
                         <div className="buttons">
-                                <li id="register" onClick={this.show_modal}><div className="buttontext">Register</div></li>
+                                <li id="register-section-b" onClick={this.show_modal}><div className="buttontext">Register</div></li>
                             </div>
                        </div>
                        <ReactModal
@@ -159,6 +159,9 @@ render(){
                                width={590}
                                alt="singer"
                            />
+                            <div className="buttons">
+                                <li id="register-section-c" onClick={this.show_modal}><div className="buttontext">Register</div></li>
+                            </div>
                        </div>
                        <div className="schedule-container2">
                            <h3 className="content-title3">FULLERTON'S GOT TALENT</h3>
@@ -196,6 +199,9 @@ render(){
                                width={600}
                                alt="golfer"
                            />
+                            <div className="buttons">
+                                <li id="register-section-d" onClick={this.show_modal}><div className="buttontext">Register</div></li>
+                            </div>
                        </div>
                        <div className="golf-course">
                        <Image
