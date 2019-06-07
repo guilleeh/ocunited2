@@ -22,6 +22,8 @@ class Registration extends React.Component{
        super();
        this.DynamicDropdown1 = React.createRef();
        this.state = {
+           adultTickets: 0,
+           childTickets: 0,
            values: [],
            currentStep: 0,
 
@@ -106,9 +108,11 @@ class Registration extends React.Component{
        );
    }
 
-   checkCaseZero=()=>{
-       this.next();
-   }
+    checkCaseZero=()=>{
+        console.log(this.state.childTickets)
+        console.log(this.state.adultTickets)
+        this.next();
+    }
 
    checkCaseOne=()=>{
       
@@ -116,6 +120,14 @@ class Registration extends React.Component{
       
        this.next();
    }
+
+    adultHandler = (amount) => {
+        this.setState({adultTickets: amount});
+    }
+
+    childHandler = (amount) => {
+        this.setState({childTickets: amount});
+    }
 
 
    renderField(){
@@ -137,14 +149,11 @@ class Registration extends React.Component{
                        <hr class="hr-text" />
                        <h3 className="ticket-header">Select your type of tickets</h3>
                             <div className="inputcontainer">
-                                <Inputcounter />
-                                <Inputcounter2 />
+                                <Inputcounter value={this.state.adultTickets} onChangeAdult={this.adultHandler}/>
+                                <Inputcounter2 value={this.state.childTickets} onChangeChild={this.childHandler}/>
                             </div>
                         <hr class="hr-text" />
-                            
-  
-                        
-                       
+
                        <DynamicDropdown ref={this.DynamicDropdown1} selections={this.state.selections}  handleSelectionChange={(e) => this.handleSelectionChange(e)} />
                     
                        <div className="ModalNav">

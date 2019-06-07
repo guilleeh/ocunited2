@@ -4,22 +4,24 @@ import $ from 'jquery';
 import './adultbutton.css';
 
 class Inputcounter2 extends React.Component{
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
-    this.state = {amount: 0};
+    this.state = {amount: this.props.value};
 
   }
 
   handleIncrease = () => {
     console.log("Increasing")
     let amount = this.state.amount + 1;
+    this.props.onChangeChild(amount);
     this.setState({amount: amount});
   }
 
   handleDecrease = () => {
     if(this.state.amount  > 1) {
       let amount = this.state.amount - 1;
+      this.props.onChangeChild(amount)
       this.setState({amount: amount});
     }
     console.log("Decreasing")
