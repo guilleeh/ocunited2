@@ -73,6 +73,7 @@ class Registration extends React.Component{
 
    next=()=>{
        this.setState({values: this.state.values, currentStep: this.state.currentStep + 1})
+       console.log(this.state.personal_information);
 
 
    }
@@ -109,17 +110,26 @@ class Registration extends React.Component{
    }
 
     checkCaseZero=()=>{
-        console.log(this.state.childTickets)
-        console.log(this.state.adultTickets)
+        if (this.state.adultTickets === 0 && this.state.childTickets === 0){
+            toast.error("Please choose at least 1 ticket.");
+            return;
+        }
         this.next();
     }
 
-   checkCaseOne=()=>{
-      
-        
-      
-       this.next();
-   }
+    checkCaseOne=()=>{
+        let incomplete_field = "";
+        for( var value in this.state.personal_information) {
+            if( value !== "phone") {
+                if(this.state.personal_information[value] === "") {
+                    incomplete_field = value
+                    toast.error("Please fill out the all the fields.");
+                    return;
+                }
+            }
+        }
+        this.next();
+    }
 
     adultHandler = (amount) => {
         this.setState({adultTickets: amount});
@@ -127,6 +137,18 @@ class Registration extends React.Component{
 
     childHandler = (amount) => {
         this.setState({childTickets: amount});
+    }
+
+    personalInfoChangeHandler = event => {
+        
+        const name = event.target.name;
+        const value = event.target.value;
+        this.setState({
+            personal_information: {
+                ...this.state.personal_information,
+                [name] : value,
+            }
+        });
     }
 
 
@@ -177,27 +199,27 @@ class Registration extends React.Component{
                        <div className="personalinfo">
                            <div className="container">
                                <form>
-                                   <div class="row">
-                                       <input type="text" class="col-md form-control" placeholder="First Name" aria-label="firstname" aria-describedby="basic-addon1"/>
-                                       <input type="text" class="col-md form-control" placeholder="Last Name" aria-label="lastname" aria-describedby="basic-addon1"/>
-                                   </div>
-                                   <div class="row">
-                                       <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1"/>
-                                   </div>
-                                   <div class="row">
-                                       <input type="text" class="form-control" placeholder="Phone Number(optional)" aria-label="phone" aria-describedby="basic-addon1"/>
-                                   </div>
-                                   <div class="row">
-                                       <input type="text" class="form-control" placeholder="Street Address" aria-label="street" aria-describedby="basic-addon1"/>
-                                   </div>
-                                   <div class="row">
-                                       <input type="text" class="col-md form-control" placeholder="City" aria-label="city" aria-describedby="basic-addon1"/>
-                                       <input type="text" class="col-md form-control" placeholder="State" aria-label="state" aria-describedby="basic-addon1"/>
-                                   </div>
-                                   <div class="row">
-                                       <input type="number" class="col-md form-control" placeholder="Postal Code" min="00501" aria-label="state" aria-describedby="basic-addon1"/>
-                                       <input type="text" class="col-md form-control" placeholder="Country" aria-label="country" aria-describedby="basic-addon1"/>
-                                   </div>
+                                    <div class="row">
+                                        <input type="text" name="first_name" value={this.state.personal_information.first_name} onChange={this.personalInfoChangeHandler} class="col-md form-control" placeholder="First Name" aria-label="firstname" aria-describedby="basic-addon1"/>
+                                        <input type="text" name="last_name" value={this.state.personal_information.last_name} onChange={this.personalInfoChangeHandler} class="col-md form-control" placeholder="Last Name" aria-label="lastname" aria-describedby="basic-addon1"/>
+                                    </div>
+                                    <div class="row">
+                                        <input type="email" name="email" value={this.state.personal_information.email} onChange={this.personalInfoChangeHandler} class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1"/>
+                                    </div>
+                                    <div class="row">
+                                        <input type="text" name="phone" value={this.state.personal_information.phone} onChange={this.personalInfoChangeHandler} class="form-control" placeholder="Phone Number(optional)" aria-label="phone" aria-describedby="basic-addon1"/>
+                                    </div>
+                                    <div class="row">
+                                        <input type="text" name="street" value={this.state.personal_information.street} onChange={this.personalInfoChangeHandler} class="form-control" placeholder="Street Address" aria-label="street" aria-describedby="basic-addon1"/>
+                                    </div>
+                                    <div class="row">
+                                        <input type="text" name="city" value={this.state.personal_information.city} onChange={this.personalInfoChangeHandler} class="col-md form-control" placeholder="City" aria-label="city" aria-describedby="basic-addon1"/>
+                                        <input type="text" name="state" value={this.state.personal_information.state} onChange={this.personalInfoChangeHandler} class="col-md form-control" placeholder="State" aria-label="state" aria-describedby="basic-addon1"/>
+                                    </div>
+                                    <div class="row">
+                                        <input type="number" name="postal" value={this.state.personal_information.postal} onChange={this.personalInfoChangeHandler} class="col-md form-control" placeholder="Postal Code" min="00501" aria-label="state" aria-describedby="basic-addon1"/>
+                                        <input type="text" name="country" value={this.state.personal_information.country} onChange={this.personalInfoChangeHandler} class="col-md form-control" placeholder="Country" aria-label="country" aria-describedby="basic-addon1"/>
+                                    </div>
                                </form>
                            </div>
                            <div className="ModalNav">
