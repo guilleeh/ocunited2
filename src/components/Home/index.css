@@ -311,6 +311,7 @@ footer{
 .contacts-box .social{
     display: inline-block;
     width: 100%;
+    padding: 96px 0px 0px 32px;
     margin-bottom: 30px;
     font-weight: 500;
     color: #189297;
@@ -319,6 +320,7 @@ footer{
 .contacts-box .newsletter{
     display: inline-block;
     width: 100%;
+    padding: 96px 0px 0px 32px;
     margin-bottom: 30px;
     font-weight: 500;
     color: #189297;

@@ -41,8 +41,7 @@ class UpcomingEvents extends React.Component{
       document.body.style.setProperty("overflow-y","auto");
   }
 
-
-render(){
+ render(){
     return(
         <div className = "events-container">
           <Heading />
@@ -55,12 +54,11 @@ render(){
                        autoPlay loop muted playing
                        />
                    </div>
-                   <div className="content-wrap">
-                       <div className="video-header">
+                   <div className="video-header">
                            <h1>RESTORING FAMILIES &amp; COMMUNITIES TOGETHER</h1>
+                           <br></br>
                            <h4>THE LOVE OF OUR NEIGHBOR IN ALL ITS FULLNESS SIMPLY MEANS BEING ABLE TO SAY, "WHAT ARE YOU GOING THROUGH?" </h4>
-                       </div>
-                   </div>
+                    </div>
               </header>
 
            {/* Main Area */}
@@ -78,12 +76,12 @@ render(){
                        </div>
                    </div>
                </section>
-              
+
                {/* Section B */}
                <section id="section-b" class="grid">
                    <div class="content-wrap">
-                       <h1>EVENTS SUMMARY</h1>
-                       <hr className="main-divider"></hr>
+                       <h1 id="events-summary">EVENTS SUMMARY</h1>
+                       <div id="main-divider"></div>
                        <div id="yellow-circle" className="circles"></div>
                        <h3 className="content-title">NO JOB TOO BIG OR SMALL</h3>
                        <h2 className="content-title2">COMMUNITY SERVICE<br/>HELPS ALL</h2>
@@ -91,28 +89,29 @@ render(){
                        <div className="woman-volunteer">
                            <Image
                                src={Woman}
-                               height={1300}
-                               width={500}
+                               height={600}
+                               width={600}
                                alt="woman-volunteer"
                            />
-                        <div className="buttons">
-                                <li id="register-section-b" onClick={this.show_modal}><div className="buttontext">Register</div></li>
-                            </div>
+                           <div className="buttons">
+                              <li id="register-section-b" onClick={this.show_modal}><div className="buttontext">Register</div></li>
+                           </div>
                        </div>
+               
                        <ReactModal
-                            isOpen={this.state.donation_visibility}
-                            onRequestClose={this.hide_modal}
-                            shouldCloseOnOverlayClick={true}
-                            shouldCloseOnEsc={true}
-                            className="DonationModal"
-                            overlayClassName="Overlay">
-                            <div id = "makeadonation">Event Registration</div>
-                            <Registration hide_modal={this.hide_modal} />
-                        </ReactModal>
+                               isOpen={this.state.donation_visibility}
+                               onRequestClose={this.hide_modal}
+                               shouldCloseOnOverlayClick={true}
+                               shouldCloseOnEsc={true}
+                               className="DonationModal"
+                               overlayClassName="Overlay">
+                               <div id = "makeadonation">Event Registration</div>
+                               <Registration hide_modal={this.hide_modal} />
+                           </ReactModal>
                        <div className="group">
                            <Image
                                src={Group}
-                               height={1000}
+                               height={350}
                                width={550}
                                alt="group"
                            />
@@ -122,7 +121,7 @@ render(){
                            <div id="divider1" className="dividers"></div>
                            <h4 id="section-b-h4" className="h4">BE A PART OF SERVE DAY THIS YEAR! <br/>DETAILS AND SCHEDULING</h4>
                            <ul id="section-b-list" className="li">
-                               <li>SCHEDULE</li>
+                               <li id="child1">SCHEDULE</li>
                                <br></br>
                                <li>07:00 AM – Team Meeting at OC United Booth</li>
                                <li>08:00 AM – DTF Plaza Rally</li>
@@ -147,7 +146,7 @@ render(){
                        <div className="stage">
                            <Image
                                src={Stage}
-                               height={1000}
+                               height={350}
                                width={540}
                                alt="stage"
                            />
@@ -155,13 +154,13 @@ render(){
                        <div className="singer">
                            <Image
                                src={Singer}
-                               height={1500}
+                               height={500}
                                width={590}
                                alt="singer"
                            />
-                            <div className="buttons">
-                                <li id="register-section-c" onClick={this.show_modal}><div className="buttontext">Register</div></li>
-                            </div>
+                           <div className="buttons">
+                              <li id="register-section-c" onClick={this.show_modal}><div className="buttontext">Register</div></li>
+                          </div>
                        </div>
                        <div className="schedule-container2">
                            <h3 className="content-title3">FULLERTON'S GOT TALENT</h3>
@@ -176,7 +175,7 @@ render(){
                            other Youth In Need in our community</p>
                            </div>
                            <ul id="section-c-list" className="li">
-                               <li id="child1">SCHEDULE OF EVENTS</li>
+                               <li id="child2">SCHEDULE OF EVENTS</li>
                                <li>5:00 PM - 6:30 PM DINNER RECEPTION @ A&amp;V’S</li>
                                <li>7:00 PM - 8:30 PM FOX THEATER SHOW</li>
                                <li>8:30 PM - AFTER PARTY &amp; ARTIST RECEPTION</li>
@@ -195,18 +194,18 @@ render(){
                        <div className="golfer">
                            <Image
                                src={Golfer}
-                               height={1500}
+                               height={600}
                                width={600}
                                alt="golfer"
                            />
-                            <div className="buttons">
-                                <li id="register-section-d" onClick={this.show_modal}><div className="buttontext">Register</div></li>
-                            </div>
+                           <div className="buttons">
+                              <li id="register-section-d" onClick={this.show_modal}><div className="buttontext">Register</div></li>
+                          </div>
                        </div>
                        <div className="golf-course">
                        <Image
                            src={GolfCourse}
-                           height={1500}
+                           height={300}
                            width={590}
                            alt="golfcourse"
                        />
@@ -229,7 +228,8 @@ render(){
                                    <li>Helicopter Ball Drop
                                    $10 Per Ball Or $25 For 3 Balls</li>
                                </ul>
-                               <div id="footer-circle" className="circles">
+                       </div>
+                       <div id="footer-circle" className="circles">
                            <div className="quote-mark">
                                <Image
                                    src={Quote}
@@ -240,26 +240,39 @@ render(){
                            </div>
                            <p className="footer-paragraph">“Love Fullerton was an awesome experience for our families. All the volunteers made our ladies feel wonderful, not only did they do haircuts, but they also did manicures and pedicures. Not only did the ladies enjoy themselves but the children as well, received haircuts, manicures, and pedicures... every one of them were so grateful and ecstatic about their new looks. It truly had the “spa day” feel... All that participated were immensely pleased and loved their new looks and their colored toes and fingernails! We take our hats off to Grace and all the volunteers that made this day a special one!” </p>
                        </div>
-                       </div>
                    </div>
                </section>
-         
+
                {/* Section E */}
                <section id="section-e" class="grid">
                    <div class="content-wrap">
                        <div class="contact">
                            <h5>CONTACT</h5>
-                           <p>418 W COMMONWEALTH AVE.,
-                               FULLERTON, CA 92832
+                           <hr id="contact-divider"></hr>
+                           <p>418 W COMMONWEALTH AVE.,<br/>
+                               FULLERTON, CA 92832 <br/>
                                (714) 515 - 3085</p>
                        </div>
                        <div class="connect-with-us">
+                       <div id="middle-connect">
                            <h4>CONNECT WITH US</h4>
-                           <div className="employees"> <img src={Employees} alt="employees"/></div>
-                           <div className="social"> <img src={Social} alt="social"/></div>
+                           <div id="connect-w-us"></div>
                        </div>
-                       <h4>JOIN OUR MAILING LIST</h4>
-                       <form class="form-inline" action="/action_page.php">
+                           <div className="employees">
+                           <Image
+                               src={Employees}
+                               height={200}
+                               width={300}
+                               alt="employees"
+                           />
+                           </div>
+                           <div className="social-handle"> <img src={Social} alt="social"/></div>
+                       </div>
+                       <div class="mail-list">
+                           <h5>JOIN OUR MAILING LIST</h5>
+                           <hr id="mailing"></hr>
+                       </div>
+                       <form class="form-inline-events" action="/action_page.php">
                            <label for="email">Email:</label>
                            <input type="email" id="email" placeholder="Your email address" name="email"/>
                            <button type="submit">SIGN UP</button>
@@ -273,9 +286,7 @@ render(){
                <div className="footer-container">
                    <div class="left">
                        <ul>
-                           <li>TERMS OF USE</li>
-                           <li>PRIVACY POLICY</li>
-                           <li>JOBS</li>
+                           <li>TERMS OF USE | PRIVACY POLICY | JOBS</li>
                        </ul>
                    </div>
                    <div class="middle">
@@ -310,6 +321,9 @@ export default UpcomingEvents;
    </ReactModal>
    <div className="event-one-btn">
        <li onClick={this.show_modal}><div className="event-one-text">Register</div></li>
-   </div> 
+   </div>
                    */}
+
+
+
 
