@@ -116,7 +116,7 @@
     font-weight: 500;
     font-size: 24px;
     font-family: MinionPro-Regular;
-    right: 1em;
+    right: 0.2em;
     bottom: 23em;
     z-index: 1;
    }
@@ -140,7 +140,7 @@
 
  .sponsor-header {
   position: relative;
-  top: 20%;
+  top: 18%;
   color: #0E1F2C;
   font-size: 28px;
   font-family: Poppins-Regular;
@@ -174,9 +174,13 @@
   top: 30%;
 }
 
+#summary-wrap {
+  position: relative;
+  bottom: 10%;
+}
  #section-b #events-summary {
    position: relative;
-   bottom: 2%;
+   padding-bottom: 1em;
    text-align: center;
    font-family: Din-Black;
    font-weight: 400;
@@ -532,11 +536,13 @@
   #section-d .content-title {
     position: relative;
     top: 8%;
-    left: 72%;
+    left: 69.5%;
   }
   #section-d h2 {
     position: relative;
     top:8%;
+    left: 4%;
+    font-size: 41px;
   }
 
   .golfer{
@@ -562,7 +568,7 @@
   .golf-course {
     position: relative;
     bottom: 60%;
-    left: 22.8%;
+    left: 23.5%;
   }
 
   .schedule-container3{
@@ -579,6 +585,10 @@
   #section-d-list{
     position: relative;
     right: 5.3%;
+    font-size: 16px;
+    font-family: MinionPro-Regular;
+    line-height: 1.5;
+    color: #0e1f2c;
   }
 
   #section-d #red-circle {
@@ -590,16 +600,51 @@
   .black-line{
     position: relative;
     top: 8%;
-    left: 13%;
+    left: 15%;
     width: 77%;
     height: 2px;
     background-color: #000;
     z-index: 1;
    }
 
+   #divider3 {
+    position: relative;
+    width: 100%;
+    margin: -4px 0 15px;
+    right: 17.5%;
+    display: block;
+    text-align: center;
+  }
+  
+  #divider3 #spand {
+    display: block;
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background: #0e1f2c;
+    border-radius: 15px;
+    margin: 0 auto;
+  }
+  
+  #spand::before, #spand::after {
+    content: "";
+    vertical-align: top;
+    border-bottom: 1px solid #0e1f2c;
+    position: absolute;
+    top: 2pt;
+    right: 9pt;
+    height: 2px;
+    width: 235px;
+  }
+  
+  #spand::after {
+    left: 9pt;
+    right: inherit;
+  }
+
    #footer-circle{
     position: relative;
-    bottom: 45%;
+    bottom: 48%;
     background: linear-gradient(#0E1F2C, #c24327);
     opacity: .73;
     z-index: -1;
@@ -618,7 +663,13 @@
     color: #fff;
     width: 95%;
   }
-    
+  
+  #child3 {
+  font-style: DIN-Black;
+  font-size: 17px;
+  font-weight: 600;
+  padding-bottom: 1em;
+  }
   /* Section E */
   #section-e{
     position: relative;

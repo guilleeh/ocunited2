@@ -80,8 +80,11 @@ class UpcomingEvents extends React.Component{
                {/* Section B */}
                <section id="section-b" class="grid">
                    <div class="content-wrap">
-                       <h1 id="events-summary">EVENTS SUMMARY</h1>
-                       <div className="divider div-transparent div-dot"></div>
+                   <div id="summary-wrap">
+                   <h1 id="events-summary">EVENTS SUMMARY</h1>
+                   <div className="divider div-transparent div-dot"></div>
+                   </div>
+  
                        <div id="yellow-circle" className="circles"></div>
                        <h2 className="content-title">NO JOB TOO BIG OR SMALL</h2>
                        <h4 className="content-title2">COMMUNITY SERVICE<br/>HELPS ALL</h4>
@@ -207,20 +210,20 @@ class UpcomingEvents extends React.Component{
                        <Image
                            src={GolfCourse}
                            height={300}
-                           width={590}
+                           width={598}
                            alt="golfcourse"
                        />
                        </div>
                        <div className="schedule-container3">
                            <h3 className="content-title3">CHARITY GOLF TOURNAMENT</h3>
-                           <div id="divider3" className="dividers"></div>
+                           <div id="divider3" className="dividers"><span id="spand"></span></div>
                                <h4 id="section-d-h4" className="h4">OC UNITED'S SECOND ANNUAL CHARITY <br/>
                                    GOLF TOURNAMENT</h4>
                                <p className="p3">We are excited to invite you to OC United’s Second Annual <br/>
                                    Charity Golf Tournament on Wednesday, June 26th, 2019 <br/>
                                    at Coyote Hills Golf Course!</p>
                                <ul id="section-d-list" className="li">
-                                   <li id="child2">CONTESTS</li>
+                                   <li id="child3">CONTESTS</li>
                                    <li>Longest Drive (Men’s and Women’s)</li>
                                    <li>Hole In One</li>
                                    <li>Closest To The Pin (Men’s and Women’s)</li>
