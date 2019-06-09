@@ -28,10 +28,11 @@
    /* Global Classes */
    .h4 {
     position: relative;
-    font-family: DIN-Black;
+    font-family: D-DIN;
+    font-weight: 700;
     font-size: 18px;
-    font-weight: 600;
-    line-height: 2.1rem;
+    line-height: 1.4;
+    display: block;
    }
 
    .circles {
@@ -42,23 +43,26 @@
    }
 
    .content-title {
-    font-size: 20px;
     font-family: D-DINCondensed;
-    font-weight: 600;
+    font-weight: 540;
+    line-height: 1.1;
+    font-size: 26px;
    }
   
    .content-title2 {
-    font-size: 33px;
-    font-family: Din-Black;
     letter-spacing: 6%;
-    font-weight: 900;
     text-align: end;
+    font-size: 42px;
+    font-family: DIN-Black;
+    font-weight: 700;
+    line-height: .88;
    }
   
    .content-title3 {
     font-family: DIN-Black;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 600;
+    line-height: 1;
    }
   
    .li {
@@ -92,13 +96,14 @@
 
   .video-header h1{
     position: relative;
-    font-size: 50px;
+    font-size: 94px;
     text-align: center;
     font-weight: bold;
     color: #0e1f2c;
+    line-height: 0.9;
     margin: 0;
     white-space: nowrap;
-    bottom: 5em;
+    bottom: 6em;
     z-index: 1;
   }
  
@@ -107,10 +112,12 @@
     font-style: italic;
     color: #f36c21;
     text-align: center;
-    font-weight: bold;
-    font-size: 14px;
+    line-height: 1;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: MinionPro-Regular;
     right: 1em;
-    bottom: 18em;
+    bottom: 23em;
     z-index: 1;
    }
  
@@ -172,9 +179,9 @@
    bottom: 2%;
    text-align: center;
    font-family: Din-Black;
-   font-weight: bold;
-   font-size: 30px;
-
+   font-weight: 400;
+   font-size: 18px;
+   letter-spacing: 0.3em;
  }
 
  .divider
@@ -211,29 +218,6 @@
 					0 0 0 4px white;
 }
 
-
- /* #main-divider {
-  position: relative;
-  bottom: 4.5%;
-  height: 30px;
-  border-style: solid;
-  border-color: #0E1F2C;
-  border-width: 1px 0 0 0;
-  border-radius: 20px;
- }
-
- #main-divider:before {
-  display: block;
-  content: "";
-  height: 30px;
-  margin-top: -31px;
-  border-style: solid;
-  border-color: black;
-  border-width: 0 0 1px 0;
-  border-radius: 20px;
- }  */
-
-
  #section-b #yellow-circle {
    position: relative;
    top: 10%;
@@ -243,9 +227,13 @@
 
  #section-b .content-title {
   position: relative;
-  left: 67%;
+  left: 67.7%;
   bottom: 49.5%;
   color: #0E1F2C;
+  font-family: D-DINCondensed;
+  font-weight: 540;
+  line-height: 1.1;
+  font-size: 26px;
  }
 
  #section-b .content-title2 {
@@ -296,35 +284,76 @@
       left: 56%;
      }
 
-     #section-b #divider1 {
-      height: 30px; 
-      border-style: solid; 
-      border-color: #8c8b8b; 
-      border-width: 1px 0 0 0; 
-      border-radius: 20px; 
-      width: 55%;
+     .schedule-container1 .content-title3 {
+       position: relative;
+       font-size: 32px;
+       left: 19%;
      }
+     #divider1
+     {
+       position: relative;
+       margin-top: 15px;
+       height: 10px;
+       right: 18%;
+     }
+     
+     #divider1:before {
+       content: "";
+       position: absolute;
+       top: 0;
+       left: 5%;
+       right: 5%;
+       width: 80%;
+       height: 4px;
+       background-image: linear-gradient(to right,transparent, #ffce07, transparent);
+     }
+     
+     #divider1:after
+      {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: -7px;
+        left: calc(60% - 1px);
+        width: 13px;
+        height: 13px;
+        transform: rotate(225deg);
+        background-color: white;
+        border-bottom: 4px solid #ffce07;
+        border-right: 4px solid #ffce07;
+      }
 
      #section-b #section-b-h4 {
        position: relative;
        color: #ffce07;
-       top: 2%
+       top: 2%;
+       right: 42%;
+       font-family: D-DIN;
+       font-weight: 700;
+       font-size: 18px;
+       line-height: 1.4;
+       display: block;
+       text-align: end;
      }
 
      #section-b ul {
       list-style: none;
       margin: 0;
       padding: 0;
+      right: 42%;
+      text-align: end;
      }
 
      #section-b #child1 {
       font-style: DIN-Black;
       font-size: 17px;
-      font-weight: bold;
+      font-weight: 600;
      }
     
      #section-b li {
-     
+      font-size: 16px;
+      font-family: MinionPro-Regular;
+      line-height: 1.5;
       color: #0e1f2c;
      }
 
@@ -357,7 +386,7 @@
  #section-c #child2 {
   font-style: DIN-Black;
   font-size: 17px;
-  font-weight: bold;
+  font-weight: 600;
   padding-bottom: 1em;
  }
 
@@ -367,25 +396,19 @@
  }
  #section-c .content-title {
   position: relative;
-  
-  left: 3.5%;
+  left: 4.5%;
   color: #F36C21;
-  letter-spacing: 0.01rem;
   z-index: 1;
  }
 
  #section-c .content-title2 {
   position: relative;
-  
-  font-family: DIN-Black;
   color: #F36C21;
-  font-size: 36px;
-  font-weight: 900;
   text-align: start;
-  word-spacing: 0.6rem;
   z-index: 1;
   left: 0.7em;
  }
+
 
  .blue-line {
   position: relative;
@@ -396,6 +419,39 @@
   background-color: #0e1f2c;
  }
 
+
+ #divider2 {
+    position: relative;
+    margin-top: 15px;
+    height: 10px;
+    right: 13%;
+  }
+  
+  #divider2:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 5%;
+    right: 5%;
+    width: 80%;
+    height: 4px;
+    background-image: linear-gradient(to right,transparent, #0e1f2c, transparent);
+  }
+  
+  #divider2:after
+  {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: -7px;
+    left: calc(19% - 1px);
+    width: 16px;
+    height: 16px;
+    transform: rotate(225deg);
+    background-color: #0e1f2c opacity 0.73;
+    border-bottom: 3px solid #0e1f2c;
+    border-right: 3px solid #0e1f2c;
+  }
  #section-c ul {
   position: relative;
   right: 4.7%;
@@ -411,7 +467,7 @@
  .buttons #register-section-c {
   position: relative;
   top: 28rem;
-  right: 24rem;
+  right: 23rem;
   background: #FF4901 ;
   border: 2px solid #FF4901;
  }
@@ -424,16 +480,26 @@
  .stage {
   position: relative;
   bottom: 23%;
-  left: 8%;
+  left: 4%;
  }
 
  .schedule-container2 {
   position: relative;
   bottom: 57%;
-  left: 8%;
+  left: 2.5%;
   font-weight: bold;
  }
 
+ #sectionb-p {
+   font-size: 16px;
+   font-family: MinionPro-Regular;
+ }
+ #section-c-list {
+  font-size: 16px;
+  font-family: MinionPro-Regular;
+  line-height: 1.5;
+  color: #0e1f2c;
+ }
   /* Section D */
 
   #section-d {

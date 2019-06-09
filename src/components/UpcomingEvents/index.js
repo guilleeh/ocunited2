@@ -49,13 +49,13 @@ class UpcomingEvents extends React.Component{
               <header id="showcase" className="grid">
                    <div className='player-wrapper'>
                        <ReactPlayer className='react-player'
-                       url='https://vimeo.com/262118519'
+                       url='https://vimeo.com/260972046'
                        width='100%' height='100%'
                        autoPlay loop muted playing
                        />
                    </div>
                    <div className="video-header">
-                           <h1>RESTORING FAMILIES &amp; COMMUNITIES TOGETHER</h1>
+                           <h1>RESTORING FAMILIES <br/>&amp; COMMUNITIES TOGETHER</h1>
                            <br></br>
                            <h4>THE LOVE OF OUR NEIGHBOR IN ALL ITS FULLNESS SIMPLY MEANS BEING ABLE TO SAY, "WHAT ARE YOU GOING THROUGH?" </h4>
                     </div>
@@ -83,8 +83,8 @@ class UpcomingEvents extends React.Component{
                        <h1 id="events-summary">EVENTS SUMMARY</h1>
                        <div className="divider div-transparent div-dot"></div>
                        <div id="yellow-circle" className="circles"></div>
-                       <h3 className="content-title">NO JOB TOO BIG OR SMALL</h3>
-                       <h2 className="content-title2">COMMUNITY SERVICE<br/>HELPS ALL</h2>
+                       <h2 className="content-title">NO JOB TOO BIG OR SMALL</h2>
+                       <h4 className="content-title2">COMMUNITY SERVICE<br/>HELPS ALL</h4>
                        <hr className="yellow-line"></hr>
                        <div className="woman-volunteer">
                            <Image
@@ -119,7 +119,7 @@ class UpcomingEvents extends React.Component{
                        <div className="schedule-container1">
                            <h3 className="content-title3">LOVE YOUR CITY</h3>
                            <div id="divider1" className="dividers"></div>
-                           <h4 id="section-b-h4" className="h4">BE A PART OF SERVE DAY THIS YEAR! <br/>DETAILS AND SCHEDULING</h4>
+                           <h4 id="section-b-h4" className="h4">BE A PART OF SERVE DAY THIS YEAR!<br/>DETAILS AND SCHEDULING</h4>
                            <ul id="section-b-list" className="li">
                                <li id="child1">SCHEDULE</li>
                                <br></br>
@@ -167,7 +167,7 @@ class UpcomingEvents extends React.Component{
                            <div id="divider2" className="dividers"></div>
                            <div>
                            <h4 id="section-c-h4" className="h4">THE FULLERTON ROTARY PRESENTS THE FIRST <br/>ANNUAL FULLERTON'S GOT TALENT SHOW</h4>
-                           <p>Come enjoy a fun night of local talent. See eight of our local <br/>
+                           <p id="sectionb-p">Come enjoy a fun night of local talent. See eight of our local <br/>
                            Non-profit organizations compete with local talent for the <br/>
                            grand prize. There will be snacks, soft drinks, wine and beer <br/>
                            available for purchase. Funds raised will go to the Fullerton <br/>
