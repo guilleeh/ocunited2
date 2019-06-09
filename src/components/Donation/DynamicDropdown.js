@@ -29,7 +29,7 @@ class DynamicDropdown extends React.Component{
             },
             {
               id: 4,
-              title: 'Donate to Foster/Adopt',
+              title: 'Donate to Foster or Adopt',
               selected: false,
 
             },
