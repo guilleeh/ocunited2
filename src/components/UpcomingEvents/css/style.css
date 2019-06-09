@@ -272,90 +272,94 @@
    border-color: #F99200;
   }
   
-   .group {
+  .group {
+  position: relative;
+  bottom: 110%;
+  left: 40%;
+  }
+
+  .schedule-container1 {
     position: relative;
     bottom: 110%;
-    left: 40%;
+    left: 56%;
     }
 
-    .schedule-container1 {
-      position: relative;
-      bottom: 110%;
-      left: 56%;
-     }
-
-     .schedule-container1 .content-title3 {
-       position: relative;
-       font-size: 32px;
-       left: 19%;
-     }
-     #divider1
-     {
-       position: relative;
-       margin-top: 15px;
-       height: 10px;
-       right: 18%;
-     }
+  .schedule-container1 .content-title3 {
+    position: relative;
+    font-size: 32px;
+    left: 19%;
+    }
      
-     #divider1:before {
-       content: "";
-       position: absolute;
-       top: 0;
-       left: 5%;
-       right: 5%;
-       width: 80%;
-       height: 4px;
-       background-image: linear-gradient(to right,transparent, #ffce07, transparent);
-     }
      
-     #divider1:after
-      {
-        content: "";
-        position: absolute;
-        z-index: 1;
-        top: -7px;
-        left: calc(60% - 1px);
-        width: 13px;
-        height: 13px;
-        transform: rotate(225deg);
-        background-color: white;
-        border-bottom: 4px solid #ffce07;
-        border-right: 4px solid #ffce07;
-      }
+  #section-b #section-b-h4 {
+    position: relative;
+    color: #ffce07;
+    top: 2%;
+    right: 42%;
+    font-family: D-DIN;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.4;
+    display: block;
+    text-align: end;
+  }
 
-     #section-b #section-b-h4 {
-       position: relative;
-       color: #ffce07;
-       top: 2%;
-       right: 42%;
-       font-family: D-DIN;
-       font-weight: 700;
-       font-size: 18px;
-       line-height: 1.4;
-       display: block;
-       text-align: end;
-     }
-
-     #section-b ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      right: 42%;
-      text-align: end;
-     }
-
-     #section-b #child1 {
-      font-style: DIN-Black;
-      font-size: 17px;
-      font-weight: 600;
-     }
+  #divider1 {
+    position: relative;
+    width: 100%;
+    margin: -4px 0 15px;
     
-     #section-b li {
-      font-size: 16px;
-      font-family: MinionPro-Regular;
-      line-height: 1.5;
-      color: #0e1f2c;
-     }
+    right: 12.5%;
+    display: block;
+    text-align: center;
+  }
+  
+  #divider1 span {
+    display: block;
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background: #0d0d0d;
+    border-radius: 15px;
+    margin: 0 auto;
+  }
+  
+  #spanb::before, #spanb::after {
+    content: "";
+    vertical-align: top;
+    border-bottom: 1px solid #0d0d0d;
+    position: absolute;
+    top: 2pt;
+    right: 9pt;
+    height: 2px;
+    width: 135px;
+  }
+  
+  #spanb::after {
+    left: 9pt;
+    right: inherit;
+  }
+
+  #section-b ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  right: 42%;
+  text-align: end;
+  }
+
+  #section-b #child1 {
+  font-style: DIN-Black;
+  font-size: 17px;
+  font-weight: 600;
+  }
+
+  #section-b li {
+  font-size: 16px;
+  font-family: MinionPro-Regular;
+  line-height: 1.5;
+  color: #0e1f2c;
+  }
 
     
  /* Section C */
@@ -419,39 +423,7 @@
   background-color: #0e1f2c;
  }
 
-
- #divider2 {
-    position: relative;
-    margin-top: 15px;
-    height: 10px;
-    right: 13%;
-  }
-  
-  #divider2:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 5%;
-    right: 5%;
-    width: 80%;
-    height: 4px;
-    background-image: linear-gradient(to right,transparent, #0e1f2c, transparent);
-  }
-  
-  #divider2:after
-  {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    top: -7px;
-    left: calc(19% - 1px);
-    width: 16px;
-    height: 16px;
-    transform: rotate(225deg);
-    background-color: #0e1f2c opacity 0.73;
-    border-bottom: 3px solid #0e1f2c;
-    border-right: 3px solid #0e1f2c;
-  }
+ 
  #section-c ul {
   position: relative;
   right: 4.7%;
@@ -487,13 +459,55 @@
   position: relative;
   bottom: 57%;
   left: 2.5%;
-  font-weight: bold;
  }
 
- #sectionb-p {
-   font-size: 16px;
-   font-family: MinionPro-Regular;
+ #divider2 {
+  position: relative;
+  width: 100%;
+  margin: -4px 0 15px;
+  
+  right: 21%;
+  display: block;
+  text-align: center;
+}
+
+#divider2 span {
+  display: block;
+  position: relative;
+  width: 10px;
+  height: 10px;
+  background: #0e1f2c;
+  border-radius: 15px;
+  margin: 0 auto;
+}
+
+#section-c-h4 {
+  color: #F36C21;
+}
+#spanc::before, #spanc::after {
+  content: "";
+  vertical-align: top;
+  border-bottom: 1px solid #0e1f2c;
+  position: absolute;
+  top: 2pt;
+  right: 9pt;
+  height: 2px;
+  width: 210px;
+}
+
+#spanc::after {
+  left: 9pt;
+  right: inherit;
+}
+
+.p3 {
+  font-size: 16px;
+  font-weight: light;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
  }
+
  #section-c-list {
   font-size: 16px;
   font-family: MinionPro-Regular;

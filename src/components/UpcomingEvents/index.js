@@ -118,7 +118,8 @@ class UpcomingEvents extends React.Component{
                        </div>
                        <div className="schedule-container1">
                            <h3 className="content-title3">LOVE YOUR CITY</h3>
-                           <div id="divider1" className="dividers"></div>
+                           <div id="divider1" className="dividers"><span id="spanb"></span></div>  
+                           
                            <h4 id="section-b-h4" className="h4">BE A PART OF SERVE DAY THIS YEAR!<br/>DETAILS AND SCHEDULING</h4>
                            <ul id="section-b-list" className="li">
                                <li id="child1">SCHEDULE</li>
@@ -164,10 +165,10 @@ class UpcomingEvents extends React.Component{
                        </div>
                        <div className="schedule-container2">
                            <h3 className="content-title3">FULLERTON'S GOT TALENT</h3>
-                           <div id="divider2" className="dividers"></div>
+                           <div id="divider2" className="dividers"><span id="spanc"></span></div>
                            <div>
                            <h4 id="section-c-h4" className="h4">THE FULLERTON ROTARY PRESENTS THE FIRST <br/>ANNUAL FULLERTON'S GOT TALENT SHOW</h4>
-                           <p id="sectionb-p">Come enjoy a fun night of local talent. See eight of our local <br/>
+                           <p className="p3">Come enjoy a fun night of local talent. See eight of our local <br/>
                            Non-profit organizations compete with local talent for the <br/>
                            grand prize. There will be snacks, soft drinks, wine and beer <br/>
                            available for purchase. Funds raised will go to the Fullerton <br/>
@@ -215,7 +216,7 @@ class UpcomingEvents extends React.Component{
                            <div id="divider3" className="dividers"></div>
                                <h4 id="section-d-h4" className="h4">OC UNITED'S SECOND ANNUAL CHARITY <br/>
                                    GOLF TOURNAMENT</h4>
-                               <p>We are excited to invite you to OC United’s Second Annual <br/>
+                               <p className="p3">We are excited to invite you to OC United’s Second Annual <br/>
                                    Charity Golf Tournament on Wednesday, June 26th, 2019 <br/>
                                    at Coyote Hills Golf Course!</p>
                                <ul id="section-d-list" className="li">
