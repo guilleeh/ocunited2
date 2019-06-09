@@ -81,7 +81,7 @@ class UpcomingEvents extends React.Component{
                <section id="section-b" class="grid">
                    <div class="content-wrap">
                        <h1 id="events-summary">EVENTS SUMMARY</h1>
-                       <div id="main-divider"></div>
+                       <div className="divider div-transparent div-dot"></div>
                        <div id="yellow-circle" className="circles"></div>
                        <h3 className="content-title">NO JOB TOO BIG OR SMALL</h3>
                        <h2 className="content-title2">COMMUNITY SERVICE<br/>HELPS ALL</h2>
