@@ -44,7 +44,9 @@ class Registration extends React.Component{
                country: ''
            },
            usersOrgsAndAmounts: {
-               selectedOrganizations: []
+            selectedOrganizations: [],
+            amountToOrg: [],
+            amountTotal: 0,
            }
        }
    }
@@ -151,6 +153,38 @@ class Registration extends React.Component{
         });
     }
 
+    enableSubmit = () => {
+        this.setState({state: this.setState})
+        this.forceUpdate();
+    }
+
+    handleOptionalDonationChange = event => {
+        const value = event.target.value;
+        console.log(value);
+        this.setState({optionalDonationAmount: value});
+        this.setState({usersOrgsAndAmounts: {selectedOrganizations: ['Donate to General'],
+                        amountToOrg: [value],
+                        amountTotal: value}});
+        this.forceUpdate();
+    }
+
+    submit = () => {
+        let response = fetch("/register", {
+          method: "post",
+          headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
+          body: JSON.stringify({info: this.state.personal_information, adults: this.state.adultTickets, children: this.state.childTickets}),
+        });
+      
+        if (response.ok) {
+          console.log("Yay")
+        }
+
+    }
+
+    sendRegistration = () => {
+        this.next();
+        this.submit();
+    }
 
    renderField(){
        switch (this.state.currentStep){
@@ -237,7 +271,7 @@ class Registration extends React.Component{
                        <h3 className="donationDescription">**Optional Donation**</h3>
                        <div className="optionalDiv">
                            <div className="input-group-prepend"><span class="input-group-text" id="basic-addon1">$</span>
-                       <input type="number" min="1" max="50000" class="form-control" id="optionalD" placeholder="Amount" aria-label="Username" aria-describedby="basic-addon1" />
+                       <input type="number" value={this.state.optionalDonationAmount} onChange={this.handleOptionalDonationChange} min="1" max="50000" class="form-control" id="optionalD" placeholder="Amount" aria-label="Username" aria-describedby="basic-addon1" />
                         </div>
                         </div>
 
@@ -245,7 +279,9 @@ class Registration extends React.Component{
                        <StripeProvider apiKey="pk_test_mVIHxjDBueW9FOhHUrp3uD7d0042aj7bq6">
                        <div className="oc-united-stripe-element">
                         <Elements>
-                       <CheckoutForm />
+                       <CheckoutForm next={this.next} personal_information={this.state.personal_information} 
+                                        anon={false} amount={this.state.usersOrgsAndAmounts} 
+                                        frequency={this.state.donationFrequency}/>
                        </Elements>
                        </div>
                        </StripeProvider>
@@ -289,7 +325,7 @@ class Registration extends React.Component{
                        <div className="ModalNav">
                            <button onClick={this.closeModal}>Cancel</button>
                            <button onClick={this.previous}>Previous</button>
-                           <button onClick={this.next}>Submit</button>
+                           <button onClick={this.sendRegistration}>Submit</button>
                        </div>
                    </div>
                );
