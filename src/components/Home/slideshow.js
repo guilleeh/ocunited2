@@ -3,6 +3,7 @@ import Carousel from 'react-bootstrap/Carousel'
 import './slideshow.css';
 
 class Slideshow extends React.Component{
+    // Automatic slideshow behind title at the top
     state={
         slideImages : [
             require('./images/clean.jpg'),

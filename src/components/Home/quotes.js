@@ -3,7 +3,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import './quotes.css';
 
 class Quotes extends React.Component{
-
+    // Blue slideshow/carousel element
     render(){
         return (
             <div id="white">

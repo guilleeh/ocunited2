@@ -2,6 +2,7 @@ import React from 'react';
 import './dynamicdropdown.css';
 
 class DynamicDropdown extends React.Component{
+  // dynamic dropdown for the select donation amount tab
     state={
         organizations: [
             {
@@ -86,12 +87,14 @@ class DynamicDropdown extends React.Component{
     }
 
     addSelection(){
+      // called when "add field" is pressed
       let temp=this.props.selections;
       temp.push([0,'']);
       this.props.handleSelectionChange(temp);
     }
 
     renderSelect(index){
+        // renders every <select> dropdown
         let output=[];
         for (let i=0;i<this.state.organizations.length;i++){
           if(this.props.selections[index][0]===i){
@@ -111,6 +114,7 @@ class DynamicDropdown extends React.Component{
     }
 
     changeDropdown(e,index){
+      // called when a dropdown is changed to store the new value
       let temp=this.props.selections;
       for (let i=0;i<this.state.organizations.length;i++){
         if (this.state.organizations[i].title===e.target.value){
@@ -122,6 +126,7 @@ class DynamicDropdown extends React.Component{
     }
 
     renderButton(){
+      // renders the add field button. If there are more than 6 fields, it is hidden
         if(this.props.selections.length>=6) return;
         return(
             <button class="btn btn-outline-secondary" id="add-field" onClick={(e)=>this.addSelection(e)}>Add Field</button>
@@ -129,12 +134,14 @@ class DynamicDropdown extends React.Component{
     }
 
     handleRemove(index){
+      // called when user wants to remove a field
       let temp=this.props.selections;
       temp.splice(index,1);
       this.props.handleSelectionChange(temp);
     }
 
     handlePercentChange(e,index){
+      //called when the amount is changed in the donation area
         let temp=this.props.selections;
         temp[index][1]=e.target.value;
         this.props.handleSelectionChange(temp);

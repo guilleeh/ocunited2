@@ -7,22 +7,26 @@ import { Link } from 'react-router-dom';
 
 
 class Heading extends React.Component{
+    // blue bar at the top
     state={
         donation_visibility:false,
         event_dropdown_show: false,
     };
 
     show_modal = () =>{
+        // shows donation modal
         this.setState({donation_visibility:true});
         document.body.style.setProperty("overflow-y","hidden");
     }
 
     hide_modal = () =>{
+        // hides donation modal
         this.setState({donation_visibility:false});
         document.body.style.setProperty("overflow-y","auto");
     }
 
     componentDidMount() {
+        // for transparency of the header when scrolling 
         document.addEventListener('scroll', () => {
           const isTop = window.scrollY < 100;
           if (isTop && document.documentElement.style.getPropertyValue("--header-color")!=="none"){

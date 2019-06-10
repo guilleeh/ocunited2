@@ -4,6 +4,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import './facts.css';
 
 class Facts extends React.Component{
+    // orange facts slideshow
     state={
         children:require('./images/kid.jpg'),
         swing:require('./images/swing.jpg'),

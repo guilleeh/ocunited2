@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {CardElement, injectStripe} from 'react-stripe-elements';
 
 class CheckoutForm extends Component {
+  // Stripe checkout form
   constructor(props) {
     super(props);
     this.state = {complete: false, 

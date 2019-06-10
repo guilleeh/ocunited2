@@ -16,6 +16,7 @@ import PlayButton from './images/play.png';
 
 
 class Home extends React.Component{
+    // Home page
     state={
         donation_visibility:false,
         event_dropdown_show: false,
@@ -24,34 +25,41 @@ class Home extends React.Component{
     };
 
     show_modal = () =>{
+        // Opens the donation modal
         this.setState({donation_visibility:true});
         document.body.style.setProperty("overflow-y","hidden");
     }
 
     hide_modal = () =>{
+        // Closes the donatio modal
         this.setState({donation_visibility:false});
         document.body.style.setProperty("overflow-y","auto");
     }
 
-    volunteer_video_open = () => {
-        this.setState({volunteer_video: true});
-        document.body.style.setProperty("overflow-y","hidden");
-    }
-
-    volunteer_video_close = () =>{
-        this.setState({volunteer_video: false});
-        document.body.style.setProperty("overflow-y","auto");
-    }
-
     video_open = () => {
+        // opens the first video
         this.setState({video: true});
         document.body.style.setProperty("overflow-y","hidden");
     }
 
     video_close = () => {
+        // closes the first video
         this.setState({video: false});
         document.body.style.setProperty("overflow-y","auto");
     }
+
+    volunteer_video_open = () => {
+        // opens the second video 
+        this.setState({volunteer_video: true});
+        document.body.style.setProperty("overflow-y","hidden");
+    }
+
+    volunteer_video_close = () =>{
+        // closes the second video
+        this.setState({volunteer_video: false});
+        document.body.style.setProperty("overflow-y","auto");
+    }
+
 
 
     render(){
