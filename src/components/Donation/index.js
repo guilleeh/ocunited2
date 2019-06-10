@@ -16,7 +16,7 @@ import CheckoutForm from './CheckoutForm';
 class Donation extends React.Component{
     constructor() {
         super();
-        this.DynamicDropdown1 = React.createRef();
+        this.DynamicDropdown1 = React.createRef(); // used to access child variables
         this.state = {
             values: [],
             currentStep: 0,
@@ -56,6 +56,7 @@ class Donation extends React.Component{
 
 
     closeModal = () =>{
+        // closes the donation modal
         this.props.hide_modal();
     }
 
