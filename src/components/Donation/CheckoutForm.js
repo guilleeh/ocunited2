@@ -23,7 +23,7 @@ class CheckoutForm extends Component {
       name = this.state.personal_information.first_name
     }
     let token =  await this.props.stripe.createToken({name: name})
-    let response = await fetch("/charge", {
+    let response = await fetch("https://ocunited2-api.herokuapp.com/charge", {
       method: "post",
       headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
       body: JSON.stringify({id: token, data: this.state.personal_information, donations: this.state.amount, anon: this.state.anon}),

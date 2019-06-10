@@ -169,7 +169,7 @@ class Registration extends React.Component{
     }
 
     submit = () => {
-        let response = fetch("/register", {
+        let response = fetch("https://ocunited2-api.herokuapp.com/register", {
           method: "post",
           headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
           body: JSON.stringify({info: this.state.personal_information, adults: this.state.adultTickets, children: this.state.childTickets}),
