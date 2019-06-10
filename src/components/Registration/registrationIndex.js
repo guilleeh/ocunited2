@@ -298,7 +298,7 @@ class Registration extends React.Component{
                    <div className="lineup">
                        <img className="logo" src={logo} alt="Thank you for Donating"/>
                        <div>
-                       <h1>Thank you for donating!</h1>
+                       <h1>See You At The Event!</h1>
                        <div className="ModalNav">
                            <button onClick={this.closeModal}>Back to Home</button>
                        </div>
