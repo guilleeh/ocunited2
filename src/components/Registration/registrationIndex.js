@@ -4,8 +4,6 @@ import Stepper from 'react-stepper-horizontal';
 import logo from '../Donation/logo.png'
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-import DynamicDropdown from '../Registration/RegDynamicDropdown';
 import Inputcounter from './Inputcounter';
 import Inputcounter2 from './Inputcounter2';
 //dependencies for Stripe
@@ -210,7 +208,7 @@ class Registration extends React.Component{
                             </div>
                         <hr class="hr-text" />
 
-                       <DynamicDropdown ref={this.DynamicDropdown1} selections={this.state.selections}  handleSelectionChange={(e) => this.handleSelectionChange(e)} />
+                      
                     
                        <div className="ModalNav">
                            <button className="cancel" onClick={this.closeModal}>Cancel</button>

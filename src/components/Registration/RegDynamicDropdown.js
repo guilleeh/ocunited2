@@ -1,6 +1,8 @@
 import React from 'react';
 import './adultbutton.css';
 
+/*This class can be removed from the project*/
+
 class DynamicDropdown extends React.Component{
  constructor() {
    super();

@@ -1,6 +1,6 @@
 /*======= BASE STYLE ========*/
 
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -25,7 +25,9 @@
  
 
  @media(min-width: 700px) {
+
    /* Global Classes */
+
    .h4 {
     position: relative;
     font-family: D-DIN;
@@ -94,7 +96,7 @@
       
       }
 
-  .video-header h1{
+  .video-header h1 {
     position: relative;
     font-size: 94px;
     text-align: center;
@@ -670,6 +672,7 @@
   font-weight: 600;
   padding-bottom: 1em;
   }
+
   /* Section E */
   #section-e{
     position: relative;

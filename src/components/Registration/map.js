@@ -1,3 +1,4 @@
+/* Used for registration modal on UpcomingEvents page */
 import React from 'react';
 import {Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 const mapStyles = {
@@ -7,7 +8,8 @@ const mapStyles = {
 class MapContainer extends React.Component {
  constructor(props) {
    super(props);
-    this.state = {
+    this.state = { 
+     /* Placeholder map lat/long */
      stores: [{lat: 47.49855629475769, lng: -122.14184416996333},
              {latitude: 47.359423, longitude: -122.021071},
              {latitude: 47.2052192687988, longitude: -121.988426208496},
@@ -44,7 +46,7 @@ class MapContainer extends React.Component {
 }
 
 export default GoogleApiWrapper({
- apiKey: 'AIzaSyBcQkcHtUZOGs2d9ElNQ0BagKevx2iJfKQ'
+ apiKey: {/* Insert Google map API key */}
 })(MapContainer);
 
 
